@@ -1,12 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import cerrojoSvg from "@/assets/icons/cerrojo.svg";
 
-function LockOverlay({ isKeyPickedUp, onUnlock }) {
-    const [isUnlocked, setIsUnlocked] = useState(false);
-
+function LockOverlay({ isKeyPickedUp, isUnlocked, onUnlock }) {
     const handleUnlock = () => {
-        setIsUnlocked(true);
-        onUnlock();
+        if (!isUnlocked) {
+            onUnlock();
+        }
     };
 
     const handleDropZoneClick = () => {
@@ -17,7 +16,6 @@ function LockOverlay({ isKeyPickedUp, onUnlock }) {
 
     const handleDragOver = (e) => {
         e.preventDefault();
-        e.dataTransfer.dropEffect = "move";
     };
 
     const handleDrop = (e) => {
@@ -30,7 +28,7 @@ function LockOverlay({ isKeyPickedUp, onUnlock }) {
 
     return (
         <div
-            className={`absolute inset-0 bg-black ${isUnlocked ? "opacity-0" : "opacity-90"} transition-opacity duration-500 flex flex-col justify-center items-center`}
+            className={`absolute inset-0 bg-black ${isUnlocked ? "opacity-0 pointer-events-none" : "opacity-90"} transition-opacity duration-500 flex flex-col justify-center items-center`}
             onDragOver={handleDragOver}
             onDrop={handleDrop}
             onClick={handleDropZoneClick}
@@ -38,11 +36,9 @@ function LockOverlay({ isKeyPickedUp, onUnlock }) {
             {!isUnlocked && (
                 <div className="flex flex-col items-center space-y-4">
                     <img src={cerrojoSvg} alt="Lock Icon" className="w-80 h-80 mb-4" />
-
                     <h2 className="text-white text-5xl font-extrabold tracking-wider text-center">
-                        Section Locked
+                        Section More about me <br /> Locked
                     </h2>
-
                     <p className="text-white text-lg font-medium opacity-80 text-center mt-2">
                         {isKeyPickedUp ? "Click or drop the key here to unlock" : "Pick up the key to unlock"}
                     </p>

@@ -1,0 +1,12 @@
+@keyframes return-to-origin {
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(-50px, -50px); /* Ajusta según tu posición original */
+    }
+}
+
+.key-returning {
+    animation: return-to-origin 0.5s ease-out forwards;
+}
