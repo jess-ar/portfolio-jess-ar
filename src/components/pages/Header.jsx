@@ -1,39 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import llave from '@/assets/images/espadallave.png';
 import sombra from '@/assets/icons/sombra.svg';
 import Navbar from '@/components/layout/Navbar';
 import Button from '@/components/common/Button';
 import HeaderBackground from '@/components/common/HeaderBackground';
+import Key from '@/components/common/Key';
 
-function Header({ onPickup, isKeyPickedUp }) {
-  const [isDragging, setIsDragging] = useState(false);
-  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
-
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      setCursorPosition({ x: e.clientX, y: e.clientY });
-    };
-    if (isDragging) {
-      window.addEventListener("mousemove", handleMouseMove);
-    } else {
-      window.removeEventListener("mousemove", handleMouseMove);
-    }
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, [isDragging]);
-
-  const handlePickup = () => {
-    if (!isKeyPickedUp) {
-      onPickup(true);
-    }
-    setIsDragging(true);
-  };
-
-  const handleDrop = () => {
-    setIsDragging(false);
-    onPickup(false);
-  };
-
+function Header({ onPickup, isKeyPickedUp, isUnlocked }) {
   return (
     <div id='home' className='relative h-screen flex flex-col'>
       <HeaderBackground />
@@ -59,34 +32,12 @@ function Header({ onPickup, isKeyPickedUp }) {
           <button className='text-white text-2xl mt-4'>Let's Connect <i className="fa-solid fa-arrow-right text-lg p-[2px]"></i></button>
         </div>
 
+        {/* Componente Key para manejar la lógica de la llave */}
         <div className="image banner-astronout1 lg:hidden absolute w-[300px] flex flex-col items-center">
-          {!isDragging && (
-            <img 
-              className="w-96 ast-img cursor-pointer animate-float" 
-              src={llave} 
-              alt="Key to unlock about section" 
-              onMouseDown={handlePickup}
-            />
-          )}
+          <Key onPickup={onPickup} isUnlocked={isUnlocked} />
         </div>
 
-        {isDragging && (
-          <img 
-            src={llave} 
-            alt="Key in hand"
-            style={{
-              position: 'fixed',
-              top: cursorPosition.y - 48,
-              left: cursorPosition.x - 48,
-              pointerEvents: 'none',
-              zIndex: 1000,
-              width: '72px',
-              transition: 'transform 0.1s ease-in-out',
-            }}
-            onMouseUp={handleDrop}
-          />
-        )}
-        
+        {/* SVG de sombra */}
         <div className="image banner-astronout lg:hidden absolute w-[300px] flex">
           <img className='w-60 ast-img' src={sombra} alt="Shadow" />
         </div>
