@@ -16,7 +16,7 @@ function Header({ onPickup, isKeyPickedUp, isUnlocked }) {
         <div className="content lg:text-center">
           <p className='text-white text-5xl font-bold'>Hi,</p>
           <p className='text-white text-5xl font-bold'>
-            I'm <img src="/favicon-j.svg" alt="Logo J" className="inline-block align-middle mb-8 mr-0.5" />essica,
+            I'm <img src="/favicon-j.svg" alt="Logo J" className="inline-block align-middle mb-8 mr-0.5" />essica
           </p>
           <h1 className='text-white text-6xl font-bold mt-2'>
             <span className="text-primary">Junior Fullstack</span> <br />

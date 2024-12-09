@@ -1,59 +1,78 @@
 import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper";
 import { FaLaptopCode, FaPaintBrush, FaBrain, FaSeedling, FaFilm } from "react-icons/fa";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import '@/styles/AboutInfo.css';
+import namine from '@/assets/images/namine.jpg';
 
 function AboutInfo() {
+    const cards = [
+        {
+            icon: <FaLaptopCode className="text-green-400" />,
+            title: "Fullstack Development",
+            description: "🔧I build web applications from front to back, ensuring seamless user experiences and efficient backends."
+        },
+        {
+            icon: <FaPaintBrush className="text-pink-400" />,
+            title: "Design Enthusiast",
+            description: "🎨With a background in graphic design, I have a passion for design and a keen eye for detail."
+        },
+        {
+            icon: <FaBrain className="text-purple-400" />,
+            title: "Artificial Intelligence",
+            description: "🧠Fascinated by AI, constantly exploring how it can transform web development."
+        },
+        {
+            icon: <FaSeedling className="text-green-400 " />,
+            title: "Growth and Learning",
+            description: "🌿 Passionate about growth. Always learning, always improving."
+        },
+        {
+            icon: <FaFilm className="text-yellow-400 " />,
+            title: "Fun fact",
+            description: "🎬 Film enthusiast, 🌱 plant nurturer, and 💡 creative thinker."
+        }
+    ];
+
     return (
-        <div className="wrapper flex flex-col justify-between items-center gap-6 px-4 lg:px-20 w-full max-w-6xl relative z-20 opacity-100 transition-opacity duration-500">
-            <h1 className="text-white text-5xl font-bold mb-8">More about me</h1>
-            <div className="grid grid-cols-2 gap-6 sm:grid-cols-2 lg:grid-cols-2 lg:gap-8 w-full">
-                <div className="bg-white text-black p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <div className="flex items-center mb-4">
-                        <FaLaptopCode className="text-3xl text-blue-400 mr-3" />
-                        <h2 className="text-2xl font-bold">Turning ideas into code</h2>
-                    </div>
-                    <p>Turning ideas into code, and code into solutions.</p>
-                </div>
-
-                <div className="bg-white text-black p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <div className="flex items-center mb-4">
-                        <FaLaptopCode className="text-3xl text-green-400 mr-3" />
-                        <h2 className="text-2xl font-bold">Fullstack Development</h2>
-                    </div>
-                    <p>I build web applications from front to back, ensuring seamless user experiences and efficient backends.</p>
-                </div>
-
-                <div className="bg-white text-black p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <div className="flex items-center mb-4">
-                        <FaPaintBrush className="text-3xl text-pink-400 mr-3" />
-                        <h2 className="text-2xl font-bold">Design Enthusiast</h2>
-                    </div>
-                    <p>With a background in graphic design, I have a passion for design and a keen eye for detail.</p>
-                </div>
-
-                <div className="bg-white text-black p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <div className="flex items-center mb-4">
-                        <FaBrain className="text-3xl text-purple-400 mr-3" />
-                        <h2 className="text-2xl font-bold">Artificial Intelligence</h2>
-                    </div>
-                    <p>Fascinated by the world of Artificial Intelligence, constantly exploring how it can enhance and transform web development.</p>
-                </div>
-
-                <div className="bg-white text-black p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <div className="flex items-center mb-4">
-                        <FaSeedling className="text-3xl text-green-400 mr-3" />
-                        <h2 className="text-2xl font-bold">Growth and Learning</h2>
-                    </div>
-                    <p>Passionate about growth. Always learning, always improving.</p>
-                </div>
-
-                <div className="bg-white text-black p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <div className="flex items-center mb-4">
-                        <FaFilm className="text-3xl text-yellow-400 mr-3" />
-                        <h2 className="text-2xl font-bold">Fun fact</h2>
-                    </div>
-                    <p>Film enthusiast, plant lover, and creative thinker.</p>
-                </div>
+        <div className="about-container">
+            {/* Carrusel de información */}
+            <div className="carousel-container">
+                <h2 className="title text-center" >More about me</h2>
+                <Swiper
+                    modules={[Navigation, Pagination]}
+                    navigation
+                    pagination={{ clickable: true }}
+                    spaceBetween={20}
+                    slidesPerView={1}
+                    breakpoints={{
+                        768: { slidesPerView: 1 },
+                        1024: { slidesPerView: 1 },
+                    }}
+                    className="swiper-container text-balance"
+                >
+                    {cards.map((card, index) => (
+                        <SwiperSlide key={index}>
+                            <div className="card">
+                                <div className="icon">{card.icon}</div>
+                                <h2 className="text-2xl font-bold mb-2">{card.title}</h2>
+                                <p>{card.description}</p>
+                            </div>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
             </div>
+
+            {/* Imagen */}
+            <div className="about-container">
+            <div className="photo-container">
+                <img src={namine} alt="Naminé" className="photo" />
+                <h1 className="name-overlay text-3xl mt-40">Jessica Arroyo Lebrón</h1>
+            </div>
+        </div>
         </div>
     );
 }
