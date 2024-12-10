@@ -37,20 +37,20 @@ function Navbar() {
   return (
     <>
       <div className="navbarcon flex justify-between items-center px-20 py-6 bg-transparent z-40 text-white lg:px-6 fixed w-full shadow-[0px_4px_10px_rgba(255,255,255,0.2)]">
-
         <img src={logo} alt="Jess-ar Logo" className="w-28 h-10" />
 
         <nav
-          className={`flex justify-center items-center gap-x-10 ${
-            durum && "lg:hidden"
-          } lg:fixed lg:top-0 -z-20 lg:flex-col lg:w-full lg:bg-[#171717] lg:h-[450px] lg:left-0 h-full lg:items-start lg:pl-6 cursor-pointer lg:pt-20`}
+          className={`flex justify-center items-center gap-x-10 ${durum ? "hidden" : ""
+            } lg:flex lg:flex-row lg:gap-x-10`}
         >
-          <ul className="flex gap-10 text-2xl mr-4 lg:flex-col lg:gap-6">
+          <ul className="flex gap-10 text-2xl mr-4 lg:flex-row lg:gap-10">
             <li className="bla">
               <AnchorLink href="#home">Home</AnchorLink>
             </li>
             <li className="bla">
-              <AnchorLink href="#about" offset="90">About me</AnchorLink>
+              <AnchorLink href="#about" offset="90">
+                About me
+              </AnchorLink>
             </li>
             <li className="bla">
               <AnchorLink href="#skills">Skills</AnchorLink>
@@ -60,12 +60,15 @@ function Navbar() {
             </li>
           </ul>
 
-          <div className="icon text-lg flex gap-4 lg:gap-8 lg:my-10">
+          <div className="icon text-lg flex gap-4 lg:gap-8 lg:my-0">
             <a href="https://x.com/jess_arDEV" target="_blank">
               <i className="fa-brands fa-twitter border-[1px] border-white p-2 rounded-[100%] hover:bg-white hover:text-black"></i>
             </a>
 
-            <a href="https://www.linkedin.com/in/jessica-arroyo-lebron/" target="_blank">
+            <a
+              href="https://www.linkedin.com/in/jessica-arroyo-lebron/"
+              target="_blank"
+            >
               <i className="fa-brands fa-linkedin border-[1px] border-white p-2 rounded-[100%] hover:bg-white hover:text-black"></i>
             </a>
             <a href="https://github.com/jess-ar" target="_blank">
@@ -82,7 +85,7 @@ function Navbar() {
 
         <i
           onClick={() => setDurum(!durum)}
-          className="fa-solid fa-bars hidden lg:block text-2xl cursor-pointer"
+          className="fa-solid fa-bars block lg:hidden text-2xl cursor-pointer"
         ></i>
       </div>
     </>
