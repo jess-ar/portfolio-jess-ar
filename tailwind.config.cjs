@@ -6,6 +6,8 @@ module.exports = {
       colors: {
         primary: "#ffffff",
         secondary: "#000000",
+        terciary: "#0087CD",
+        accent:"#EFBB04",
         "stats-yellow": "#e1b323",
         "stats-blue": "#0830aa",
         "stats-grey": "#b0aaaa",
@@ -27,6 +29,9 @@ module.exports = {
       borderRadius: {
         "xl-rounded": "20px",
         "lg-rounded": "10px",
+      },
+      screens: {
+        'tablet': '1023px',
       },
     },
   },

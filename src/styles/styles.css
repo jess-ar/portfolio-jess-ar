@@ -76,14 +76,46 @@ swiper {
   }
 }
 
-.bla{
-  transition: transform ease .4s;
-  padding: 0 10px;
+.navbar-link {
+  position: relative;
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease;
 }
 
-.bla:hover{
-  transform: scale(1.3);
+.navbar-link:hover {
+  color: #6caff3;
 }
+
+.navbar-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #6caff3;
+  bottom: -2px;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+.navbar-link:hover::after {
+  width: 100%;
+}
+
+@media (min-width: 303px) and (max-width: 1024px) {
+  .navbar-link {
+    color: #ffffff;
+  }
+
+  .navbar-link:hover {
+    color: #0a0a0a;
+  }
+
+  .navbar-link::after {
+    background: #0a0a0a;
+  }
+}
+
 
 @keyframes float {
   0% { transform: translateY(0); }
