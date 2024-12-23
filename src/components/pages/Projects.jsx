@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import img1 from '@/assets/images/project-img1.png';
 import img2 from '@/assets/images/project-img2.png';
 import img3 from '@/assets/images/project-img3.png';
+import WorkInProgress from '@/components/common/WorkInProgress';
 
-import ProjectCard from '@/components/projects/ProjectCard'; 
+import ProjectCard from '@/components/projects/ProjectCard';
 
 function Projects() {
   const [durum, setDurum] = useState(1);
@@ -57,56 +58,51 @@ function Projects() {
           incidunt dolores? Officia consectetur optio non totam cum eos soluta
           ipsa et quod.
         </p>
-        <div className="flex justify-center items-center gap-4 mt-12 mb-2 ">
+        <div className="flex justify-center items-center gap-2 mt-12 mb-2 ">
           <button
             onClick={() => setDurum(1)}
-            className={`font-bold text-[19px] border-2  bg-[#171717] rounded-[6px] p-[4px] ${
-              durum == 1 ? "bg-[linear-gradient(90deg,#6caff3,#38097a)]" : ""
-            }`}
+            className={`font-bold text-[19px] border-2  bg-[#171717] rounded-[6px] p-[4px] ${durum == 1 ? "bg-[linear-gradient(90deg,#6caff3,#38097a)]" : ""
+              }`}
           >
             Projects
           </button>
           <button
             onClick={() => setDurum(2)}
-            className={`font-bold text-[19px] border-2  bg-[#171717] rounded-[6px] p-[4px] ${
-              durum === 2 ? "bg-[linear-gradient(90deg,#6caff3,#38097a)]" : ""
-            }  `}
+            className={`font-bold text-[19px] border-2  bg-[#171717] rounded-[6px] p-[4px] ${durum === 2 ? "bg-[linear-gradient(90deg,#6caff3,#38097a)]" : ""
+              }  `}
           >
             Text-1
           </button>
           <button
             onClick={() => setDurum(3)}
-            className={`font-bold text-[19px] border-2  bg-[#171717] rounded-[6px] p-[4px]  ${
-              durum === 3 ? "bg-[linear-gradient(90deg,#6caff3,#38097a)]" : ""
-            }`}
+            className={`font-bold text-[19px] border-2  bg-[#171717] rounded-[6px] p-[4px]  ${durum === 3 ? "bg-[linear-gradient(90deg,#6caff3,#38097a)]" : ""
+              }`}
           >
             Text-2
           </button>
         </div>
-        <div className="grid grid-cols-3 p-10 justify-center items-center gap-8 lg:grid-cols-2 tl:grid-cols-1  ">
+        <div className="grid grid-cols-3 p-10 justify-center items-center gap-8 lg:grid-cols-2 tl:grid-cols-1">
           {durum === 1
-            ? projects.map((item, i) => <ProjectCard key={i} item={item} />)
+            ? projects.map((item) => <ProjectCard key={item.id} item={item} />)
             : null}
         </div>
-        {durum === 2 ? (
+
+        {durum === 2 && (
           <div
             id="text2"
-            className="tab-pane  text-center text-white py-16 max-w-4xl mx-auto lg:p-5 "
+            className="tab-pane text-center py-16 max-w-4xl mx-auto lg:p-5"
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
-            atque porro quasi dolorum facere tempore maxime nemo quia nulla
-            blanditiis doloribus, dolore, voluptas aspernatur harum facilis
-            cumque magni soluta sapiente.
+            <WorkInProgress section="Text-1 Content" />
           </div>
-        ) : null}
-        {durum === 3 ? (
+        )}
+        {durum === 3 && (
           <div
             id="text1"
-            className="tab-pane  text-center text-white py-5   lg:p-5"
+            className="tab-pane text-center py-16 max-w-4xl mx-auto lg:p-5"
           >
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum, nisi.
+            <WorkInProgress section="Text-2 Content" />
           </div>
-        ) : null}
+        )}
       </div>
     </>
   );
