@@ -4,7 +4,7 @@ function Footer() {
   return (
     <>
       <div className="footer bg-[#171717]">
-        <div className="wrap flex justify-between items-center px-8 text-white font-bold py-6 tl:px-4 tl:py-4 ">
+        <div className="wrap flex justify-between items-center px-8 text-white font-bold py-6 tl:px-4 tl:py-4 pl-0 md:pl-0 lg:pl-0 ">
           <img src={logo} alt="Jess-ar Logo" className="w-28 h-10" />
           <div className="flex gap-4 cursor-pointer ">
             <a href="https://www.linkedin.com/in/jessica-arroyo-lebron/" target="_blank">
