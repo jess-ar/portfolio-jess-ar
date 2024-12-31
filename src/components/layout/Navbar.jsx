@@ -36,7 +36,7 @@ function Navbar({ setCurrentPage }) {
 
   return (
     <>
-      <div className="navbarcon flex justify-between items-center px-6 md:px-8 py-4 md:py-4 bg-transparent z-40 text-primary fixed w-full shadow-[0px_4px_10px_rgba(255,255,255,0.2)]">
+      <div className="navbarcon flex justify-between items-center px-6 pl-0 md:pl-0 lg:pl-0 md:px-8 py-4 md:py-4 bg-transparent z-40 text-primary fixed w-full shadow-[0px_4px_10px_rgba(255,255,255,0.2)]">
         <img src={logo} alt="Jess-ar Logo" className="w-24 md:w-28 h-10" />
         {/* Botón hamburguesa para móvil */}
         <i
