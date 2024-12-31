@@ -8,6 +8,7 @@ function About({ isUnlocked, isKeyPickedUp, onUnlock }) {
             id="about"
             className="relative w-full min-h-screen py-6 lg:py-12 flex flex-col justify-center items-center text-white bg-black"
         >
+            {/* Gradiente superior */}
             <div className="absolute top-0 left-0 w-full h-10 bg-gradient-to-b from-black to-transparent"></div>
 
             {!isUnlocked && (
