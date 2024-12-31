@@ -1,0 +1,58 @@
+/* Estilos generales del Swiper */
+.swiper {
+    width: 100%;
+    height: auto;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background: none;
+}
+
+/* Estilo para cada tarjeta */
+.swiper-slide div {
+    background-color: #171717;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto hover */
+.swiper-slide div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Título */
+.swiper-slide h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+/* Descripción */
+.swiper-slide p {
+    font-size: 1rem;
+    color: #cfcfcf;
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+    .swiper-slide div {
+        padding: 1rem;
+    }
+
+    .swiper-slide h1 {
+        font-size: 1.25rem;
+    }
+
+    .swiper-slide p {
+        font-size: 0.9rem;
+    }
+}
