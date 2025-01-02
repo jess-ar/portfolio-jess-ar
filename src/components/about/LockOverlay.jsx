@@ -35,8 +35,8 @@ function LockOverlay({ isKeyPickedUp, isUnlocked, onUnlock }) {
         >
             {!isUnlocked && (
                 <div className="flex flex-col items-center space-y-4">
-                    <img src={cerrojoSvg} alt="Lock Icon" className="w-80 h-80 mb-4" />
-                    <h2 className="text-white text-5xl font-extrabold tracking-wider text-center">
+                    <img src={cerrojoSvg} alt="Lock Icon" className="lg:w-80 lg:h-80 w-52 h-52 mb-4" />
+                    <h2 className="text-white text-2xl md:text-2xl lg:text-5xl font-extrabold tracking-wider text-center">
                         Section More about me <br /> Locked
                     </h2>
                     <p className="text-white text-lg font-medium opacity-80 text-center mt-2">
