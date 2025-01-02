@@ -3,7 +3,6 @@ import img1 from '@/assets/images/project-img1.png';
 import img2 from '@/assets/images/project-img2.png';
 import img3 from '@/assets/images/project-img3.png';
 import img4 from '@/assets/images/project-img4.png';
-import WorkInProgress from '@/components/common/WorkInProgress';
 
 import ProjectCard from '@/components/projects/ProjectCard';
 
