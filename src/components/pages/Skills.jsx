@@ -1,84 +1,67 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import { Navigation } from "swiper";
-import { Pagination } from "swiper";
-import bg from "@/assets/images/banner-bg.webp"
+import bg from "@/assets/images/banner-bg.webp";
 import '@/styles/Skills.css';
+import useMousePosition from "@/hooks/useMousePosition";
+
+const skills = [
+    {
+        category: "Frontend",
+        items: ["JavaScript", "React", "Tailwind", "HTML", "CSS"]
+    },
+    {
+        category: "Backend",
+        items: ["Python", "Django"]
+    },
+    {
+        category: "DevOps",
+        items: ["Docker", "GitHub Actions", "AWS"]
+    },
+    {
+        category: "Databases",
+        items: ["PostgreSQL", "MySQL"]
+    },
+    {
+        category: "Others",
+        items: ["Git", "SOLID", "DRY", "KISS"]
+    }
+];
 
 function Skills() {
-  const skills = [
-    { 
-      title: "Frontend Development", 
-      description: "Development of dynamic and responsive interfaces using React.js and Tailwind CSS." 
-    },
-    { 
-      title: "JavaScript & Frameworks", 
-      description: "Proficiency in ES6+, React.js." 
-    },
-    { 
-      title: "UI/UX Design", 
-      description: "Experience with Figma, Photoshop, and Canva for creating attractive prototypes." 
-    },
-    { 
-      title: "Version Control", 
-      description: "Usage of Git, GitHub, and continuous deployment with Vercel." 
-    },
-    { 
-      title: "Agile Methodologies", 
-      description: "Working with Scrum, Jira, and estimations for agile teams." 
-    }
-  ];
+    const mousePosition = useMousePosition();
 
-  return (
-    <>
-      <div 
-        id="skills" 
-        style={{ backgroundImage: `url(${bg})` }} 
-        className="wrapper h-full bg-no-repeat bg-center bg-cover p-16 lg:p-4"
-      >
-        <div className="skills-wrapper text-center text-white bg-[#171717] p-10 rounded-[50px] lg:p-4">
-          <h1 className="text-4xl">Skills</h1>
-          <p className="text-lg py-3">
-            Here are some of my main skills:
-          </p>
-          <div className="box bg-[#171717] my-6">
-            <Swiper
-              breakpoints={{
-                320: {
-                  slidesPerView: 1,
-                  spaceBetween: 20,
-                },
-                768: {
-                  slidesPerView: 2,
-                  spaceBetween: 30,
-                },
-                1024: {
-                  slidesPerView: 3,
-                  spaceBetween: 40,
-                },
-              }}
-              pagination={{
-                clickable: true,
-              }}
-              navigation={true}
-              modules={[Navigation, Pagination]}
-              className="mySwiper"
+    return (
+        <div
+            id="skills"
+            style={{ backgroundImage: `url(${bg})` }}
+            className="wrapper h-full bg-no-repeat bg-center bg-cover p-8 lg:p-8"
+        >
+            <section className="flex flex-col gap-y-4 p-8 text-white rounded-lg shadow-md 
+                max-w-screen-md mx-auto lg:px-16"
             >
-              {skills.map((skill, index) => (
-                <SwiperSlide key={index} className="bg-[#171717]">
-                  <div className="bg-[#171717] flex flex-col items-center p-4">
-                    <h1 className="font-bold text-2xl mb-2">{skill.title}</h1>
-                    <p className="text-center text-lg">{skill.description}</p>
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
+                <h1 className="text-2xl font-bold">Skills</h1>
+                <div className="flex flex-col gap-y-3">
+                    {skills.map((skill, index) => (
+                        <div
+                            key={index}
+                            className="flex flex-col gap-y-2 md:flex-row md:gap-x-5 md:gap-y-0"
+                        >
+                            <h3 className="w-1/5 font-medium mr-10">{skill.category}</h3>
+                            <div className="flex w-4/5 flex-row flex-wrap gap-x-4 gap-y-2">
+                                {skill.items.map((item, idx) => (
+                                    <span
+                                        key={idx}
+                                        className="px-4 py-2 bg-[#171717] text-sm rounded-lg shadow-sm hover:shadow-md transition card-with-light-effect mouse-light-effect"
+                                        style={{ borderColor: "hsl(214, 15%, 30%)" }}
+                                    >
+                                        {item}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </section>
         </div>
-      </div>
-    </>
-  );
+    );
 }
 
 export default Skills;
