@@ -3,6 +3,11 @@ import img1 from '@/assets/images/project-img1.png';
 import img2 from '@/assets/images/project-img2.png';
 import img3 from '@/assets/images/project-img3.png';
 import img4 from '@/assets/images/project-img4.png';
+import img5 from '@/assets/images/project-img5.png';
+import img6 from '@/assets/images/project-img6.png';
+import img7 from '@/assets/images/project-img7.png';
+import img8 from '@/assets/images/project-img8.png';
+import img9 from '@/assets/images/project-img9.png';
 
 import ProjectCard from '@/components/projects/ProjectCard';
 
@@ -12,13 +17,13 @@ function Projects() {
   const projects = [
     {
       id: 1,
-      title: "Lorem ipsum",
+      title: "Project 1",
       description: "Design & Development",
       img: img1,
     },
     {
       id: 2,
-      title: "Lorem ipsum",
+      title: "Project 2",
       description: "Design & Development",
       img: img2,
     },
@@ -28,29 +33,47 @@ function Projects() {
     {
       id: 3,
       title: "Hackathon Project 3",
-      description: "Responsive Layout Creation",
-      img: img3,
+      description: "Design & Development",
+      img: img5,
     },
     {
       id: 4,
       title: "Hackathon Project 4",
-      description: "UI/UX Prototype Development",
+      description: "Design & Development",
+      img: img6,
+    },
+    {
+      id: 5,
+      title: "Hackathon Project 5",
+      description: "Design & Development",
+      img: img3,
+    },
+    {
+      id: 6,
+      title: "Hackathon Project 6",
+      description: "Design & Development",
       img: img4,
     },
   ];
 
   const bootcampProjects = [
     {
-      id: 5,
-      title: "Bootcamp Project 1",
-      description: "Full Stack Application with React and Node.js",
-      img: img1,
+      id: 7,
+      title: "Bootcamp Project 7",
+      description: "Design & Development",
+      img: img7,
     },
     {
-      id: 6,
-      title: "Bootcamp Project 2",
-      description: "E-commerce Platform Design & Development",
-      img: img2,
+      id: 8,
+      title: "Bootcamp Project 8",
+      description: "Design & Development",
+      img: img8,
+    },
+    {
+      id: 9,
+      title: "Bootcamp Project 9",
+      description: "Design & Development",
+      img: img9,
     },
   ];
 
