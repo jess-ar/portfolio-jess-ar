@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import '@/styles/shooting-stars.css';
 
 const HeaderBackground = () => {
-    const stars = Array.from({ length: 30 });
+    const stars = Array.from({ length: 10 });
     const shootingStars = Array.from({ length: 50 });
 
     const [shootingStarActive, setShootingStarActive] = useState(Array(10).fill(false));
@@ -23,7 +23,7 @@ const HeaderBackground = () => {
                         return newState;
                     });
                 }, 1000);
-            }, Math.random() * 5000 + 2000)
+            }, Math.random() * 1000 + 500)
         );
 
         return () => {
