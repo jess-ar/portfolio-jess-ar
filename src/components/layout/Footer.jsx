@@ -1,22 +1,34 @@
-import logo from '@/assets/icons/logo.svg';
-
 function Footer() {
   return (
-    <>
-      <div className="footer bg-[#171717]">
-        <div className="wrap flex justify-between items-center px-8 text-white font-bold py-6 tl:px-4 tl:py-4 pl-0 md:pl-0 lg:pl-0 ">
-          <img src={logo} alt="Jess-ar Logo" className="w-28 h-10" />
-          <div className="flex gap-4 cursor-pointer ">
-            <a href="https://www.linkedin.com/in/jessica-arroyo-lebron/" target="_blank">
-              <i className="fa-brands fa-linkedin border-[1px] border-primary p-2 rounded-[100%] hover:bg-primary hover:text-secondary"></i>
-            </a>
-            <a href="https://github.com/jess-ar" target="_blank">
-              <i className="fa-brands fa-github border-[1px] border-primary p-2 rounded-[100%] hover:bg-primary hover:text-secondary"></i>
+    <footer className="footer hidden-print bg-[#171717] text-white py-8">
+      <div className="footer__container mx-auto px-6 max-w-7xl mt-20">
+        {/* Divisor */}
+        <span className="section__divide block border-t border-gray-600 my-6"></span>
+        <article className="section__content flex flex-col sm:flex-row justify-center sm:justify-between items-center sm:items-start gap-y-6 sm:gap-y-0">
+
+          <div className="footer__copyright text-center sm:text-left text-sm text-gray-400 md:text-base">
+            Developed with ♥ from Barcelona to the world
+            <br />
+            <a href="https://moure.dev" className="text-primary hover:underline">
+              © 2025 Jessica Arroyo Lebrón
             </a>
           </div>
-        </div>
+
+          <ul className="footer__nav-social flex gap-4 text-xl">
+            <li className="footer__nav-item">
+              <a href="https://www.linkedin.com/in/jessica-arroyo-lebron/" target="_blank" className="hover:text-primary transition-colors">
+                <i className="fa-brands fa-linkedin" />
+              </a>
+            </li>
+            <li className="footer__nav-item">
+              <a href="https://github.com/jess-ar" target="_blank" className="hover:text-primary transition-colors">
+                <i className="fa-brands fa-github" />
+              </a>
+            </li>
+          </ul>
+        </article>
       </div>
-    </>
+    </footer>
   );
 }
 

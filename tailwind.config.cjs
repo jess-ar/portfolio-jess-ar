@@ -32,7 +32,8 @@ module.exports = {
         "lg-rounded": "10px",
       },
       screens: {
-        'tablet': '1023px',
+        'custom-xl': '1153px',
+        'custom-lg': '1024px',
       },
     },
   },
