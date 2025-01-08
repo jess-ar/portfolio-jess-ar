@@ -40,65 +40,79 @@ function Header({ onPickup, isKeyPickedUp, isUnlocked }) {
   };
 
   return (
-    <div id='home' className='relative h-screen flex flex-col overflow-hidden'>
+    <div id='home' className='relative min-h-[90vh] md:min-h-[120vh] lg:min-h-[120vh] xl:min-h-[90vh] flex flex-col overflow-hidden'>
       <HeaderBackground />
       <Navbar />
-
-      <div className="wrapper flex flex-col justify-between h-full w-full px-6 relative z-10">
-        {/* Contenido principal */}
-        <div className="content text-left pl-2 pt-[150px] lg:flex lg:items-center lg:gap-[68.22px]">
+      <div className="wrapper flex flex-col justify-between h-full w-full pl-6 relative z-10">
+        <section className="relative flex flex-col lg:flex-col custom-xl:flex-col xl:flex-row  md:justify-items-start mt-32 gap-5 sm:gap-6 md:gap-0 lg:gap-0 xl:gap-20 ">
           <div>
-            <p className='text-white text-3xl md:text-4xl lg:text-5xl font-bold'>Hi,</p>
-            <p className='text-white text-3xl md:text-4xl lg:text-5xl font-bold'>
-              I'm <img src="/favicon-j.svg" alt="Logo J" className="inline-block align-middle mb-4 md:mb-6 lg:mb-8 mr-0.5 w-4 md:w-6 lg:w-8 h-16 md:h-16 lg:h-20" />essica
+            <p className='text-white text-3xl md:text-4xl lg:text-4xl font-bold xl:text-5xl 2xl:text-5xl'>Hi,</p>
+            <p className='text-white text-3xl md:text-4xl lg:text-4xl font-bold xl:text-5xl 2xl:text-5xl'>
+              I'm <img src="/favicon-j.svg" alt="Logo J" className="inline-block align-middle mb-4 md:mb-8 lg:mb-8 mr-0.5 w-4 md:w-8 lg:w-8 h-16 md:h-20 lg:h-20" />essica
             </p>
-            <h1 className='text-white text-4xl md:text-5xl lg:text-6xl font-bold mt-2'>
-              <span className="text-primary">Junior Fullstack</span> <br />
-              <span>Web Developer</span>
-            </h1>
-
-            <h2 className='text-white text-base md:text-lg lg:text-3xl py-2 md:py-3 lg:py-4 max-w-md lg:max-w-2xl mx-0'>
-              Focused on building seamless web experiences.
-            </h2>
+            <div className="max-w-screen-xl mx-auto ">
+              <h1 className='text-white text-3xl md:text-5xl 2xl:text-6xl lg:text-5xl xl:text-6xl font-bold leading-tight'>
+                <span className="text-primary block mb-1">Junior Fullstack</span>
+                <span>Web Developer</span>
+              </h1>
+              <p className='text-white text-base md:text-2xl lg:text-2xl xl:text-3xl py-2 md:py-4 lg:py-4 xl:py-6 max-w-full'>
+                Focused on building seamless web experiences.
+              </p>
+            </div>
 
             <div className="flex flex-col lg:flex-row gap-4 items-start">
               <AnchorLink href="#about" offset="90">
-                <Button text="More About me" className="text-sm md:text-base lg:text-lg py-2 px-4 md:py-3 md:px-6 lg:py-4 lg:px-8" />
+                <Button text="More About me" className="text-sm md:text-lg lg:text-lg py-2 px-4 md:py-4 md:px-8 lg:py-4 lg:px-8" />
               </AnchorLink>
             </div>
           </div>
 
-          {/* Componente Key y sombra */}
-          <div className="relative flex flex-row items-center lg:ml-32 md:justify-center gap-5 md:gap-5 lg:gap-[80px]">
-            <div className="relative banner-sombra w-[150px] h-[198.96px] md:w-[223px] md:h-[295px] lg:w-[223px] lg:h-[295px] animate-float">
-              <img className='w-full h-full lg:mt-20 md:mt-10' src={sombra} alt="Shadow" />
+          <section className="relative flex flex-row items-center md:justify-center xl:mt-56 gap-1 sm:gap-1 md:gap-8 lg:gap-8 pb-8 md:pb-16 lg:pb-30 mt-3">
+            {/* Sombra */}
+            <div className="md:mt-12 relative banner-sombra w-[180px] h-[180px] sm:w-[180px] sm:h-[180px] md:w-[280px] md:h-[280px] lg:w-[280px] lg:h-[280px] xl:w-[300px] xl:h-[300px] 2xl:w-[300px] 2xl:h-[300px] animate-float ">
+              <img className='w-full h-full' src={sombra} alt="Shadow" />
             </div>
+
+            {/* Llave */}
             {!isFollowingMouse && (
-              <div 
-                className={`relative banner-key w-[245px] h-[245px] md:w-[368px] md:h-[368px] lg:w-[368px] lg:h-[368px] ${isUnlocking ? 'animate-pulse' : ''}`} 
-                onMouseEnter={() => setIsHoveringKey(true)} 
+              <div
+                className={`relative banner-key w-[200px] h-[200px] sm:w-[200px] sm:h-[200px] md:w-[320px] md:h-[320px] lg:w-[320px] lg:h-[320px] xl:w-[350px] xl:h-[350px] 2xl:w-[350px] 2xl:h-[350px]${isUnlocking ? 'animate-pulse' : ''}`}
+                onMouseEnter={() => setIsHoveringKey(true)}
                 onMouseLeave={() => setIsHoveringKey(false)}
                 onClick={handlePickup}
               >
                 <Key onPickup={onPickup} isUnlocked={isUnlocked} />
                 {isHoveringKey && showHint && (
-                  <p className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-white text-xs md:text-sm lg:text-base bg-black bg-opacity-75 px-3 py-1 rounded-lg animate-pulse">
+                  <p className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-white text-xs sm:text-sm md:text-base lg:text-lg bg-black bg-opacity-75 px-3 py-1 rounded-lg animate-pulse pb-30">
                     Unlock the section below!
                   </p>
                 )}
               </div>
             )}
+
             {isFollowingMouse && (
-              <div style={{ position: 'fixed', left: `${keyPosition.x}px`, top: `${keyPosition.y}px`, width: '100px', height: '100px', pointerEvents: 'none', transform: 'translate(-50%, -50%) scale(1.2)', zIndex: 50 }}>
+              <div
+                style={{
+                  position: 'fixed',
+                  left: `${keyPosition.x}px`,
+                  top: `${keyPosition.y}px`,
+                  width: '100px',
+                  height: '100px',
+                  pointerEvents: 'none',
+                  transform: 'translate(-50%, -50%) scale(1.2)',
+                  zIndex: 50,
+                }}
+              >
                 <Key isUnlocked={isUnlocked} />
               </div>
             )}
-          </div>
-        </div>
+          </section>
+
+        </section>
       </div>
 
       {/* Gradiente al final */}
-      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent to-black"></div>
+      <div className="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-b from-[rgba(11,18,35,0)] via-[rgba(11,18,35,0.8)] to-black"></div>
     </div>
   );
 }
