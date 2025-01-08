@@ -1,10 +1,18 @@
 
-.img-box:hover .p {
-  top: 0;
+.navbarcon {
+  padding: 1.5rem 2rem;
+  height: 80px;
 }
 
-.p {
-  transition: 0.5s all;
+@media (min-width: 768px) {
+  .navbarcon {
+    padding: 1.5rem 2rem;
+    height: 80px;
+  }
+
+  .navbar-link {
+    font-size: 1rem;
+  }
 }
 
 .navbar-link {
@@ -33,9 +41,14 @@
   width: 100%;
 }
 
-@media (min-width: 303px) and (max-width: 1024px) {
+@media (max-width: 767px) {
+  .navbarcon {
+    height: auto;
+    padding: 1rem;
+  }
+
   .navbar-link {
-    color: #ffffff;
+    font-size: 0.9rem;
   }
 
   .navbar-link:hover {

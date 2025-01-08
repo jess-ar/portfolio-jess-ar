@@ -31,15 +31,13 @@ function Navbar() {
         {/* Botón hamburguesa para móvil */}
         <i
           onClick={() => setDurum(!durum)}
-          className="fa-solid fa-bars lg:hidden text-2xl cursor-pointer"
+          className="fa-solid fa-bars lg:hidden text-2xl cursor-pointer p-2"
         ></i>
         
-        <nav
-          className={`${durum ? "hidden" : "flex"
-            } flex-col lg:flex lg:flex-row justify-center items-center gap-y-4 lg:gap-x-10 absolute lg:relative top-16 lg:top-0 left-0 w-full lg:w-auto bg-terciary lg:bg-transparent`}
-        >
-          <ul className="flex flex-col lg:flex-row items-center gap-y-4 lg:gap-x-10 text-sm md:text-lg ">
-            <li className="mt-5">
+        <nav className={`${durum ? "hidden" : "flex"} flex-col lg:flex lg:flex-row justify-center items-center gap-y-6 lg:gap-x-10 absolute lg:relative top-16 lg:top-0 left-0 w-full lg:w-auto bg-terciary lg:bg-transparent pt-4 lg:pt-0`}>
+
+          <ul className="flex flex-col lg:flex-row items-center gap-y-4 lg:gap-x-10 text-sm md:text-lg">
+            <li>
               <AnchorLink href="#home" className="navbar-link" onClick={handleLinkClick}>
                 Home
               </AnchorLink>
