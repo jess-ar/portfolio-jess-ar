@@ -1,20 +1,4 @@
 
-.navbarcon {
-  padding: 1.5rem 2rem;
-  height: 80px;
-}
-
-@media (min-width: 768px) {
-  .navbarcon {
-    padding: 1.5rem 2rem;
-    height: 80px;
-  }
-
-  .navbar-link {
-    font-size: 1rem;
-  }
-}
-
 .navbar-link {
   position: relative;
   text-decoration: none;
