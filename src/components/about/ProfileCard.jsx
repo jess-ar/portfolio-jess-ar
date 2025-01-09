@@ -2,7 +2,7 @@ import namine from "@/assets/images/namine.jpg";
 
 function ProfileCard() {
     return (
-        <div className="relative flex flex-col items-center md:items-start rounded-lg p-4 shadow-md">
+        <div className="relative flex flex-col items-center md:items-start rounded-xl p-4 shadow-md">
             <div className="flex mb-4">
                 <h1 className="flex items-center bg-black text-white font-bold text-xl md:text-2xl px-4 py-1 rounded-md border-2 border-stats-grey">
                     <svg
