@@ -44,43 +44,41 @@ function Skills() {
         <div
             id="skills"
             style={{ backgroundImage: `url(${bg})` }}
-            className="wrapper h-full bg-no-repeat bg-center bg-cover scroll-mt-30"
+            className="wrapper h-full bg-no-repeat bg-center bg-cover"
         >
-            <section className="flex flex-col gap-y-4 p-6 py-16 md:p-10 lg:p-16 xl:p-20 text-white rounded-lg shadow-md 
-                max-w-screen-md md:max-w-screen-lg lg:max-w-screen-xl xl:max-w-screen-2xl mx-auto 
-                sm:items-start md:items-center"
-            >
-                {/* Título */}
-                <div className=" text-left mt-8 md:mb-10 md:mt-28">
-                    <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-8 ">Skills</h1>
-                    {/* Listado de categorías */}
-                    <div className="flex flex-col gap-y-6 ">
-                        {skills.map((skill, index) => (
-                            <div
-                                key={index}
-                                className="flex flex-col gap-y-4 md:flex-row md:gap-x-5 md:gap-y-0"
-                            >
-                                {/* Categoría */}
-                                <h2 className="w-full md:w-1/3 font-medium text-lg md:text-xl lg:text-2xl text-left">
-                                    {skill.category}
-                                </h2>
-                                {/* Habilidades */}
-                                <div className="flex w-full sm:w-3/4 md:w-4/5 flex-row flex-wrap gap-x-4 gap-y-2">
-                                    {skill.items.map((item, idx) => (
-                                        <button
-                                            key={idx}
-                                            className="inline-flex items-center gap-x-1 bg-[#171717] border border-gray-700 rounded-xl px-2 py-1 sm:px-4  
-                                            text-sm md:text-lg lg:text-lg transition-all hover:bg-input cursor-pointer whitespace-nowrap"
-                                        >
-                                            {item}
-                                        </button>
-                                    ))}
+            <div className="max-w-screen-lg mx-auto px-6">
+                <section className="flex flex-col gap-y-4 py-16 pt-16 md:p-0 md:pt-20  text-white rounded-lg shadow-md">
+                    <div className="text-left mt-8 md:mb-16 lg:mb-16 lg:mt-14 xl:mt-14">
+                        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-8">Skills</h1>
+                        {/* Listado de categorías */}
+                        <div className="flex flex-col gap-y-6">
+                            {skills.map((skill, index) => (
+                                <div
+                                    key={index}
+                                    className="flex flex-col gap-y-4 md:flex-row md:gap-x-5 md:gap-y-0"
+                                >
+                                    {/* Categoría */}
+                                    <h2 className="w-full md:w-1/3 font-medium text-lg md:text-xl lg:text-2xl text-left">
+                                        {skill.category}
+                                    </h2>
+                                    {/* Habilidades */}
+                                    <div className="flex w-full sm:w-3/4 md:w-4/5 flex-row flex-wrap gap-x-4 gap-y-2">
+                                        {skill.items.map((item, idx) => (
+                                            <button
+                                                key={idx}
+                                                className="inline-flex items-center gap-x-1 bg-[#171717] border border-gray-700 rounded-xl px-2 py-1 sm:px-4  
+                                                text-sm md:text-lg lg:text-lg transition-all hover:bg-input cursor-pointer whitespace-nowrap"
+                                            >
+                                                {item}
+                                            </button>
+                                        ))}
+                                    </div>
                                 </div>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            </div>
         </div>
     );
 }
