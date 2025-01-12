@@ -47,7 +47,7 @@ function Header({ onPickup, isKeyPickedUp, isUnlocked }) {
       <HeaderBackground />
       <Navbar />
       <div className="max-w-screen-lg mx-auto px-6 wrapper flex flex-col justify-between h-full w-full relative z-10">
-        <section className="relative flex flex-col lg:flex-col custom-xl:flex-col xl:flex-row md:justify-items-start mt-32 gap-5 sm:gap-6 md:gap-0 lg:gap-0 xl:gap-20">
+        <section className="relative flex flex-col lg:flex-col custom-xl:flex-row xl:flex-row md:justify-items-start mt-32 gap-5 sm:gap-6 md:gap-0 lg:gap-0 xl:gap-20">
           <div>
             <p className='text-white text-3xl md:text-4xl lg:text-4xl font-bold xl:text-5xl 2xl:text-5xl'>
               I'm <img src="/favicon-j.svg" alt="Logo de Jessica Arroyo, desarrolladora web" className="inline-block align-middle mb-4 md:mb-8 lg:mb-8 mr-0.5 w-4 md:w-8 lg:w-8 h-16 md:h-20 lg:h-20" />essica

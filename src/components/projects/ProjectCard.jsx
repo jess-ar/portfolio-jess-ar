@@ -1,37 +1,49 @@
-function ProjectCard({ item }) {
+const ProjectCard = ({ title, img, description, technologies, links }) => {
   return (
-    <article
-      className="img-box w-full max-w-[350px] sm:max-w-[400px] md:max-w-[450px] lg:max-w-[500px] mx-auto flex justify-center items-center relative overflow-hidden rounded-2xl m-5"
-      aria-label={`Project: ${item.title}`}
-    >
-      <img
-        src={item.img}
-        alt={`Image of project: ${item.title}`}
-        className="w-full h-[200px] sm:h-[250px] md:h-[300px] lg:h-[350px] object-cover"
-      />
-      <div
-        className="p flex justify-center items-center absolute top-0 left-0 h-full w-full text-center bg-[linear-gradient(30deg,#0B1223,#0087CD)] p-6 opacity-0 hover:opacity-100 transition-opacity duration-300 ease-in-out"
-        role="region"
-        aria-labelledby={`project-title-${item.id}`}
-        aria-describedby={`project-description-${item.id}`}
-      >
-        <div>
-          <h2
-            id={`project-title-${item.id}`}
-            className="font-bold text-xl med:text-xl lg:text-3xl mb-8"
+    <div className="flex flex-col sm:flex-row gap-6 items-center sm:items-start sm:gap-8">
+      <div className="w-full sm:w-1/2 max-w-sm sm:max-w-md lg:max-w-lg rounded-lg overflow-hidden">
+        <img
+          src={img}
+          alt={title}
+          className="w-full h-auto object-cover rounded-lg shadow-lg"
+        />
+      </div>
+      <div className="w-full sm:w-1/2 flex flex-col justify-start">
+        <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mb-2 text-left">
+          {title}
+        </h3>
+        <div className="flex flex-wrap text-sm gap-2 mb-4">
+          {technologies.map((tech, index) => (
+            <span
+              key={index}
+              className="bg-gray-800 text-sm px-3 py-1 rounded-full"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+        <p className="text-gray-400 mb-4 text-sm md:text-base">{description}</p>
+        <div className="flex gap-4 mt-4">
+          <a
+            href={links.live}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-2 text-xs sm:text-sm lg:text-sm rounded-lg font-bold text-white transition-all bg-gradient-to-r from-[#007AB8] via-[#005F99] to-[#003F6B] hover:opacity-90 shadow-lg"
           >
-            {item.title}
-          </h2>
-          <p
-            id={`project-description-${item.id}`}
-            className="font-bold text-base md:text-lg lg:text-xl"
+            Visita la página
+          </a>
+          <a
+            href={links.code}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-2 text-xs sm:text-sm lg:text-sm rounded-lg font-bold text-white transition-all bg-gradient-to-r from-[#3D3D3D] via-[#595959] to-[#4C4C4C] hover:opacity-80 shadow-lg"
           >
-            {item.description}
-          </p>
+            Código
+          </a>
         </div>
       </div>
-    </article>
+    </div>
   );
-}
+};
 
 export default ProjectCard;

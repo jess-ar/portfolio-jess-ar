@@ -8,7 +8,7 @@ module.exports = {
         secondary: "#000000",
         terciary: "#0087CD",
         dark: "#0B1223",
-        accent:"#EFBB04",
+        accent: "#EFBB04",
         "stats-yellow": "#e1b323",
         "stats-blue": "#0830aa",
         "stats-grey": "#b0aaaa",
@@ -18,22 +18,32 @@ module.exports = {
       fontFamily: {
         inter: ["Inter", "sans-serif"],
       },
-      backgroundImage: {
-        'custom-gradient': 'linear-gradient(45deg, #0B1426 0%,#0B1426 0%, rgba(60, 187, 254, 100) 20%, rgba(55, 164, 244, 0.9) 40%, #0C89F5 45%, #0C89F5 50%, #0A2339 90%, rgba(15, 38, 62, 0.9) 100%, #050410 100%)',
-        'detail-about': 'url(/src/assets/icons/detail-about.svg)',
+      animation: {
+        gradient: "gradientAnimation 3s ease infinite",
       },
-      spacing: {
-        414: "414px",
-        761: "761px",
-        351: "351px",
-      },
-      borderRadius: {
-        "xl-rounded": "20px",
-        "lg-rounded": "10px",
-      },
-      screens: {
-        'custom-xl': '1153px',
-        'custom-lg': '1024px',
+      keyframes: {
+        gradientAnimation: {
+          "0%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+          "100%": { backgroundPosition: "0% 50%" },
+        },
+        backgroundImage: {
+          'custom-gradient': 'linear-gradient(45deg, #0B1426 0%,#0B1426 0%, rgba(60, 187, 254, 100) 20%, rgba(55, 164, 244, 0.9) 40%, #0C89F5 45%, #0C89F5 50%, #0A2339 90%, rgba(15, 38, 62, 0.9) 100%, #050410 100%)',
+          'detail-about': 'url(/src/assets/icons/detail-about.svg)',
+        },
+        spacing: {
+          414: "414px",
+          761: "761px",
+          351: "351px",
+        },
+        borderRadius: {
+          "xl-rounded": "20px",
+          "lg-rounded": "10px",
+        },
+        screens: {
+          'custom-xl': '1153px',
+          'custom-lg': '1024px',
+        },
       },
     },
   },
