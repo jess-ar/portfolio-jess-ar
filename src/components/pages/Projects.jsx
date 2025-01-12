@@ -104,28 +104,29 @@ function Projects() {
   const selectedCategory = categories.find((cat) => cat.id === category);
 
   return (
-    <section id="projects" className="bg-[#171717] text-white py-16">
+    <section id="projects" className="bg-[#171717] text-white pt-16 pb-2">
       <div className="max-w-screen-lg mx-auto pt-10 px-6">
         <h2 className="text-center text-2xl md:text-3xl lg:text-3xl font-bold mb-8">
           Projects
-        <p className="text-gray-400 mb-4 text-sm md:text-base mt-4">Discover my recent projects, featuring responsive designs, interactive prototypes, and full-stack apps. Showcasing skills in React, Tailwind CSS, JavaScript, Python, and Figma, with a focus on accessibility and user experience. More details soon!
+          <p className="text-gray-400 mb-4 text-sm md:text-base mt-4 text-left font-normal">Discover my recent projects, featuring responsive designs, interactive prototypes, and full-stack apps. Showcasing skills in React, Tailwind CSS, JavaScript, Python, and Figma, with a focus on accessibility and user experience. More details soon!
 
-          More details coming soon.</p>
+            More details coming soon.</p>
         </h2>
-        <div className="flex justify-center gap-4 mb-10">
+        <div className="flex flex-wrap justify-center gap-4 md:gap-4 mb-6 md:mb-10">
           {categories.map((cat) => (
             <button
               key={cat.id}
               onClick={() => setCategory(cat.id)}
-              className={`px-4 py-2 text-md md:text-lg lg:text-lg rounded-lg font-bold text-white transition-all ${category === cat.id
-                ? "bg-gradient-to-r from-[#0B1223] via-[#1a3a69] to-[#0087CD] hover:opacity-90"
-                : "bg-[#4C4C4C] hover:bg-opacity-80"
+              className={`px-3 py-2 text-sm md:text-lg rounded-lg font-bold text-white transition-all ${category === cat.id
+                  ? "bg-gradient-to-r from-[#0B1223] via-[#1a3a69] to-[#0087CD] hover:opacity-90"
+                  : "bg-[#4C4C4C] hover:bg-opacity-80"
                 }`}
             >
               {cat.name}
             </button>
           ))}
         </div>
+
         <div className="grid gap-10">
           {selectedCategory.data.map((project) => (
             <ProjectCard
