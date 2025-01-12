@@ -112,7 +112,7 @@ function Projects() {
 
             More details coming soon.</p>
         </h2>
-        <div className="flex flex-wrap justify-center gap-4 md:gap-4 mb-6 md:mb-10">
+        <div className="flex flex-wrap justify-center gap-3 md:gap-4 mb-6 md:mb-10">
           {categories.map((cat) => (
             <button
               key={cat.id}
