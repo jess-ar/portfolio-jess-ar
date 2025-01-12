@@ -28,7 +28,7 @@
 @media (max-width: 767px) {
   .navbarcon {
     height: auto;
-    padding: 1rem;
+    padding: 1.5rem;
   }
 
   .navbar-link {
