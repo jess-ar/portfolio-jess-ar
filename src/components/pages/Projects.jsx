@@ -114,33 +114,42 @@ function Projects() {
   ];
 
   return (
-    <>
-      <div id="projects" className="projects bg-[#171717] text-white p-6">
-        <h1 className="text-center font-bold mb-6 text-3xl md:text-4xl lg:text-5xl xl:text-6xl mt-24 ">Projects</h1>
-        <p className="text-base md:text-lg lg:text-xl xl:text-2xl text-center max-w-[1000px] px-4 lg:px-6 mx-auto text-[#939191]">
-        Explore some of my recent projects, including responsive web designs, interactive UI/UX prototypes, and full-stack applications. Each project highlights my skills in React, Tailwind CSS, and JavaScript, with a focus on accessibility, performance, and user experience.
+    <div id="projects" className="projects bg-[#171717] text-white py-16">
+      <div className="max-w-screen-lg mx-auto px-6">
+        <h1 className="text-center font-bold mb-6 text-3xl md:text-3xl lg:text-3xl xl:text-4xl mt-16">
+          Projects
+        </h1>
+        <div className="text-base md:text-lg lg:text-xl xl:text-xl text-center max-w-[1000px] px-4 lg:px-6 mx-auto text-[#939191]">
+        <p>
+          Explore some of my recent projects, including responsive web designs, interactive UI/UX prototypes, and full-stack applications. Each project showcases my skills in React, Tailwind CSS, JavaScript, and Python, with a focus on accessibility and user experience. These projects were developed in a team setting, except for Marvel & DC, which I completed individually.
         </p>
+        <p className="text-terciary">More details coming soon.</p>
+        </div>
         <div className="flex justify-center items-center gap-2 text-base md:text-lg lg:text-xl xl:text-2xl font-bold mt-10 mb-10">
           <button
             onClick={() => setDurum(1)}
-            className={`border-2 bg-[#171717] rounded-lg px-4 py-2 ${durum == 1 ? "bg-[linear-gradient(90deg,#0B1223,#0087CD)]" : ""}`}
+            className={`border-2 bg-[#171717] rounded-lg px-4 py-2 ${durum === 1 ? "bg-custom-gradient" : ""
+              }`}
           >
             Projects
           </button>
           <button
             onClick={() => setDurum(2)}
-            className={`border-2 bg-[#171717] rounded-lg px-4 py-2 ${durum === 2 ? "bg-[linear-gradient(90deg,#0B1223,#0087CD)]" : ""}`}
+            className={`border-2 bg-[#171717] rounded-lg px-4 py-2 ${durum === 2 ? "bg-custom-gradient" : ""
+              }`}
           >
             Hackathons
           </button>
           <button
             onClick={() => setDurum(3)}
-            className={` border-2 bg-[#171717] rounded-lg px-4 py-2 ${durum === 3 ? "bg-[linear-gradient(90deg,#0B1223,#0087CD)]" : ""}`}
+            className={`border-2 bg-[#171717] rounded-lg px-4 py-2 ${durum === 3 ? "bg-custom-gradient" : ""
+              }`}
           >
             Bootcamp
           </button>
         </div>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-auto max-w-[1200px] mx-auto justify-center items-start">
+
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 max-w-screen-lg mx-auto justify-center items-start">
           {durum === 1
             ? projects.map((item) => <ProjectCard key={item.id} item={item} />)
             : null}
@@ -154,7 +163,7 @@ function Projects() {
             : null}
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
