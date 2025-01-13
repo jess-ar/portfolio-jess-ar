@@ -20,6 +20,9 @@ module.exports = {
       },
       animation: {
         gradient: "gradientAnimation 3s ease infinite",
+        "shimmer-slide": "shimmer-slide var(--speed) ease-in-out infinite alternate",
+        "spin-around": "spin-around calc(var(--speed) * 2) infinite linear",
+        "shimmer-move": "shimmer-move var(--speed, 5s) linear infinite",
       },
       keyframes: {
         gradientAnimation: {
@@ -27,29 +30,39 @@ module.exports = {
           "50%": { backgroundPosition: "100% 50%" },
           "100%": { backgroundPosition: "0% 50%" },
         },
-        backgroundImage: {
-          'custom-gradient': 'linear-gradient(45deg, #0B1426 0%,#0B1426 0%, rgba(60, 187, 254, 100) 20%, rgba(55, 164, 244, 0.9) 40%, #0C89F5 45%, #0C89F5 50%, #0A2339 90%, rgba(15, 38, 62, 0.9) 100%, #050410 100%)',
-          'detail-about': 'url(/src/assets/icons/detail-about.svg)',
+        "spin-around": {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
         },
-        spacing: {
-          414: "414px",
-          761: "761px",
-          351: "351px",
+        "shimmer-slide": {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(100%)" },
         },
-        borderRadius: {
-          "xl-rounded": "20px",
-          "lg-rounded": "10px",
-        },
-        screens: {
-          'custom-xl': '1153px',
-          'custom-lg': '1024px',
-        },
+        "shimmer-move": {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+      },
+      },
+      backgroundImage: {
+        "custom-gradient":
+          "linear-gradient(45deg, #0B1426 0%,#0B1426 0%, rgba(60, 187, 254, 100) 20%, rgba(55, 164, 244, 0.9) 40%, #0C89F5 45%, #0C89F5 50%, #0A2339 90%, rgba(15, 38, 62, 0.9) 100%, #050410 100%)",
+        "detail-about": "url(/src/assets/icons/detail-about.svg)",
+      },
+      spacing: {
+        414: "414px",
+        761: "761px",
+        351: "351px",
+      },
+      borderRadius: {
+        "xl-rounded": "20px",
+        "lg-rounded": "10px",
+      },
+      screens: {
+        "custom-xl": "1153px",
+        "custom-lg": "1024px",
       },
     },
   },
-  safelist: [
-    'border-stats-yellow',
-    'border-stats-green',
-  ],
+  safelist: ["border-stats-yellow", "border-stats-green"],
   plugins: [],
 };

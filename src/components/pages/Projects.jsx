@@ -37,15 +37,15 @@ function Projects() {
     {
       id: 3,
       title: "Dermatech",
-      description: "Design & Development. Hackathon submission.",
+      description: "Hack Barna: My First In-Person Hackathon. With barely two months of programming experience, I joined Hack Barna alongside my teammate after our backend developer left us on the first day. Despite the setback, we managed to deliver a functional project locally, featuring an attractive design and a chatbot integrated with OpenAI’s API, all in just 24 hours. This was a true test of resilience, teamwork, and rapid learning.",
       img: img5,
-      technologies: ["Figma", "React", "API Integration"],
-      links: { live: "#", code: "#" },
+      technologies: ["Figma", "React", "OpenAI", "Chat bot" ],
+      links: { live: "https://www.hackbarna.com/es/projects/DermaTech", code: "https://github.com/jess-ar/derma-tech-hackbcn" },
     },
     {
       id: 4,
       title: "Sequiatron",
-      description: "Design & Development. Hackathon submission.",
+      description: "Design & Development. More details comming soon.",
       img: img6,
       technologies: ["Figma", "React", "Tailwind CSS"],
       links: { live: "#", code: "#" },
@@ -53,7 +53,7 @@ function Projects() {
     {
       id: 5,
       title: "Barris Vius",
-      description: "Design & Development. Hackathon submission.",
+      description: "Design & Development. More details comming soon.",
       img: img3,
       technologies: ["Figma", "React", "Tailwind CSS"],
       links: { live: "#", code: "#" },
@@ -61,7 +61,7 @@ function Projects() {
     {
       id: 6,
       title: "La Caixa",
-      description: "Design & Development.Hackathon submission.",
+      description: "Design & Development. More details comming soon.",
       img: img4,
       technologies: ["React", "Material UI"],
       links: { live: "#", code: "#" },
@@ -72,7 +72,7 @@ function Projects() {
     {
       id: 7,
       title: "Piedra, papel o tijera",
-      description: "Design & Development. Bootcamp project.",
+      description: "Design & Development. More details comming soon.",
       img: img7,
       technologies: ["Figma", "Javascript", "Saas"],
       links: { live: "#", code: "#" },
@@ -80,7 +80,7 @@ function Projects() {
     {
       id: 8,
       title: "Kamakura Food",
-      description: "Development. Food ordering system.",
+      description: "Design & Development. More details comming soon.",
       img: img8,
       technologies: ["Javascript", "CSS"],
       links: { live: "#", code: "#" },
@@ -88,7 +88,7 @@ function Projects() {
     {
       id: 9,
       title: "Covid Tracker",
-      description: "Development. COVID data tracker.",
+      description: "Design & Development. More details comming soon.",
       img: img9,
       technologies: ["React", "Tailwind CSS", "Shadcn"],
       links: { live: "#", code: "#" },
@@ -108,16 +108,14 @@ function Projects() {
       <div className="max-w-screen-lg mx-auto pt-10 px-6">
         <h2 className="text-center text-2xl md:text-3xl lg:text-3xl font-bold mb-8">
           Projects
-          <p className="text-gray-400 mb-4 text-sm md:text-base mt-4 text-left font-normal">Discover my recent projects, featuring responsive designs, interactive prototypes, and full-stack apps. Showcasing skills in React, Tailwind CSS, JavaScript, Python, and Figma, with a focus on accessibility and user experience. More details soon!
-
-            More details coming soon.</p>
+          <p className="text-gray-400 mb-4 text-sm md:text-base mt-4 text-left font-normal">I enjoy exploring all layers of development, but thanks to my background in graphic design, where I truly shine is in frontend. I work with technologies like React, Tailwind CSS, JavaScript, Python, PostgreSQL, and Figma, always prioritizing accessibility and user experience. If you're looking for someone who combines creativity, technical skills, and attention to detail, you're in the right place.</p>
         </h2>
         <div className="flex flex-wrap justify-center gap-3 md:gap-4 mb-6 md:mb-10">
           {categories.map((cat) => (
             <button
               key={cat.id}
               onClick={() => setCategory(cat.id)}
-              className={`px-3 py-2 text-sm md:text-lg rounded-lg font-bold text-white transition-all ${category === cat.id
+              className={`px-3 py-2 text-sm md:text-lg rounded-xl font-bold text-white transition-all ${category === cat.id
                   ? "bg-gradient-to-r from-[#0B1223] via-[#1a3a69] to-[#0087CD] hover:opacity-90"
                   : "bg-[#4C4C4C] hover:bg-opacity-80"
                 }`}
