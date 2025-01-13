@@ -1,6 +1,5 @@
 import bg from "@/assets/images/banner-bg.webp";
 import '@/styles/Skills.css';
-import useMousePosition from "@/hooks/useMousePosition";
 import ShimmerButton from "../skills/ShimmerButton";
 
 const skills = [
