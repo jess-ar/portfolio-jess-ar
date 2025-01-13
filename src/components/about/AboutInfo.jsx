@@ -1,6 +1,6 @@
-import ProfileCard from "./ProfileCard";
-import StatItem from "./StatItem";
-import Divider from "./Divider";
+import ProfileCard from "@/components/about/ProfileCard";
+import StatItem from "@/components/about/StatItem";
+import Divider from "@/components/about/Divider";
 
 function AboutInfo() {
     const stats = [
@@ -13,20 +13,19 @@ function AboutInfo() {
     ];
 
     return (
-        <div className="mx-auto w-full md:max-w-[900px] bg-gradient-to-b from-stats-blue via-black to-stats-blue p-4 rounded-lg shadow-lg">
-            <div className="flex flex-col md:flex-row md:gap-4">
+        <div className="relative p-8 shadow-lg bg-detail-about bg-cover bg-center">
+            <div className="relative z-10 flex flex-col md:flex-row gap-6 items-center">
                 <ProfileCard />
-                    <div className="space-y-3 flex flex-col items-center md:items-start mt-20">
+                <div className="w-full md:w-2/3 space-y-4">
                     {stats.map((stat, index) => (
-                        <>
+                        <div key={stat.label}>
                             <StatItem
-                                key={stat.label}
                                 label={stat.label}
                                 value={stat.value}
                                 borderColor={stat.borderColor}
                             />
                             {index === 3 && <Divider />}
-                        </>
+                        </div>
                     ))}
                 </div>
             </div>

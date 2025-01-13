@@ -1,124 +1,147 @@
 import { useState } from "react";
-import img1 from '@/assets/images/project-img1.png';
-import img2 from '@/assets/images/project-img2.png';
-import img3 from '@/assets/images/project-img3.png';
-import img4 from '@/assets/images/project-img4.png';
-import img5 from '@/assets/images/project-img5.png';
-import img6 from '@/assets/images/project-img6.png';
-import img7 from '@/assets/images/project-img7.png';
-import img8 from '@/assets/images/project-img8.png';
-import img9 from '@/assets/images/project-img9.png';
-
-import ProjectCard from '@/components/projects/ProjectCard';
+import img1 from "@/assets/images/project-img1.png";
+import img2 from "@/assets/images/project-img2.png";
+import img3 from "@/assets/images/project-img3.png";
+import img4 from "@/assets/images/project-img4.png";
+import img5 from "@/assets/images/project-img5.png";
+import img6 from "@/assets/images/project-img6.png";
+import img7 from "@/assets/images/project-img7.png";
+import img8 from "@/assets/images/project-img8.png";
+import img9 from "@/assets/images/project-img9.png";
+import ProjectCard from "@/components/projects/ProjectCard";
 
 function Projects() {
-  const [durum, setDurum] = useState(1);
+  const [category, setCategory] = useState(1);
 
   const projects = [
     {
       id: 1,
-      title: "Project 1",
-      description: "Design & Development",
+      title: "Pair Connect",
+      description:
+        "A platform designed and developed as a team to connect developers for collaborative programming sessions based on skills and preferences. We created a modern, responsive design focused on user experience. The project followed agile methodologies like Scrum, managed tasks with Jira, and implemented Gitflow for efficient version control.",
       img: img1,
+      technologies: ["Figma", "React", "Tailwind CSS", "Python", "Django", "PostgreSQL"],
+      links: { live: "https://pair-connect.netlify.app/", code: "https://github.com/jess-ar/pair_connect_front/tree/main" },
     },
     {
       id: 2,
-      title: "Project 2",
-      description: "Design & Development",
+      title: "Marvel & DC",
+      description: " Is an interactive platform that I designed and developed, where users can explore popular characters and teams from the Marvel and DC universes. The project offers features such as advanced character search and the ability to perform CRUD actions to manage the characters.",
       img: img2,
+      technologies: ["Figma", "React", "Tailwind CSS", "Python", "Django", "PostgreSQL", "Superhero API"],
+      links: { live: "https://www.marvel-and-dc-ultimate-guide.com", code: "https://github.com/jess-ar/marvel-dc-ultimate-guide-frontend/tree/main" },
     },
   ];
 
   const hackathonProjects = [
     {
       id: 3,
-      title: "Hackathon Project 3",
-      description: "Design & Development",
+      title: "Dermatech",
+      description: "Design & Development. Hackathon submission.",
       img: img5,
+      technologies: ["Figma", "React", "API Integration"],
+      links: { live: "#", code: "#" },
     },
     {
       id: 4,
-      title: "Hackathon Project 4",
-      description: "Design & Development",
+      title: "Sequiatron",
+      description: "Design & Development. Hackathon submission.",
       img: img6,
+      technologies: ["Figma", "React", "Tailwind CSS"],
+      links: { live: "#", code: "#" },
     },
     {
       id: 5,
-      title: "Hackathon Project 5",
-      description: "Design & Development",
+      title: "Barris Vius",
+      description: "Design & Development. Hackathon submission.",
       img: img3,
+      technologies: ["Figma", "React", "Tailwind CSS"],
+      links: { live: "#", code: "#" },
     },
     {
       id: 6,
-      title: "Hackathon Project 6",
-      description: "Design & Development",
+      title: "La Caixa",
+      description: "Design & Development.Hackathon submission.",
       img: img4,
+      technologies: ["React", "Material UI"],
+      links: { live: "#", code: "#" },
     },
   ];
 
   const bootcampProjects = [
     {
       id: 7,
-      title: "Bootcamp Project 7",
-      description: "Design & Development",
+      title: "Piedra, papel o tijera",
+      description: "Design & Development. Bootcamp project.",
       img: img7,
+      technologies: ["Figma", "Javascript", "Saas"],
+      links: { live: "#", code: "#" },
     },
     {
       id: 8,
-      title: "Bootcamp Project 8",
-      description: "Design & Development",
+      title: "Kamakura Food",
+      description: "Development. Food ordering system.",
       img: img8,
+      technologies: ["Javascript", "CSS"],
+      links: { live: "#", code: "#" },
     },
     {
       id: 9,
-      title: "Bootcamp Project 9",
-      description: "Design & Development",
+      title: "Covid Tracker",
+      description: "Development. COVID data tracker.",
       img: img9,
+      technologies: ["React", "Tailwind CSS", "Shadcn"],
+      links: { live: "#", code: "#" },
     },
   ];
 
+  const categories = [
+    { id: 1, name: "Highlights", data: projects },
+    { id: 2, name: "Hackathons", data: hackathonProjects },
+    { id: 3, name: "Bootcamp", data: bootcampProjects },
+  ];
+
+  const selectedCategory = categories.find((cat) => cat.id === category);
+
   return (
-    <>
-      <div id="projects" className="projects bg-[#171717] text-white py-10">
-        <h1 className="text-center text-4xl font-bold py-6">Projects</h1>
-        <p className="text-center max-w-[1000px] px-4 lg:px-6 mx-auto text-[#939191]">
-        Explore some of my recent projects, including responsive web designs, interactive UI/UX prototypes, and full-stack applications. Each project highlights my skills in React, Tailwind CSS, and JavaScript, with a focus on accessibility, performance, and user experience.
-        </p>
-        <div className="flex justify-center items-center gap-2 mt-12 mb-6">
-          <button
-            onClick={() => setDurum(1)}
-            className={`font-bold text-[16px] border-2 bg-[#171717] rounded-[6px] px-4 py-2 ${durum == 1 ? "bg-[linear-gradient(90deg,#0B1223,#0087CD)]" : ""}`}
-          >
-            Projects
-          </button>
-          <button
-            onClick={() => setDurum(2)}
-            className={`font-bold text-[16px] border-2 bg-[#171717] rounded-[6px] px-4 py-2 ${durum === 2 ? "bg-[linear-gradient(90deg,#0B1223,#0087CD)]" : ""}`}
-          >
-            Hackathons
-          </button>
-          <button
-            onClick={() => setDurum(3)}
-            className={`font-bold text-[16px] border-2 bg-[#171717] rounded-[6px] px-4 py-2 ${durum === 3 ? "bg-[linear-gradient(90deg,#0B1223,#0087CD)]" : ""}`}
-          >
-            Bootcamp
-          </button>
-        </div>
-        <div className="grid grid-cols-1 gap-4 p-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-auto max-w-[1200px] mx-auto justify-center items-start">
-          {durum === 1
-            ? projects.map((item) => <ProjectCard key={item.id} item={item} />)
-            : null}
+    <section id="projects" className="bg-[#171717] text-white pt-16 pb-2">
+      <div className="max-w-screen-lg mx-auto pt-10 px-6">
+        <h2 className="text-center text-2xl md:text-3xl lg:text-3xl font-bold mb-8">
+          Projects
+          <p className="text-gray-400 mb-4 text-sm md:text-base mt-4 text-left font-normal">Discover my recent projects, featuring responsive designs, interactive prototypes, and full-stack apps. Showcasing skills in React, Tailwind CSS, JavaScript, Python, and Figma, with a focus on accessibility and user experience. More details soon!
 
-          {durum === 2
-            ? hackathonProjects.map((item) => <ProjectCard key={item.id} item={item} />)
-            : null}
-
-          {durum === 3
-            ? bootcampProjects.map((item) => <ProjectCard key={item.id} item={item} />)
-            : null}
+            More details coming soon.</p>
+        </h2>
+        <div className="flex flex-wrap justify-center gap-3 md:gap-4 mb-6 md:mb-10">
+          {categories.map((cat) => (
+            <button
+              key={cat.id}
+              onClick={() => setCategory(cat.id)}
+              className={`px-3 py-2 text-sm md:text-lg rounded-lg font-bold text-white transition-all ${category === cat.id
+                  ? "bg-gradient-to-r from-[#0B1223] via-[#1a3a69] to-[#0087CD] hover:opacity-90"
+                  : "bg-[#4C4C4C] hover:bg-opacity-80"
+                }`}
+            >
+              {cat.name}
+            </button>
+          ))}
         </div>
+
+        <div className="grid gap-10">
+          {selectedCategory.data.map((project) => (
+            <ProjectCard
+              key={project.id}
+              title={project.title}
+              img={project.img}
+              description={project.description}
+              technologies={project.technologies}
+              links={project.links}
+            />
+          ))}
+        </div>
+
       </div>
-    </>
+    </section>
   );
 }
 

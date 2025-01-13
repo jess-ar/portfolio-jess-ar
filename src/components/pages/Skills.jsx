@@ -5,23 +5,35 @@ import useMousePosition from "@/hooks/useMousePosition";
 const skills = [
     {
         category: "Frontend",
-        items: ["JavaScript", "React", "Tailwind", "HTML", "CSS"]
+        items: ["HTML5", "CSS3", "Tailwind CSS", "JavaScript", "React"]
     },
     {
         category: "Backend",
         items: ["Python", "Django"]
     },
     {
-        category: "DevOps",
-        items: ["Docker", "GitHub Actions", "AWS"]
+        category: "Testing",
+        items: ["Pytest", "Vitest", "React Testing Library"]
     },
     {
         category: "Databases",
         items: ["PostgreSQL", "MySQL"]
     },
     {
-        category: "Others",
-        items: ["Git", "SOLID", "DRY", "KISS"]
+        category: "Agile Methodologies",
+        items: ["Scrum", "Kanban", "Jira"]
+    },
+    {
+        category: "Design Tools",
+        items: ["Figma", "Photoshop", "Illustrator", "InDesign"]
+    },
+    {
+        category: "Development Principles",
+        items: ["SOLID", "DRY", "KISS"]
+    },
+    {
+        category: "Languages",
+        items: ["English (B1)", "Spanish (Native)", "Catalan (Native)"]
     }
 ];
 
@@ -32,34 +44,38 @@ function Skills() {
         <div
             id="skills"
             style={{ backgroundImage: `url(${bg})` }}
-            className="wrapper h-full bg-no-repeat bg-center bg-cover p-8 lg:p-8"
+            className="wrapper h-full bg-no-repeat bg-center bg-cover"
         >
-            <section className="flex flex-col gap-y-4 p-8 text-white rounded-lg shadow-md 
-                max-w-screen-md mx-auto lg:px-16"
-            >
-                <h1 className="text-2xl font-bold">Skills</h1>
-                <div className="flex flex-col gap-y-3">
-                    {skills.map((skill, index) => (
-                        <div
-                            key={index}
-                            className="flex flex-col gap-y-2 md:flex-row md:gap-x-5 md:gap-y-0"
-                        >
-                            <h3 className="w-1/5 font-medium mr-10">{skill.category}</h3>
-                            <div className="flex w-4/5 flex-row flex-wrap gap-x-4 gap-y-2">
-                                {skill.items.map((item, idx) => (
-                                    <span
-                                        key={idx}
-                                        className="px-4 py-2 bg-[#171717] text-sm rounded-lg shadow-sm hover:shadow-md transition card-with-light-effect mouse-light-effect"
-                                        style={{ borderColor: "hsl(214, 15%, 30%)" }}
-                                    >
-                                        {item}
-                                    </span>
-                                ))}
-                            </div>
+            <div className="max-w-screen-lg mx-auto px-6">
+                <section className="flex flex-col gap-y-4 py-16 pt-16 md:p-0 md:pt-16  text-white rounded-lg shadow-md">
+                    <div className="text-left mt-8 md:mb-16 lg:mb-16 lg:mt-14 xl:mt-14">
+                        <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold mb-8">Skills</h2>
+                        <div className="flex flex-col gap-y-6">
+                            {skills.map((skill, index) => (
+                                <div
+                                    key={index}
+                                    className="flex flex-col gap-y-4 md:flex-row md:gap-x-5 md:gap-y-0"
+                                >
+                                    <p className="w-full md:w-1/3 font-medium text-lg md:text-xl lg:text-xl text-left">
+                                        {skill.category}
+                                    </p>
+                                    <div className="flex w-full sm:w-3/4 md:w-4/5 flex-row flex-wrap gap-x-4 gap-y-2">
+                                        {skill.items.map((item, idx) => (
+                                            <button
+                                                key={idx}
+                                                className="inline-flex items-center gap-x-1 bg-[#171717] border border-gray-700 rounded-xl px-2 py-1  
+                                                text-sm md:text-base lg:text-base transition-all hover:bg-input cursor-pointer whitespace-nowrap"
+                                            >
+                                                {item}
+                                            </button>
+                                        ))}
+                                    </div>
+                                </div>
+                            ))}
                         </div>
-                    ))}
-                </div>
-            </section>
+                    </div>
+                </section>
+            </div>
         </div>
     );
 }

@@ -1,12 +1,4 @@
 
-.img-box:hover .p {
-  top: 0;
-}
-
-.p {
-  transition: 0.5s all;
-}
-
 .navbar-link {
   position: relative;
   text-decoration: none;
@@ -33,9 +25,14 @@
   width: 100%;
 }
 
-@media (min-width: 303px) and (max-width: 1024px) {
+@media (max-width: 767px) {
+  .navbarcon {
+    height: auto;
+    padding: 1.5rem;
+  }
+
   .navbar-link {
-    color: #ffffff;
+    font-size: 0.9rem;
   }
 
   .navbar-link:hover {

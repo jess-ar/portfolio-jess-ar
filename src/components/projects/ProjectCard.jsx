@@ -1,17 +1,49 @@
-function ProjectCard({ item }) {
+const ProjectCard = ({ title, img, description, technologies, links }) => {
   return (
-    <div className="img-box w-full max-w-[350px] sm:max-w-[400px] md:max-w-[450px] lg:max-w-[500px] mx-auto flex justify-center items-center relative overflow-hidden rounded-md m-5">
-      <img 
-        src={item.img} 
-        alt={item.title} 
-        className="w-full h-[200px] sm:h-[250px] md:h-[300px] lg:h-[350px] object-cover rounded-md" 
-      />
-      <div className="p absolute top-0 left-0 h-full w-full text-center bg-[linear-gradient(30deg,#0B1223,#0087CD)] p-4 pt-20 opacity-0 hover:opacity-100 transition-opacity duration-300 ease-in-out">
-        <h1 className="font-bold text-2xl mb-2">{item.title}</h1>
-        <p className="font-bold">{item.description}</p>
+    <div className="flex flex-col sm:flex-row gap-6 items-center sm:items-start sm:gap-8">
+      <div className="w-full sm:w-1/2 max-w-sm sm:max-w-md lg:max-w-lg rounded-lg overflow-hidden">
+        <img
+          src={img}
+          alt={title}
+          className="w-full h-auto object-cover rounded-lg shadow-lg"
+        />
+      </div>
+      <div className="w-full sm:w-1/2 flex flex-col justify-start">
+        <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mb-2 text-left">
+          {title}
+        </h3>
+        <div className="flex flex-wrap text-sm gap-2 mb-4">
+          {technologies.map((tech, index) => (
+            <span
+              key={index}
+              className="bg-gray-800 text-sm px-3 py-1 rounded-full"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+        <p className="text-gray-400 mb-4 text-sm md:text-base">{description}</p>
+        <div className="flex gap-4 mt-4">
+          <a
+            href={links.live}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-2 text-xs sm:text-sm lg:text-sm rounded-lg font-bold text-white transition-all bg-gradient-to-r from-[#007AB8] via-[#005F99] to-[#003F6B] hover:opacity-90 shadow-lg"
+          >
+            Visita la página
+          </a>
+          <a
+            href={links.code}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-2 text-xs sm:text-sm lg:text-sm rounded-lg font-bold text-white transition-all bg-gradient-to-r from-[#3D3D3D] via-[#595959] to-[#4C4C4C] hover:opacity-80 shadow-lg"
+          >
+            Código
+          </a>
+        </div>
       </div>
     </div>
   );
-}
+};
 
 export default ProjectCard;
