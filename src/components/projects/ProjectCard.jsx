@@ -23,23 +23,26 @@ const ProjectCard = ({ title, img, description, technologies, links }) => {
           ))}
         </div>
         <p className="text-gray-400 mb-4 text-sm md:text-base">{description}</p>
-        <div className="flex gap-4 mt-4">
+        <div className="flex gap-4 mt-4 ">
           <a
             href={links.live}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-4 py-2 text-xs sm:text-sm lg:text-sm rounded-lg font-bold text-white transition-all bg-gradient-to-r from-[#007AB8] via-[#005F99] to-[#003F6B] hover:opacity-90 shadow-lg"
+            className="px-4 py-2 text-base md:text-lg lg:text-lg rounded-xl text-white transition-all bg-gradient-to-r from-[#3D3D3D] via-[#595959] to-[#4C4C4C] hover:opacity-90 shadow-lg"
           >
-            Visita la página
+            Visit the website
           </a>
           <a
             href={links.code}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-4 py-2 text-xs sm:text-sm lg:text-sm rounded-lg font-bold text-white transition-all bg-gradient-to-r from-[#3D3D3D] via-[#595959] to-[#4C4C4C] hover:opacity-80 shadow-lg"
+            className="flex items-center gap-2 px-4 py-2 text-base md:text-lg lg:text-lg rounded-xl text-white transition-all bg-gradient-to-r from-[#3D3D3D] via-[#595959] to-[#4C4C4C] hover:opacity-80 shadow-lg"
+            aria-label="GitHub Repository"
           >
-            Código
+            <i className="fa-brands fa-github" aria-hidden="true"></i>
+            Code
           </a>
+
         </div>
       </div>
     </div>
