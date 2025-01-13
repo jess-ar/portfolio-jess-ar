@@ -42,38 +42,41 @@ function Header({ onPickup, isKeyPickedUp, isUnlocked }) {
   return (
     <div
       id='home'
-      className='relative min-h-[90vh] md:min-h-[120vh] lg:min-h-[120vh] xl:min-h-[90vh] flex flex-col overflow-hidden'
+      className='relative min-h-[120vh] md:min-h-[90vh] lg:min-h-[90vh] xl:min-h-[90vh] flex flex-col overflow-hidden'
     >
       <HeaderBackground />
       <Navbar />
       <div className="max-w-screen-lg mx-auto px-6 wrapper flex flex-col justify-between h-full w-full relative z-10">
-        <section className="relative flex flex-col lg:flex-col custom-xl:flex-row xl:flex-row md:justify-items-start mt-32 gap-5 sm:gap-6 md:gap-0 lg:gap-0 xl:gap-20">
+        <section className="relative flex flex-col md:flex-row lg:flex-row custom-xl:flex-row xl:flex-row md:justify-items-start mt-32 gap-5">
           <div>
-            <p className='text-white text-3xl md:text-4xl lg:text-4xl font-bold xl:text-5xl 2xl:text-5xl'>
-              I'm <img src="/favicon-j.svg" alt="Logo de Jessica Arroyo, desarrolladora web" className="inline-block align-middle mb-4 md:mb-8 lg:mb-8 mr-0.5 w-4 md:w-8 lg:w-8 h-16 md:h-20 lg:h-20" />essica
+            <p className='text-white text-3xl md:text-4xl lg:text-4xl font-bold'>
+              I'm <img src="/favicon-j.svg" alt="Logo de Jessica Arroyo, desarrolladora web" className="inline-block align-middle mb-4 w-8 h-20" />essica
             </p>
-            <div className="max-w-screen-xl mx-auto ">
-              <h1 className='text-white text-3xl md:text-5xl 2xl:text-6xl lg:text-5xl xl:text-6xl font-bold leading-tight'>
+            <div className="max-w-screen-xl mx-auto">
+              <h1 className='text-white text-3xl md:text-4xl lg:text-4xl font-bold leading-tight'>
                 <span className="text-primary block mb-1">Junior Fullstack</span>
                 <span>Web Developer</span>
               </h1>
-              <p className='text-white text-base md:text-2xl lg:text-2xl xl:text-2xl py-2 md:py-4 lg:py-4 xl:py-6 max-w-full'>
-                Focused on building seamless web experiences.
+              <p className='text-white text-base md:text-lg lg:text-lg py-4'>
+                My determination has driven me to take on challenges, <br />
+                participate in hackathons, and create solutions <br />
+                that stand out for their creativity and precision. <br />
               </p>
+
             </div>
             <div className="flex flex-col lg:flex-row gap-4 items-start">
               <AnchorLink href="#about" offset="90">
-                <Button text="More About me" className="text-sm md:text-lg lg:text-lg py-2 px-4 md:py-4 md:px-8 lg:py-4 lg:px-8" />
+                <Button text="More About me" className="text-lg py-4 px-8" />
               </AnchorLink>
             </div>
           </div>
-          <section className="relative flex flex-row items-center md:justify-center xl:mt-56 gap-1 sm:gap-1 md:gap-8 lg:gap-8 pb-8 md:pb-16 lg:pb-30 mt-3">
-            <div className="md:mt-12 relative banner-sombra w-[180px] h-[180px] sm:w-[180px] sm:h-[180px] md:w-[200px] md:h-[200px] lg:w-[200px] lg:h-[200px] xl:w-[220px] xl:h-[220px] animate-float ">
+          <section className="relative flex items-center gap-8 pb-8 mt-3 md:mt-36 md:ml-10 lg:mt-36 lg:ml-5">
+            <div className="relative banner-sombra w-[220px] h-[220px]  md:w-[180px] md:h-[180px] lg:w-[200px] lg:h-[200px] animate-float">
               <img className='w-full h-full' src={sombra} alt="Una sombra flotante decorativa, un Sincorazón de Kingdom Hearts" />
             </div>
             {!isFollowingMouse && (
               <div
-                className={`relative banner-key w-[200px] h-[200px] sm:w-[200px] sm:h-[200px] md:w-[200px] md:h-[200px] lg:w-[200px] lg:h-[200px] xl:w-[200px] xl:h-[200px] ${isUnlocking ? 'animate-pulse' : ''}`}
+                className={`relative banner-key w-[250px] h-[250px]  md:w-[180px] md:h-[180px] lg:w-[250px] lg:h-[250px] ${isUnlocking ? 'animate-pulse' : ''}`}
                 tabIndex="0"
                 role="button"
                 aria-label="Pickup the key to unlock the section below"
@@ -84,7 +87,7 @@ function Header({ onPickup, isKeyPickedUp, isUnlocked }) {
               >
                 <Key onPickup={onPickup} isUnlocked={isUnlocked} />
                 {isHoveringKey && showHint && (
-                  <p className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-white text-xs sm:text-sm md:text-base lg:text-lg bg-black bg-opacity-75 px-3 py-1 rounded-lg animate-pulse pb-30">
+                  <p className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-white text-sm bg-black bg-opacity-75 px-3 py-1 rounded-lg animate-pulse">
                     Unlock the section below!
                   </p>
                 )}

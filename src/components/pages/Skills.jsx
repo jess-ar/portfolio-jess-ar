@@ -1,6 +1,6 @@
 import bg from "@/assets/images/banner-bg.webp";
 import '@/styles/Skills.css';
-import useMousePosition from "@/hooks/useMousePosition";
+import ShimmerButton from "../skills/ShimmerButton";
 
 const skills = [
     {
@@ -21,7 +21,7 @@ const skills = [
     },
     {
         category: "Agile Methodologies",
-        items: ["Scrum", "Kanban", "Jira"]
+        items: ["Scrum", "Kanban", " Jira "]
     },
     {
         category: "Design Tools",
@@ -38,7 +38,6 @@ const skills = [
 ];
 
 function Skills() {
-    const mousePosition = useMousePosition();
 
     return (
         <div
@@ -61,13 +60,13 @@ function Skills() {
                                     </p>
                                     <div className="flex w-full sm:w-3/4 md:w-4/5 flex-row flex-wrap gap-x-4 gap-y-2">
                                         {skill.items.map((item, idx) => (
-                                            <button
+                                            <ShimmerButton
                                                 key={idx}
-                                                className="inline-flex items-center gap-x-1 bg-[#171717] border border-gray-700 rounded-xl px-2 py-1  
-                                                text-sm md:text-base lg:text-base transition-all hover:bg-input cursor-pointer whitespace-nowrap"
+                                                className="inline-flex items-center gap-x-1 bg-[#171717] border border-gray-700    
+                                                text-sm md:text-base lg:text-base transition-all hover:bg-input whitespace-nowrap"
                                             >
                                                 {item}
-                                            </button>
+                                            </ShimmerButton>
                                         ))}
                                     </div>
                                 </div>
