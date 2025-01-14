@@ -1,25 +1,60 @@
-import logo from '@/assets/icons/logo.svg';
-
 function Footer() {
   return (
-    <>
-      <div className="footer bg-[#171717]">
-        <div className="wrap flex justify-between items-center px-12 text-white font-bold py-6 tl:px-4 tl:py-4 ">
-          <img src={logo} alt="Jess-ar Logo" className="w-28 h-10" />
-          <div className="flex gap-4 cursor-pointer ">
-            <a href="https://x.com/jess_arDEV" target="_blank">
-              <i className="fa-brands fa-twitter border-[1px] border-white p-2 rounded-[100%] hover:bg-white hover:text-black"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/jessica-arroyo-lebron/" target="_blank">
-              <i className="fa-brands fa-linkedin border-[1px] border-white p-2 rounded-[100%] hover:bg-white hover:text-black"></i>
-            </a>
-            <a href="https://github.com/jess-ar" target="_blank">
-              <i className="fa-brands fa-github border-[1px] border-white p-2 rounded-[100%] hover:bg-white hover:text-black"></i>
-            </a>
+    <footer
+      className="footer hidden-print bg-[#171717] text-white py-8"
+      role="contentinfo"
+      aria-label="Footer"
+    >
+      <div className="max-w-screen-lg mx-auto px-6">
+        <span
+          className="section__divide block border-t border-gray-600 my-6"
+          aria-hidden="true"
+        ></span>
+        <article
+          className="section__content flex flex-col sm:flex-row justify-center sm:justify-between items-center sm:items-start gap-y-6 sm:gap-y-0"
+          role="region"
+          aria-label="Footer Content"
+        >
+          <div
+            className="footer__copyright text-center sm:text-left text-sm text-gray-400 md:text-base"
+            aria-label="Copyright Information"
+          >
+            <p className="text-primary">
+              Developed with ♥ from Barcelona to the world
+            </p>
+            <p>© 2025 Jessica Arroyo Lebrón</p>
           </div>
-        </div>
+
+          <ul
+            className="footer__nav-social flex gap-4 text-xl"
+            aria-label="Social Links"
+          >
+            <li className="footer__nav-item">
+              <a
+                href="https://www.linkedin.com/in/jessica-arroyo-lebron/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-primary transition-colors"
+                aria-label="LinkedIn Profile"
+              >
+                <i className="fa-brands fa-linkedin" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li className="footer__nav-item">
+              <a
+                href="https://github.com/jess-ar"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-primary transition-colors"
+                aria-label="GitHub Profile"
+              >
+                <i className="fa-brands fa-github" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+        </article>
       </div>
-    </>
+    </footer>
   );
 }
 

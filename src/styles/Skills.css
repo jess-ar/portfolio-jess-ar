@@ -1,0 +1,37 @@
+.card-with-light-effect {
+  position: relative;
+  background-color: hsl(240, 5%, 96%);
+  border-radius: 0.5rem;
+}
+
+.card-with-light-effect::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 0.5rem;
+  pointer-events: none;
+}
+
+.mouse-light-effect {
+  position: relative;
+  padding: 2px;
+}
+
+.mouse-light-effect::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    150px at var(--mouse-x) var(--mouse-y),
+    hsl(184, 72%, 45%) 0%,
+    rgba(255, 255, 255, 0.2) 40%,
+    transparent 70%
+  );
+  transition: background 0.1s ease-out;
+  border-radius: inherit;
+}
+
+.special-shadow:hover {
+  box-shadow: 0 4px 12px 0 rgba(8, 223, 223, 1);
+}

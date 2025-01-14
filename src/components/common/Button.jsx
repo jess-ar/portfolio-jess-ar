@@ -1,10 +1,9 @@
-import React from 'react'
-
 const Button = ({ text = "Click me", onClick }) => {
     return (
-        <div className="btn py-3">
+        <div className="btn">
             <button 
-                className='border-2 border-[#b0aaaa] font-bold text-white bg-[linear-gradient(90deg,#6cd2da,#456896)] p-4 rounded-2xl'
+                className='border-2 border-[#b0aaaa] font-bold text-white bg-[linear-gradient(90deg,#0B1223,#0087CD)] 
+                p-3 md:p-4 lg:p-4 text-sm md:text-sm lg:text-lg rounded-xl '
                 onClick={onClick}
             >
                 {text}

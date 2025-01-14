@@ -83,7 +83,7 @@ function Key({ onPickup, isUnlocked }) {
                         left: cursorPosition.x - 48,
                         pointerEvents: 'none',
                         zIndex: 1000,
-                        width: '72px',
+                        width: '150px',
                         transition: 'transform 0.1s ease-in-out',
                     }}
                 />
