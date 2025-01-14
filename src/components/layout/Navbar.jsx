@@ -33,7 +33,7 @@ function Navbar() {
       >
         <div className="max-w-screen-lg mx-auto lg:py-6 lg:px-6 md:py-6 md:px-6 flex justify-between items-center">
           <a href="#home" aria-label="Back to home">
-            <img src={logo} alt="Jessica Arroyo Lebrón Logo" className="h-10" />
+            <img src={logo} alt="Jessica Arroyo Lebrón Logo" className="h-12" />
           </a>
 
           {/* Botón hamburguesa para móvil */}

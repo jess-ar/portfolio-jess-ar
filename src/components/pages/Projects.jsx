@@ -9,6 +9,7 @@ import img7 from "@/assets/images/project-img7.png";
 import img8 from "@/assets/images/project-img8.png";
 import img9 from "@/assets/images/project-img9.png";
 import ProjectCard from "@/components/projects/ProjectCard";
+import { GradientButton } from "../common/GradientButton";
 
 function Projects() {
   const [category, setCategory] = useState(1);
@@ -39,7 +40,7 @@ function Projects() {
       title: "Dermatech",
       description: "Hack Barna: My First In-Person Hackathon. With barely two months of programming experience, I joined Hack Barna alongside my teammate after our backend developer left us on the first day. Despite the setback, we managed to deliver a functional project locally, featuring an attractive design and a chatbot integrated with OpenAI’s API, all in just 24 hours. This was a true test of resilience, teamwork, and rapid learning.",
       img: img5,
-      technologies: ["Figma", "React", "OpenAI", "Chat bot" ],
+      technologies: ["Figma", "React", "OpenAI", "Chat bot"],
       links: { live: "https://www.hackbarna.com/es/projects/DermaTech", code: "https://github.com/jess-ar/derma-tech-hackbcn" },
     },
     {
@@ -110,20 +111,18 @@ function Projects() {
           Projects
           <p className="text-gray-400 mb-4 text-sm md:text-base mt-4 text-left font-normal">I enjoy exploring all layers of development, but thanks to my background in graphic design, where I truly shine is in frontend. I work with technologies like React, Tailwind CSS, JavaScript, Python, PostgreSQL, and Figma, always prioritizing accessibility and user experience. If you're looking for someone who combines creativity, technical skills, and attention to detail, you're in the right place.</p>
         </h2>
-        <div className="flex flex-wrap justify-center gap-3 md:gap-4 mb-6 md:mb-10">
+        <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-6 md:mb-10">
           {categories.map((cat) => (
-            <button
+            <GradientButton
               key={cat.id}
               onClick={() => setCategory(cat.id)}
-              className={`px-3 py-2 text-sm md:text-lg rounded-xl font-bold text-white transition-all ${category === cat.id
-                  ? "bg-gradient-to-r from-[#0B1223] via-[#1a3a69] to-[#0087CD] hover:opacity-90"
-                  : "bg-[#4C4C4C] hover:bg-opacity-80"
-                }`}
+              variant={category === cat.id ? "default" : "neutral"}
             >
               {cat.name}
-            </button>
+            </GradientButton>
           ))}
         </div>
+
 
         <div className="grid gap-10">
           {selectedCategory.data.map((project) => (
