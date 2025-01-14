@@ -20,7 +20,8 @@ module.exports = {
       },
       animation: {
         gradient: "gradientAnimation 3s ease infinite",
-        "shimmer-slide": "shimmer-slide var(--speed) ease-in-out infinite alternate",
+        "shimmer-slide":
+          "shimmer-slide var(--speed) ease-in-out infinite alternate",
         "spin-around": "spin-around calc(var(--speed) * 2) infinite linear",
         "shimmer-move": "shimmer-move var(--speed, 5s) linear infinite",
       },
@@ -41,7 +42,7 @@ module.exports = {
         "shimmer-move": {
           "0%": { transform: "rotate(0deg)" },
           "100%": { transform: "rotate(360deg)" },
-      },
+        },
       },
       backgroundImage: {
         "custom-gradient":
@@ -63,6 +64,13 @@ module.exports = {
       },
     },
   },
-  safelist: ["border-stats-yellow", "border-stats-green"],
+  safelist: [
+    "gradient-button-default",
+    "gradient-button-default:hover",
+    "gradient-button-variant",
+    "gradient-button-variant:hover",
+    "gradient-button-neutral",
+    "gradient-button-neutral:hover",
+  ],
   plugins: [],
 };
