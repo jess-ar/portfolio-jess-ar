@@ -1,8 +1,9 @@
 import { useState } from "react";
-import Home from "@/components/pages/Home";
-import About from "@/components/pages/About";
-import Projects from "@/components/pages/Projects";
-import Skills from "@/components/pages/Skills";
+import Home from "@/pages/Home";
+import About from "@/pages/About";
+import Projects from "@/pages/Projects";
+import Skills from "@/pages/Skills";
+
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import NotFound from "@/components/common/NotFound";
