@@ -1,6 +1,6 @@
 import namine from "@/assets/images/namine.jpg";
 import jessAboutSvg from "@/assets/icons/jess-about.svg";
-import jessAboutPng from "@/assets/icons/jess-about.png";
+import jessAboutPng from "@/assets/images/jess-about.png";
 
 function ProfileCard() {
     return (
