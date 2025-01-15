@@ -1,4 +1,6 @@
 import namine from "@/assets/images/namine.jpg";
+import jessAboutSvg from "@/assets/icons/jess-about.svg";
+import jessAboutPng from "@/assets/icons/jess-about.png";
 
 function ProfileCard() {
     return (
@@ -29,29 +31,10 @@ function ProfileCard() {
             </div>
 
             {/* SVG Jess encima de la imagen */}
-            <svg
-                className="absolute top-[250px] z-10 "
-                width="199"
-                height="43"
-                viewBox="0 0 199 43"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-            >
-                <g filter="url(#filter0_i_134_260)">
-                    <path d="M19.5 0L0 21L19.5 42.5H182.5L199 21L178.5 0H19.5Z" fill="#0830AA" />
-                </g>
-                <text
-                    x="50%"
-                    y="50%"
-                    dominantBaseline="middle"
-                    textAnchor="middle"
-                    fill="white"
-                    fontSize="20"
-                    fontWeight="bold"
-                >
-                    Jess
-                </text>
-            </svg>
+            <picture className="absolute top-[250px] z-10">
+            <source srcSet={jessAboutSvg} type="image/svg+xml" />
+            <img src={jessAboutPng} alt="Jess label" width="199" height="43" />
+        </picture>
 
             <img
                 src={namine}
