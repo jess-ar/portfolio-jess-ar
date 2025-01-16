@@ -139,7 +139,7 @@ function Header({ onPickup, isKeyPickedUp, isUnlocked }) {
           </section>
         </section>
       </div>
-      <div className="relative w-full h-48">
+      <div className="relative w-full h-48 xxl:h-96">
         {/* Degradado en curva */}
         <div
           className="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-b from-[rgba(11,18,35,0)] via-[rgba(11,18,35,0.8)] to-black"

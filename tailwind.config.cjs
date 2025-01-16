@@ -61,6 +61,7 @@ module.exports = {
       screens: {
         "custom-xl": "1153px",
         "custom-lg": "1024px",
+        'xxl': '1600px',
       },
     },
   },
