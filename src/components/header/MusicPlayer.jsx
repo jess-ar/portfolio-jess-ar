@@ -48,42 +48,46 @@ const MusicPlayer = ({ tracks, initialTrack = 0, skipStartSeconds = 3 }) => {
     const handleNext = () => {
         const nextTrack = (currentTrack + 1) % tracks.length;
         setCurrentTrack(nextTrack);
-        setIsPlaying(false);
+        setIsPlaying(true);
     };
 
     const handlePrev = () => {
         const prevTrack = (currentTrack - 1 + tracks.length) % tracks.length;
         setCurrentTrack(prevTrack);
-        setIsPlaying(false);
+        setIsPlaying(true);
+    };
+
+    const handleTrackEnd = () => {
+        const nextTrack = (currentTrack + 1) % tracks.length;
+        setCurrentTrack(nextTrack);
+        setIsPlaying(true);
     };
 
     return (
-        <div className="bg-[#0b3c65b7] text-white rounded-lg p-4 shadow-md w-full max-w-sm ">
-            <div className="flex justify-between items-center">
-                <div>
-                    <h3 className="text-sm font-bold">{tracks[currentTrack].title}</h3>
-                    <p className="text-xs text-[#D7C616]">
-                        {tracks[currentTrack].artist}
-                    </p>
+        <div className="bg-[#0b3c65b7] text-white rounded-lg p-4 shadow-md w-full max-w-[414px] min-w-[280px]">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-3">
+                <div className="w-full md:w-2/3 text-center md:text-left">
+                    <h3 className="text-sm font-bold truncate">{tracks[currentTrack].title}</h3>
+                    <p className="text-xs text-[#D7C616] truncate">{tracks[currentTrack].artist}</p>
                 </div>
-                <div className="flex items-center gap-2 text-xs ">
+                <div className="flex items-center gap-2 mt-3 md:mt-0">
                     <button
                         onClick={handlePrev}
-                        className="w-6 h-6 md:w-8 md:h-8 lg:w-8 lg:h-8 bg-[#469396] rounded-full flex items-center justify-center hover:bg-[#D7C616]"
+                        className="w-8 h-8 bg-[#469396] rounded-full flex items-center justify-center hover:bg-[#D7C616]"
                         aria-label="Anterior"
                     >
                         <i className="fas fa-backward text-white"></i>
                     </button>
                     <button
                         onClick={togglePlay}
-                        className="w-8 h-8 md:w-10 md:h-10 lg:w-10 lg:h-10 bg-[#0087CD] rounded-full flex items-center justify-center text-black"
+                        className="w-10 h-10 bg-[#0087CD] rounded-full flex items-center justify-center text-black hover:bg-[#D7C616]"
                         aria-label={isPlaying ? "Pause" : "Play"}
                     >
                         <i className={`fas ${isPlaying ? "fa-pause" : "fa-play"} text-white`}></i>
                     </button>
                     <button
                         onClick={handleNext}
-                        className="w-6 h-6 md:w-8 md:h-8 lg:w-8 lg:h-8 bg-[#469396] rounded-full flex items-center justify-center hover:bg-[#D7C616]"
+                        className="w-8 h-8 bg-[#469396] rounded-full flex items-center justify-center hover:bg-[#D7C616]"
                         aria-label="Siguiente"
                     >
                         <i className="fas fa-forward text-white"></i>
@@ -105,12 +109,31 @@ const MusicPlayer = ({ tracks, initialTrack = 0, skipStartSeconds = 3 }) => {
                     <span>{Math.floor(duration)}s</span>
                 </div>
             </div>
-            <audio
-                ref={audioRef}
-                onTimeUpdate={handleTimeUpdate}
-                onLoadedMetadata={handleTimeUpdate}
-                src={tracks[currentTrack].src}
-            />
+            <div className="overflow-x-auto mt-4">
+                <audio
+                    ref={audioRef}
+                    onTimeUpdate={handleTimeUpdate}
+                    onLoadedMetadata={handleTimeUpdate}
+                    onEnded={handleTrackEnd}
+                    src={tracks[currentTrack].src}
+                />
+            </div>
+            {/* Indicador de puntos */}
+            <div className="flex justify-center mt-4 space-x-2">
+                {tracks.map((_, index) => (
+                    <button
+                        key={index}
+                        className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                            currentTrack === index ? "bg-[#D7C616] scale-125" : "bg-gray-500"
+                        }`}
+                        onClick={() => {
+                            setCurrentTrack(index);
+                            setIsPlaying(true);
+                        }}
+                        aria-label={`Seleccionar pista ${index + 1}`}
+                    />
+                ))}
+            </div>
         </div>
     );
 };
