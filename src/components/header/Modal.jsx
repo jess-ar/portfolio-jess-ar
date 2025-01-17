@@ -1,9 +1,41 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import MusicPlayer from "./MusicPlayer";
 import kingdomHeartsImage from "@/assets/images/kingdomHeartsImage.png";
 
 const Modal = ({ isOpen, onClose, title }) => {
     const modalRef = useRef(null);
+    const [currentTrack, setCurrentTrack] = useState(0);
+
+    const tracks = [
+        {
+            title: "Hikari - Kingdom",
+            artist: "Orchestra Instrumental Version",
+            src: "/sounds/hikari.mp3",
+        },
+        {
+            title: "Dearly Beloved",
+            artist: "Yōko Shimomura",
+            src: "/sounds/dearly-beloved.mp3",
+        },
+        {
+            title: "Hikari - Simple and Clean",
+            artist: "Utada Hikaru",
+            src: "/sounds/simple-and-clean.mp3",
+        },
+        {
+            title: "Kairi I",
+            artist: "Yōko Shimomura",
+            src: "/sounds/kairi-I.mp3",
+        },
+    ];
+
+    const handleNextTrack = () => {
+        setCurrentTrack((prev) => (prev + 1) % tracks.length);
+    };
+
+    const handlePreviousTrack = () => {
+        setCurrentTrack((prev) => (prev - 1 + tracks.length) % tracks.length);
+    };
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -34,7 +66,7 @@ const Modal = ({ isOpen, onClose, title }) => {
             <div
                 ref={modalRef}
                 className="bg-gradient-to-b from-[#0B3D65] to-[#0B1223] text-white rounded-lg 
-                w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%] xl:w-[55%] max-h-[90vh] p-6 mt-28 shadow-lg relative overflow-y-auto"
+                w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%] xl:w-[55%] max-h-[90vh] p-6 mt-28 shadow-lg relative overflow-y-auto pb-20 md:pb-6 lg:pb-6"
             >
                 <button
                     className="absolute top-4 right-4 text-gray-300 hover:text-[#D7C616]"
@@ -68,24 +100,16 @@ const Modal = ({ isOpen, onClose, title }) => {
                         </p>
                     </div>
                 </div>
-                <div className="mt-6 flex justify-center">
-                    <MusicPlayer
-                        tracks={[
-                            {
-                                title: "Hikari - Kingdom",
-                                artist: "Orchestral Version",
-                                src: "/sounds/hikari.mp3",
-                                cover: "/images/kingdomHeartsImage.png",
-                            },
-                            {
-                                title: "Dearly Beloved",
-                                artist: "Yōko Shimomura",
-                                src: "/sounds/dearly-beloved.mp3",
-                                cover: "/images/anotherSongCover.png",
-                            },
-                        ]}
-                    />
-                </div>
+                <section className="flex justify-center">
+                    <div className="mt-6">
+                        <MusicPlayer
+                            tracks={tracks}
+                            currentTrack={currentTrack}
+                            onNext={handleNextTrack}
+                            onPrevious={handlePreviousTrack}
+                        />
+                    </div>
+                </section>
             </div>
         </div>
     );
