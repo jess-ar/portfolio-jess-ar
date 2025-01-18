@@ -83,7 +83,7 @@ function Navbar() {
           </div>
 
           <nav
-            className={`${durum ? "hidden" : "flex"} flex-col lg:flex lg:flex-row justify-center items-center gap-y-4 lg:gap-x-8 absolute lg:relative top-16 lg:top-0 left-0 w-full lg:w-auto bg-terciary lg:bg-transparent pt-4 lg:pt-0`}
+            className={`${durum ? "hidden" : "flex"} flex-col lg:flex lg:flex-row justify-center items-center gap-y-4 lg:gap-x-8 absolute lg:relative top-16 lg:top-0 left-0 w-full lg:w-auto bg-terciary lg:bg-transparent mt-6 lg:mt-0 pt-4 lg:pt-0`}
             role="navigation"
           >
             <ul
