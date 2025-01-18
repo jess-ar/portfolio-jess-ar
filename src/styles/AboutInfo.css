@@ -8,11 +8,6 @@
     color: white;
 }
 
-.carousel-container {
-    flex: 1;
-    margin-right: 2rem;
-}
-
 .title {
     font-size: 3rem;
     font-weight: bold;
