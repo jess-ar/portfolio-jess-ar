@@ -8,6 +8,9 @@ import img6 from "@/assets/images/projects/project-img6.png";
 import img7 from "@/assets/images/projects/project-img7.png";
 import img8 from "@/assets/images/projects/project-img8.png";
 import img9 from "@/assets/images/projects/project-img9.png";
+import img10 from "@/assets/images/projects/project-img10.png";
+import img11 from "@/assets/images/projects/project-img11.png";
+import img12 from "@/assets/images/projects/project-img12.png";
 import ProjectCard from "@/components/projects/ProjectCard";
 import { GradientButton } from "@/components/common/GradientButton";
 
@@ -40,7 +43,7 @@ function Projects() {
       title: "Dermatech",
       description: "Hack Barna: My First In-Person Hackathon. With barely two months of programming experience, I joined Hack Barna alongside my teammate after our backend developer left us on the first day. Despite the setback, we managed to deliver a functional project locally, featuring an attractive design and a chatbot integrated with OpenAI’s API, all in just 24 hours. This was a true test of resilience, teamwork, and rapid learning.",
       img: img5,
-      technologies: ["Figma", "React", "OpenAI", "Chat bot"],
+      technologies: ["Figma", "React", "Tailwind CSS", "OpenAI", "Chat bot"],
       links: { live: "https://www.hackbarna.com/es/projects/DermaTech", code: "https://github.com/jess-ar/derma-tech-hackbcn" },
     },
     {
@@ -48,17 +51,17 @@ function Projects() {
       title: "Sequiatron",
       description: "Design & Development. More details comming soon.",
       img: img6,
-      technologies: ["React", "Tailwind CSS"],
+      technologies: ["Figma", "React", "Tailwind CSS"],
       links: { live: "https://sequiatron.netlify.app/", code: "https://github.com/jess-ar/Hackatoon_Sequia" },
     },
-    /*{
+    {
       id: 5,
       title: "Boored",
-      description: "Design & Development. More details comming soon.",
-      img: img6,
-      technologies: ["Figma", "React", "Tailwind CSS"],
+      description: "Development. More details comming soon.",
+      img: img11,
+      technologies: ["React", "Tailwind CSS"],
       links: { live: "https://github.com/jess-ar/hack-boored/tree/main", code: "https://hack-boored-jess-ar.vercel.app/" },
-    },*/
+    },
     {
       id: 6,
       title: "Barris Vius",
@@ -67,21 +70,21 @@ function Projects() {
       technologies: ["Figma", "React", "Tailwind CSS"],
       links: { live: "https://barris-vius.vercel.app/", code: "https://github.com/jess-ar/comercio_local_front" },
     },
-    /*{
+    {
       id: 7,
-      title: "La Caixa",
+      title: "La Caixa The Game is On",
       description: "Development. More details comming soon.",
-      img: img4,
+      img: img10,
       technologies: ["React", "Material UI"],
       links: { live: "#", code: "https://github.com/jess-ar/the-game-is-hackathon-caixabank-tech" },
-    },*/
+    },
     {
       id: 8,
-      title: "La Caixa",
+      title: "La Caixa Coding Challenges",
       description: "Development. More details comming soon.",
       img: img4,
       technologies: ["React", "Material UI"],
-      links: { code: "https://github.com/jess-ar/hackathon-caixabank-frontend-js-react" },
+      links: {  live: "https://hack-la-caixa-1sw9yt3na-jess-ars-projects.vercel.app/", code: "https://github.com/jess-ar/hackathon-caixabank-frontend-js-react" },
     },
   ];
 
@@ -110,14 +113,14 @@ function Projects() {
       technologies: ["Javascript", "CSS"],
       links: { live: "https://kamakura-food.vercel.app/", code: "https://github.com/jess-ar/Kamakura-food" },
     },
-    /*{
+    {
       id: 12,
       title: "Travel Buddy",
       description: "Design & Development. More details comming soon.",
-      img: img8,
+      img: img12,
       technologies: ["Figma", "React", "Tailwind CSS",],
       links: { live: "https://travel-buddy-femcoders.netlify.app/", code: "https://github.com/jess-ar/TravelBuddy_front" },
-    },*/
+    },
   ];
 
   const categories = [
