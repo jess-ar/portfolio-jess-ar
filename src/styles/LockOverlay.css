@@ -27,7 +27,7 @@
 }
 
 .animate-heartbeat {
-    animation: heartbeat 3s infinite ease-in-out;
+    animation: heartbeat 1.5s infinite ease-in-out;
 }
 
 /* Animación glow (texto brillante) */

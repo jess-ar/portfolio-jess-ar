@@ -35,7 +35,7 @@ const ShimmerButton = (
                 className={clsx(
                     "-z-30 blur-[2px]",
                     "absolute inset-0 overflow-visible [container-type:size]",
-                    "animate-shimmer-move lg:animate-none lg:group-hover:animate-shimmer-move"
+                    "animate-shimmer-move "
                 )}
             >
                 <div className="absolute inset-0 -z-30 overflow-hidden">

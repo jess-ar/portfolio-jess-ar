@@ -48,52 +48,76 @@ function Projects() {
       title: "Sequiatron",
       description: "Design & Development. More details comming soon.",
       img: img6,
-      technologies: ["Figma", "React", "Tailwind CSS"],
-      links: { live: "#", code: "#" },
+      technologies: ["React", "Tailwind CSS"],
+      links: { live: "https://sequiatron.netlify.app/", code: "https://github.com/jess-ar/Hackatoon_Sequia" },
     },
-    {
+    /*{
       id: 5,
+      title: "Boored",
+      description: "Design & Development. More details comming soon.",
+      img: img6,
+      technologies: ["Figma", "React", "Tailwind CSS"],
+      links: { live: "https://github.com/jess-ar/hack-boored/tree/main", code: "https://hack-boored-jess-ar.vercel.app/" },
+    },*/
+    {
+      id: 6,
       title: "Barris Vius",
       description: "Design & Development. More details comming soon.",
       img: img3,
       technologies: ["Figma", "React", "Tailwind CSS"],
-      links: { live: "#", code: "#" },
+      links: { live: "https://barris-vius.vercel.app/", code: "https://github.com/jess-ar/comercio_local_front" },
     },
-    {
-      id: 6,
+    /*{
+      id: 7,
       title: "La Caixa",
-      description: "Design & Development. More details comming soon.",
+      description: "Development. More details comming soon.",
       img: img4,
       technologies: ["React", "Material UI"],
-      links: { live: "#", code: "#" },
+      links: { live: "#", code: "https://github.com/jess-ar/the-game-is-hackathon-caixabank-tech" },
+    },*/
+    {
+      id: 8,
+      title: "La Caixa",
+      description: "Development. More details comming soon.",
+      img: img4,
+      technologies: ["React", "Material UI"],
+      links: { code: "https://github.com/jess-ar/hackathon-caixabank-frontend-js-react" },
     },
   ];
 
   const bootcampProjects = [
     {
-      id: 7,
-      title: "Piedra, papel o tijera",
-      description: "Design & Development. More details comming soon.",
-      img: img7,
-      technologies: ["Figma", "Javascript", "Saas"],
-      links: { live: "#", code: "#" },
-    },
-    {
-      id: 8,
-      title: "Kamakura Food",
-      description: "Design & Development. More details comming soon.",
-      img: img8,
-      technologies: ["Javascript", "CSS"],
-      links: { live: "#", code: "#" },
-    },
-    {
       id: 9,
       title: "Covid Tracker",
-      description: "Design & Development. More details comming soon.",
+      description: "Development. More details comming soon.",
       img: img9,
       technologies: ["React", "Tailwind CSS", "Shadcn"],
-      links: { live: "#", code: "#" },
+      links: { live: "https://covid-tracker-m71yx9i7x-jess-ars-projects.vercel.app/", code: "https://github.com/jess-ar/COVID-Tracker" },
     },
+    {
+      id: 10,
+      title: "Piedra, papel o tijera",
+      description: "Design & Development.Only mobile and tablet More details comming soon.",
+      img: img7,
+      technologies: ["Figma", "Javascript", "Saas"],
+      links: { live: "https://giveme5-carnivaldom-f5.netlify.app/", code: "https://github.com/jess-ar/ProyectoCarnivalDom" },
+    },
+    {
+      id: 11,
+      title: "Kamakura Food",
+      description: "Development. More details comming soon.",
+      img: img8,
+      technologies: ["Javascript", "CSS"],
+      links: { live: "https://kamakura-food.vercel.app/", code: "https://github.com/jess-ar/Kamakura-food" },
+    },
+    /*{
+      id: 12,
+      title: "Travel Buddy",
+      description: "Design & Development. More details comming soon.",
+      img: img8,
+      technologies: ["Figma", "React", "Tailwind CSS",],
+      links: { live: "https://travel-buddy-femcoders.netlify.app/", code: "https://github.com/jess-ar/TravelBuddy_front" },
+    },*/
   ];
 
   const categories = [
@@ -123,7 +147,6 @@ function Projects() {
           ))}
         </div>
 
-
         <div className="grid gap-10">
           {selectedCategory.data.map((project) => (
             <ProjectCard
@@ -136,7 +159,6 @@ function Projects() {
             />
           ))}
         </div>
-
       </div>
     </section>
   );
