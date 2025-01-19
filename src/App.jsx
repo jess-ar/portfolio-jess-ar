@@ -7,6 +7,7 @@ import Skills from "@/pages/Skills";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import NotFound from "@/components/common/NotFound";
+import SoundController from "@/components/layout/soundModal";
 
 function App() {
   const [currentPage, setCurrentPage] = useState("home");
@@ -41,6 +42,7 @@ function App() {
   return (
     <div className="app">
       <Navbar setCurrentPage={setCurrentPage} />
+      <SoundController />
       <main>{renderPage()}</main>
       <Footer />
     </div>
