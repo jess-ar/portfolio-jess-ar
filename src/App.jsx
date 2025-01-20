@@ -8,13 +8,21 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import NotFound from "@/components/common/NotFound";
 
+
 function App() {
   const [currentPage, setCurrentPage] = useState("home");
   const [isUnlocked, setIsUnlocked] = useState(false);
   const [isKeyPickedUp, setIsKeyPickedUp] = useState(false);
 
-  const handleUnlockAbout = () => setIsUnlocked(true);
-  const handleKeyPickup = (pickedUp) => setIsKeyPickedUp(pickedUp);
+  const handleUnlockAbout = () => {
+    setIsUnlocked(true);
+    console.log("About unlocked!");
+  };
+
+  const handleKeyPickup = (pickedUp) => {
+    setIsKeyPickedUp(pickedUp);
+    console.log("Key picked up:", pickedUp);
+  };
 
   const renderPage = () => {
     switch (currentPage) {
@@ -28,7 +36,13 @@ function App() {
           />
         );
       case "about":
-        return isUnlocked ? <About /> : <NotFound />;
+        return (
+          <About
+            isUnlocked={isUnlocked}
+            isKeyPickedUp={isKeyPickedUp}
+            onUnlock={handleUnlockAbout}
+          />
+        );
       case "projects":
         return <Projects />;
       case "skills":

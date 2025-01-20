@@ -66,6 +66,11 @@ module.exports = {
     },
   },
   safelist: [
+    "border-stats-yellow",
+    "border-stats-blue",
+    "border-stats-grey",
+    "border-stats-green",
+    "border-stats-red",
     "gradient-button-default",
     "gradient-button-default:hover",
     "gradient-button-variant",

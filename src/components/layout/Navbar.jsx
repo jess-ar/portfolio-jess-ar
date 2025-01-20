@@ -1,51 +1,44 @@
 import { useState, useEffect, useRef } from "react";
+import { useAudio } from "@/context/AudioContext";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import logo from "@/assets/icons/logo.svg";
+import { playSound } from "@/utils/soundUtils";
 
 function Navbar() {
-  const [durum, setDurum] = useState(true); // Control del menú móvil
-  const [isScrolled, setIsScrolled] = useState(false); // Control del scroll
-  const [isMuted, setIsMuted] = useState(false); // Control del audio
-  const audioRef = useRef(null); // Referencia para el audio
+  const [durum, setDurum] = useState(true);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  const { isMuted, setIsMuted } = useAudio();
+  const audioRef = useRef(null);
+
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.muted = isMuted;
+    }
+  }, [isMuted]);
+
+  const toggleSound = () => {
+    setIsMuted((prevMuted) => !prevMuted);
+  };
 
   useEffect(() => {
     const scrollFunction = () => {
-      if (window.scrollY > 80) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 80);
     };
 
     window.addEventListener("scroll", scrollFunction);
     return () => window.removeEventListener("scroll", scrollFunction);
   }, []);
 
+
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (!event.target.closest("nav") && !event.target.closest(".fa-bars")) {
-        setDurum(true);
-      }
-    };
-
-    if (!durum) {
-      document.addEventListener("click", handleClickOutside);
-    } else {
-      document.removeEventListener("click", handleClickOutside);
-    }
-
-    return () => document.removeEventListener("click", handleClickOutside);
-  }, [durum]);
-
-  const toggleSound = () => {
-    setIsMuted(!isMuted);
     if (audioRef.current) {
-      audioRef.current.muted = !audioRef.current.muted; // Silencia o activa el audio
+      audioRef.current.muted = true;
     }
-  };
+  }, []);
 
   const handleLinkClick = () => {
-    setDurum(true); // Cierra el menú móvil al hacer clic en un enlace
+    setDurum(true);
   };
 
   return (
@@ -94,7 +87,10 @@ function Navbar() {
                 <AnchorLink
                   href="#home"
                   className="navbar-link"
-                  onClick={handleLinkClick}
+                  onClick={() => {
+                    handleLinkClick();
+                    playSound("/sounds/save.mp3", isMuted);
+                  }}
                 >
                   Home
                 </AnchorLink>
@@ -103,7 +99,10 @@ function Navbar() {
                 <AnchorLink
                   href="#about"
                   className="navbar-link"
-                  onClick={handleLinkClick}
+                  onClick={() => {
+                    handleLinkClick();
+                    playSound("/sounds/save.mp3", isMuted);
+                  }}
                 >
                   About me
                 </AnchorLink>
@@ -112,7 +111,10 @@ function Navbar() {
                 <AnchorLink
                   href="#skills"
                   className="navbar-link"
-                  onClick={handleLinkClick}
+                  onClick={() => {
+                    handleLinkClick();
+                    playSound("/sounds/save.mp3", isMuted);
+                  }}
                 >
                   Skills
                 </AnchorLink>
@@ -121,7 +123,10 @@ function Navbar() {
                 <AnchorLink
                   href="#projects"
                   className="navbar-link"
-                  onClick={handleLinkClick}
+                  onClick={() => {
+                    handleLinkClick();
+                    playSound("/sounds/save.mp3", isMuted);
+                  }}
                 >
                   Projects
                 </AnchorLink>
@@ -137,6 +142,7 @@ function Navbar() {
                   );
                   alert("¡Correo copiado al portapapeles!");
                   handleLinkClick();
+                  playSound("/sounds/item-get.mp3", isMuted);
                 }}
                 className="border border-primary py-1 px-3 text-sm md:text-base text-primary font-bold bg-transparent hover:bg-primary hover:text-secondary rounded-lg transition-all duration-300 lg:ml-24"
                 aria-label="Copy email address to clipboard"
@@ -152,6 +158,9 @@ function Navbar() {
             >
               <li>
                 <a
+                  onClick={() => {
+                    playSound("/sounds/exit.mp3", isMuted);
+                  }}
                   href="https://www.linkedin.com/in/jessica-arroyo-lebron/"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -163,6 +172,9 @@ function Navbar() {
               </li>
               <li>
                 <a
+                  onClick={() => {
+                    playSound("/sounds/exit.mp3", isMuted);
+                  }}
                   href="https://github.com/jess-ar"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -174,7 +186,12 @@ function Navbar() {
               </li>
               <li className="hidden lg:block">
                 <button
-                  onClick={toggleSound}
+                  onClick={() => {
+                    toggleSound();
+                    if (isMuted) {
+                      playSound("/sounds/select.mp3", false);
+                    }
+                  }}
                   className="w-10 h-10 flex items-center justify-center text-black text-xl border border-primary rounded-full bg-primary transition-all duration-300"
                   aria-label={isMuted ? "Enable sound" : "Mute sound"}
                 >
@@ -189,9 +206,6 @@ function Navbar() {
           </nav>
         </div>
       </div>
-
-      {/* Audio oculto */}
-      <audio ref={audioRef} src="/path-to-your-audio-file.mp3" autoPlay loop />
     </header>
   );
 }
