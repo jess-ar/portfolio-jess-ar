@@ -151,18 +151,21 @@ function Header({ onPickup, isKeyPickedUp, isUnlocked }) {
         {/* Texto introductorio */}
         <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-center text-white">
           <p className="text-sm font-medium">Use the key to unlock the next section</p>
-          <svg
-            className="mx-auto mt-2 w-6 h-6 text-white animate-bounce"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7"></path>
-          </svg>
+          <a href="#about">
+            <svg
+              className="mx-auto mt-2 w-6 h-6 text-white animate-bounce"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </a>
         </div>
       </div>
+
     </div>
   );
 }

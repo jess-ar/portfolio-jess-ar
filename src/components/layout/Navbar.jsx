@@ -1,36 +1,41 @@
 import { useState, useEffect, useRef } from "react";
+import { useAudio } from "@/context/AudioContext";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import logo from "@/assets/icons/logo.svg";
-import SoundController from "@/components/layout/SoundController";
+import { playSound } from "@/utils/soundUtils";
 
 function Navbar() {
   const [durum, setDurum] = useState(true);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMuted, setIsMuted] = useState(false);
+
+  const { isMuted, setIsMuted } = useAudio();
+  const audioRef = useRef(null);
+
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.muted = isMuted;
+    }
+  }, [isMuted]);
+
+  const toggleSound = () => {
+    setIsMuted((prevMuted) => !prevMuted);
+  };
 
   useEffect(() => {
     const scrollFunction = () => {
-      if (window.scrollY > 80) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 80);
     };
 
     window.addEventListener("scroll", scrollFunction);
     return () => window.removeEventListener("scroll", scrollFunction);
   }, []);
 
-  useEffect(() => {
-    const savedMutedState = localStorage.getItem("globalMuted");
-    setIsMuted(savedMutedState === "true");
-  }, []);
 
-  const toggleSound = () => {
-    const newMutedState = !isMuted;
-    setIsMuted(newMutedState);
-    localStorage.setItem("musicConsent", newMutedState ? "false" : "true");
-  };
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.muted = true;
+    }
+  }, []);
 
   const handleLinkClick = () => {
     setDurum(true);
@@ -39,9 +44,7 @@ function Navbar() {
   return (
     <header role="banner">
       <div
-        className={`navbarcon fixed w-full z-40 text-primary shadow-[0px_4px_10px_rgba(255,255,255,0.2)] transition-colors duration-75 ${
-          isScrolled ? "bg-[#0B1223]" : "bg-transparent"
-        }`}
+        className={`navbarcon fixed w-full z-40 text-primary shadow-[0px_4px_10px_rgba(255,255,255,0.2)] transition-colors duration-75 ${isScrolled ? "bg-[#0B1223]" : "bg-transparent"}`}
         aria-label="Main Navigation"
       >
         <div className="max-w-screen-lg mx-auto lg:py-6 lg:px-6 md:py-6 md:px-6 flex justify-between items-center">
@@ -73,9 +76,7 @@ function Navbar() {
           </div>
 
           <nav
-            className={`${
-              durum ? "hidden" : "flex"
-            } flex-col lg:flex lg:flex-row justify-center items-center gap-y-4 lg:gap-x-8 absolute lg:relative top-16 lg:top-0 left-0 w-full lg:w-auto bg-terciary lg:bg-transparent mt-6 lg:mt-0 pt-4 lg:pt-0`}
+            className={`${durum ? "hidden" : "flex"} flex-col lg:flex lg:flex-row justify-center items-center gap-y-4 lg:gap-x-8 absolute lg:relative top-16 lg:top-0 left-0 w-full lg:w-auto bg-terciary lg:bg-transparent mt-6 lg:mt-0 pt-4 lg:pt-0`}
             role="navigation"
           >
             <ul
@@ -86,7 +87,10 @@ function Navbar() {
                 <AnchorLink
                   href="#home"
                   className="navbar-link"
-                  onClick={handleLinkClick}
+                  onClick={() => {
+                    handleLinkClick();
+                    playSound("/sounds/save.mp3", isMuted);
+                  }}
                 >
                   Home
                 </AnchorLink>
@@ -95,7 +99,10 @@ function Navbar() {
                 <AnchorLink
                   href="#about"
                   className="navbar-link"
-                  onClick={handleLinkClick}
+                  onClick={() => {
+                    handleLinkClick();
+                    playSound("/sounds/save.mp3", isMuted);
+                  }}
                 >
                   About me
                 </AnchorLink>
@@ -104,7 +111,10 @@ function Navbar() {
                 <AnchorLink
                   href="#skills"
                   className="navbar-link"
-                  onClick={handleLinkClick}
+                  onClick={() => {
+                    handleLinkClick();
+                    playSound("/sounds/save.mp3", isMuted);
+                  }}
                 >
                   Skills
                 </AnchorLink>
@@ -113,7 +123,10 @@ function Navbar() {
                 <AnchorLink
                   href="#projects"
                   className="navbar-link"
-                  onClick={handleLinkClick}
+                  onClick={() => {
+                    handleLinkClick();
+                    playSound("/sounds/save.mp3", isMuted);
+                  }}
                 >
                   Projects
                 </AnchorLink>
@@ -129,6 +142,7 @@ function Navbar() {
                   );
                   alert("¡Correo copiado al portapapeles!");
                   handleLinkClick();
+                  playSound("/sounds/item-get.mp3", isMuted);
                 }}
                 className="border border-primary py-1 px-3 text-sm md:text-base text-primary font-bold bg-transparent hover:bg-primary hover:text-secondary rounded-lg transition-all duration-300 lg:ml-24"
                 aria-label="Copy email address to clipboard"
@@ -144,6 +158,9 @@ function Navbar() {
             >
               <li>
                 <a
+                  onClick={() => {
+                    playSound("/sounds/exit.mp3", isMuted);
+                  }}
                   href="https://www.linkedin.com/in/jessica-arroyo-lebron/"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -155,6 +172,9 @@ function Navbar() {
               </li>
               <li>
                 <a
+                  onClick={() => {
+                    playSound("/sounds/exit.mp3", isMuted);
+                  }}
                   href="https://github.com/jess-ar"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -166,7 +186,12 @@ function Navbar() {
               </li>
               <li className="hidden lg:block">
                 <button
-                  onClick={toggleSound}
+                  onClick={() => {
+                    toggleSound();
+                    if (isMuted) {
+                      playSound("/sounds/select.mp3", false);
+                    }
+                  }}
                   className="w-10 h-10 flex items-center justify-center text-black text-xl border border-primary rounded-full bg-primary transition-all duration-300"
                   aria-label={isMuted ? "Enable sound" : "Mute sound"}
                 >
@@ -181,9 +206,6 @@ function Navbar() {
           </nav>
         </div>
       </div>
-
-      {/* Audio oculto */}
-      <SoundController setGlobalMuted={setIsMuted} />
     </header>
   );
 }

@@ -3,9 +3,12 @@ import ReactDOM from 'react-dom/client';
 import App from '@/App';
 import '@/index.css';
 import '@/styles/styles.css';
+import { AudioProvider } from "@/context/AudioContext";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+    <AudioProvider>
+      <App />
+    </AudioProvider>
+  </React.StrictMode>
+);

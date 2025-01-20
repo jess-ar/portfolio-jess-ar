@@ -1,8 +1,19 @@
+import { useState } from "react";
 import namine from "@/assets/images/namine.jpg";
+import me from "@/assets/images/me.png";
 import jessAboutSvg from "@/assets/icons/jess-about.svg";
 import jessAboutPng from "@/assets/images/jess-about.png";
 
 function ProfileCard() {
+    const [isFlipping, setIsFlipping] = useState(false);
+
+    const handleHoverOrClick = () => {
+        setIsFlipping(true);
+        setTimeout(() => {
+            setIsFlipping(false);
+        }, 2000); // Regresa al estado original después de 2 segundos
+    };
+
     return (
         <div className="relative flex flex-col items-center md:items-start rounded-xl p-4 shadow-md">
             <div className="flex mb-4">
@@ -30,17 +41,29 @@ function ProfileCard() {
                 </h1>
             </div>
 
-            {/* SVG Jess encima de la imagen */}
-            <picture className="absolute top-[250px] z-10">
-            <source srcSet={jessAboutSvg} type="image/svg+xml" />
-            <img src={jessAboutPng} alt="Jess label" width="199" height="43" />
-        </picture>
+            {/* Avatar con animación flip */}
+            <div
+                className={`relative w-[199px] h-[199px] rounded-t-lg border-4 border-stats-blue z-0 mb-4 cursor-pointer transition-transform duration-700 ${
+                    isFlipping ? "rotate-x-180" : ""
+                }`}
+                onMouseEnter={handleHoverOrClick}
+                onClick={handleHoverOrClick}
+                style={{
+                    transformStyle: "preserve-3d",
+                }}
+            >
+                <img
+                    src={isFlipping ? me : namine}
+                    alt={isFlipping ? "me" : "Naminé, Avatar of Jess"}
+                    className="w-full h-full rounded-t-lg"
+                />
+            </div>
 
-            <img
-                src={namine}
-                alt="Naminé, Avatar of Jess, a character from Kingdom Hearts"
-                className="relative w-[199px] h-[199px] rounded-t-lg border-4 border-stats-blue z-0 mb-4"
-            />
+            {/* Imagen SVG encima */}
+            <picture className="absolute top-[250px] z-10">
+                <source srcSet={jessAboutSvg} type="image/svg+xml" />
+                <img src={jessAboutPng} alt="Jess label" width="199" height="43" />
+            </picture>
 
             <div className="mt-4 flex flex-col items-center md:items-start gap-2">
                 <div className="flex justify-between w-[203px] h-[41px] bg-black rounded-full border-2 border-stats-red px-4 py-1">
