@@ -3,10 +3,12 @@ import { useAudio } from "@/context/AudioContext";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import logo from "@/assets/icons/logo.svg";
 import { playSound } from "@/utils/soundUtils";
+import SoundPopup from "@/components/layout/SoundPopup"; // Asegúrate de importar el componente del pop-up
 
 function Navbar() {
   const [durum, setDurum] = useState(true);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [showPopup, setShowPopup] = useState(true); // Estado para mostrar el pop-up
 
   const { isMuted, setIsMuted } = useAudio();
   const audioRef = useRef(null);
@@ -19,6 +21,7 @@ function Navbar() {
 
   const toggleSound = () => {
     setIsMuted((prevMuted) => !prevMuted);
+    setShowPopup(false); // Oculta el pop-up cuando se interactúa con el botón de sonido
   };
 
   useEffect(() => {
@@ -29,7 +32,6 @@ function Navbar() {
     window.addEventListener("scroll", scrollFunction);
     return () => window.removeEventListener("scroll", scrollFunction);
   }, []);
-
 
   useEffect(() => {
     if (audioRef.current) {
@@ -44,7 +46,9 @@ function Navbar() {
   return (
     <header role="banner">
       <div
-        className={`navbarcon fixed w-full z-40 text-primary shadow-[0px_4px_10px_rgba(255,255,255,0.2)] transition-colors duration-75 ${isScrolled ? "bg-[#0B1223]" : "bg-transparent"}`}
+        className={`navbarcon fixed w-full z-40 text-primary shadow-[0px_4px_10px_rgba(255,255,255,0.2)] transition-colors duration-75 ${
+          isScrolled ? "bg-[#0B1223]" : "bg-transparent"
+        }`}
         aria-label="Main Navigation"
       >
         <div className="max-w-screen-lg mx-auto lg:py-6 lg:px-6 md:py-6 md:px-6 flex justify-between items-center">
@@ -54,7 +58,15 @@ function Navbar() {
           </a>
 
           {/* Botón hamburguesa y volumen para móvil */}
-          <div className="flex items-center gap-2 lg:hidden">
+          <div className="flex items-center gap-2 lg:hidden relative">
+            {/* Pop-up para el botón de sonido */}
+            {showPopup && (
+              <SoundPopup
+                onClose={() => setShowPopup(false)}
+                className="absolute -top-16 right-0"
+              />
+            )}
+
             <button
               onClick={toggleSound}
               className="w-10 h-10 flex items-center justify-center text-white text-xl border border-dark rounded-full bg-dark transition-all duration-300"
