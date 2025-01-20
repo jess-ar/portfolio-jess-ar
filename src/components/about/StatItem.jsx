@@ -1,8 +1,13 @@
+import clsx from "clsx";
+
 function StatItem({ label, value, borderColor }) {
     return (
         <div
-            className={`relative flex justify-between items-center bg-black rounded-xl border-2 border-${borderColor} px-4 py-1 
-                        w-[270px] h-[29px] md:w-[380px] md:h-[40px] group`}
+            className={clsx(
+                "relative flex justify-between items-center bg-black rounded-xl border-2 px-4 py-1",
+                "w-[270px] h-[29px] md:w-[380px] md:h-[40px] group",
+                `border-${borderColor}` // Esto asegura que Tailwind compile correctamente
+            )}
         >
             <span className="text-white font-bold">{label}</span>
             <span className="text-white font-bold">{value}</span>
