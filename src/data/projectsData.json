@@ -26,7 +26,7 @@
                     "id": 2,
                     "title": "Marvel & DC",
                     "description": "Is an interactive platform that I designed and developed, where users can explore popular characters and teams from the Marvel and DC universes. The project offers features such as advanced character search and the ability to perform CRUD actions to manage the characters.",
-                    "img": "/projects/projects/project-img2.png",
+                    "img": "/projects/project-img2.png",
                     "technologies": [
                         "Figma",
                         "React",
