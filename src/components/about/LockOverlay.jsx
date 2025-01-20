@@ -1,26 +1,53 @@
 import React from 'react';
 import { Howl } from 'howler';
+import { useAudio } from "@/context/AudioContext";
 import cerrojoSvg from "@/assets/icons/cerrojo.svg";
 import "@/styles/LockOverlay.css";
 
 function LockOverlay({ isKeyPickedUp, isUnlocked, onUnlock }) {
-    const heartbeatSound = new Howl({
-        src: ["/sounds/heartbeat.wav"],
-        loop: true,
-        volume: 0.8,
-    });
+    const { isMuted } = useAudio();
 
+    const heartbeatSound = React.useMemo(
+        () =>
+            new Howl({
+                src: ["/sounds/heartbeat.wav"],
+                loop: true,
+                volume: 0.8,
+            }),
+        []
+    );
+
+    const unlockSound = React.useMemo(
+        () =>
+            new Howl({
+                src: ["/sounds/blizzard.mp3"],
+                volume: 1.0,
+            }),
+        []
+    );
 
     React.useEffect(() => {
-        if (isKeyPickedUp && !isUnlocked) {
+        if (isKeyPickedUp && !isUnlocked && !isMuted) {
             heartbeatSound.play();
         } else {
             heartbeatSound.stop();
         }
 
         return () => heartbeatSound.stop();
-    }, [isKeyPickedUp, isUnlocked]);
+    }, [isKeyPickedUp, isUnlocked, isMuted]);
 
+    React.useEffect(() => {
+        console.log("isUnlocked:", isUnlocked, "isMuted:", isMuted);
+        if (isUnlocked && !isMuted) {
+            const sound = new Howl({
+                src: ["/sounds/blizzard.mp3"],
+                volume: 1.0,
+            });
+            console.log("Playing unlock sound...");
+            sound.play();
+        }
+    }, [isUnlocked, isMuted]);
+    
     const handleUnlock = () => {
         if (!isUnlocked) {
             onUnlock();
