@@ -8,7 +8,7 @@
                     "id": 1,
                     "title": "Pair Connect",
                     "description": "A platform designed and developed as a team to connect developers for collaborative programming sessions based on skills and preferences. We created a modern, responsive design focused on user experience. The project followed agile methodologies like Scrum, managed tasks with Jira, and implemented Gitflow for efficient version control.",
-                    "img": "/src/assets/images/projects/project-img1.png",
+                    "img": "/projects/project-img1.png",
                     "technologies": [
                         "Figma",
                         "React",
@@ -26,7 +26,7 @@
                     "id": 2,
                     "title": "Marvel & DC",
                     "description": "Is an interactive platform that I designed and developed, where users can explore popular characters and teams from the Marvel and DC universes. The project offers features such as advanced character search and the ability to perform CRUD actions to manage the characters.",
-                    "img": "/src/assets/images/projects/project-img2.png",
+                    "img": "/projects/projects/project-img2.png",
                     "technologies": [
                         "Figma",
                         "React",
@@ -51,7 +51,7 @@
                     "id": 3,
                     "title": "Dermatech",
                     "description": "Hack Barna: My First In-Person Hackathon. With barely two months of programming experience, I joined Hack Barna alongside my teammate after our backend developer left us on the first day. Despite the setback, we managed to deliver a functional project locally, featuring an attractive design and a chatbot integrated with OpenAI’s API, all in just 24 hours. This was a true test of resilience, teamwork, and rapid learning.",
-                    "img": "/src/assets/images/projects/project-img5.png",
+                    "img": "/projects/project-img5.png",
                     "technologies": [
                         "Figma",
                         "React",
@@ -68,7 +68,7 @@
                     "id": 4,
                     "title": "Sequiatron",
                     "description": "Design & Development. More details coming soon.",
-                    "img": "/src/assets/images/projects/project-img6.png",
+                    "img": "/projects/project-img6.png",
                     "technologies": [
                         "Figma",
                         "React",
@@ -83,7 +83,7 @@
                     "id": 5,
                     "title": "Boored",
                     "description": "Development. More details coming soon.",
-                    "img": "/src/assets/images/projects/project-img11.png",
+                    "img": "/projects/project-img11.png",
                     "technologies": [
                         "React",
                         "Tailwind CSS"
@@ -97,7 +97,7 @@
                     "id": 6,
                     "title": "Barris Vius",
                     "description": "Design & Development. More details coming soon.",
-                    "img": "/src/assets/images/projects/project-img3.png",
+                    "img": "/projects/project-img3.png",
                     "technologies": [
                         "Figma",
                         "React",
@@ -112,7 +112,7 @@
                     "id": 7,
                     "title": "La Caixa The Game is On",
                     "description": "Development. More details coming soon.",
-                    "img": "/src/assets/images/projects/project-img10.png",
+                    "img": "/projects/project-img10.png",
                     "technologies": [
                         "React",
                         "Material UI"
@@ -125,7 +125,7 @@
                     "id": 8,
                     "title": "La Caixa Coding Challenges",
                     "description": "Development. More details coming soon.",
-                    "img": "/src/assets/images/projects/project-img4.png",
+                    "img": "/projects/project-img4.png",
                     "technologies": [
                         "React",
                         "Material UI"
@@ -145,7 +145,7 @@
                     "id": 9,
                     "title": "Covid Tracker",
                     "description": "Development. More details coming soon.",
-                    "img": "/src/assets/images/projects/project-img9.png",
+                    "img": "/projects/project-img9.png",
                     "technologies": [
                         "React",
                         "Tailwind CSS",
@@ -160,7 +160,7 @@
                     "id": 10,
                     "title": "Piedra, papel o tijera",
                     "description": "Design & Development. Only mobile and tablet. More details coming soon.",
-                    "img": "/src/assets/images/projects/project-img7.png",
+                    "img": "/projects/project-img7.png",
                     "technologies": [
                         "Figma",
                         "Javascript",
@@ -175,7 +175,7 @@
                     "id": 11,
                     "title": "Kamakura Food",
                     "description": "Development. More details coming soon.",
-                    "img": "/src/assets/images/projects/project-img8.png",
+                    "img": "/projects/project-img8.png",
                     "technologies": [
                         "Javascript",
                         "CSS"
@@ -189,7 +189,7 @@
                     "id": 12,
                     "title": "Travel Buddy",
                     "description": "Design & Development. More details coming soon.",
-                    "img": "/src/assets/images/projects/project-img12.png",
+                    "img": "/projects/project-img12.png",
                     "technologies": [
                         "Figma",
                         "React",
