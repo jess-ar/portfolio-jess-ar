@@ -13,6 +13,7 @@ This portfolio showcases my projects, skills, and experience in web development,
   - [🚀 Getting Started](#-getting-started)
   - [✨ Features](#-features)
   - [🖼 Screenshots](#-screenshots)
+  - [🎞️ GIFs](#️-gifs)
   - [🤝 Contributions](#-contributions)
   - [📞 Contact](#-contact)
 
@@ -72,6 +73,22 @@ This command starts the development server. Code changes will be reflected autom
 ![Desktop Screenshot 3](./src/assets/images/screenshots/img-3.png)
 ![Desktop Screenshot 4](./src/assets/images/screenshots/img-4.png)
 ![Desktop Screenshot 4](./src/assets/images/screenshots/img-5.png)
+
+## 🎞️ GIFs  
+
+Here are some animated previews of the portfolio in action:  
+
+**Kingdom Hearts Soundtrack Playlist:**  
+![Heartless](./src/assets/gif/gif-sincorazón.gif)  
+
+**Keyblade Unlocking a Section:**    
+![Keyblade](./src/assets/gif/gif-espada-llave.gif)  
+
+**Skills Section:**  
+![Skills](./src/assets/gif/gif-skills.gif)  
+
+**Projects Section:**  
+![Projects](./src/assets/gif/gif-projects.gif)  
 
 ## 🤝 Contributions
 
