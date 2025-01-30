@@ -1,3 +1,5 @@
+import ReactMarkdown from "react-markdown";
+
 const ProjectCard = ({ title, img, description, technologies, links }) => {
   return (
     <div className="flex flex-col sm:flex-row gap-6 items-center sm:items-start sm:gap-8">
@@ -22,8 +24,21 @@ const ProjectCard = ({ title, img, description, technologies, links }) => {
             </span>
           ))}
         </div>
-        <p className="text-gray-400 mb-4 text-sm md:text-base">{description}</p>
-        <div className="flex gap-4 mt-4 ">
+
+        <div className="text-gray-400 text-sm md:text-base min-h-[210px]">
+          <ReactMarkdown
+            components={{
+              strong: ({ children }) => <strong className="text-slate-300 font-semibold">{children}</strong>,
+            }}
+            className="text-gray-400 text-sm md:text-base"
+          >
+            {description}
+          </ReactMarkdown>
+
+
+        </div>
+
+        <div className="flex gap-4 mt-3 ">
           <a
             href={links.live}
             target="_blank"
@@ -42,7 +57,6 @@ const ProjectCard = ({ title, img, description, technologies, links }) => {
             <i className="fa-brands fa-github" aria-hidden="true"></i>
             Code
           </a>
-
         </div>
       </div>
     </div>
