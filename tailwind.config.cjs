@@ -59,10 +59,16 @@ module.exports = {
         "lg-rounded": "10px",
       },
       screens: {
-        "custom-xl": "1153px",
-        "custom-lg": "1024px",
-        'xxl': '1600px',
+        'xs': '540px', 
+        'tablet-mid': { min: '540px', max: '767px' },
+        'sm': '768px',
+        "md": "1024px",
+        "lg": "1280px",
+        "xl": "1440px",
+        "xxl": "1920px",
+        "xxxl": "2560px",
       },
+
     },
   },
   safelist: [
