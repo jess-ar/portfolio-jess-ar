@@ -7,12 +7,12 @@ import { Howl } from "howler";
  * @param {number} volume 
  */
 export const playSound = (src, isMuted, volume = 1) => {
-    if (isMuted) return;
+  if (isMuted) return;
 
-    const sound = new Howl({
-        src: [src],
-        volume,
-    });
+  const sound = new Howl({
+    src: [src],
+    volume,
+  });
 
-    sound.play();
+  sound.play();
 };
