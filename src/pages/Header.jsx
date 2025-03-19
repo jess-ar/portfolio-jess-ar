@@ -49,10 +49,10 @@ function Header({ onPickup, isKeyPickedUp, isUnlocked }) {
     >
       <HeaderBackground />
       <Navbar />
-      <div className="max-w-screen-lg relative w-full min-h-screen mx-auto px-6 wrapper flex flex-col justify-between h-full  z-10">
+      <div className="max-w-screen-lg relative w-full min-h-screen mx-auto pb-40 sm:pb-0 md:pb-0 lg:pb-0 px-6 wrapper flex flex-col justify-between h-full  z-10">
         <section className="relative flex flex-col md:flex-row lg:flex-row custom-xl:flex-row xl:flex-row md:justify-items-start gap-5">
           <div>
-            <p className='text-white text-3xl md:text-4xl lg:text-4xl font-bold'>
+            <p className='text-white text-3xl md:text-4xl lg:text-4xl font-bold mt-6'>
               I'm <img src="/favicon-j.svg" alt="Logo de Jessica Arroyo, desarrolladora web" className="inline-block align-middle mb-6 w-6 h-18" />essica
             </p>
             <div className="max-w-screen-xl mx-auto">
@@ -74,7 +74,7 @@ function Header({ onPickup, isKeyPickedUp, isUnlocked }) {
             </div>
 
           </div>
-          <section className="relative flex items-center gap-8 mt-4 md:mt-36 md:ml-10 lg:mt-36 lg:ml-5">
+          <section className="relative flex items-center gap-8 md:mt-36 md:ml-10 lg:mt-36 lg:ml-5 ">
             {/* Interactive shadow */}
             <div className="relative banner-sombra w-[200px] h-[200px] md:w-[180px] md:h-[180px] lg:w-[200px] lg:h-[200px] animate-float">
               <div
