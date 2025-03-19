@@ -6,7 +6,7 @@ function About({ isUnlocked, isKeyPickedUp, onUnlock }) {
   console.log("fondoCurva:", fondoCurva);
 
   return (
-    <section className="">
+    <section>
       <div
         id="about"
         className={`
