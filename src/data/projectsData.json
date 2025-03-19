@@ -1,226 +1,226 @@
 {
-    "categories": [
+  "categories": [
+    {
+      "id": 1,
+      "name": "Highlights",
+      "data": [
         {
-            "id": 1,
-            "name": "Highlights",
-            "data": [
-                {
-                    "id": 1,
-                   "description": "A platform designed and developed as a team to connect developers for collaborative programming sessions based on skills and preferences. I am responsible for the **frontend development**, ensuring a **modern, responsive, and user-friendly** experience. This project started during the bootcamp, and we **continue working on it as a team**, holding regular **Scrum meetings**. Currently, we are in the **redesign phase in Figma**, refining the **UI/UX** before further implementation.",
-                    "img": "/projects/project-img1.png",
-                    "technologies": [
-                        "Figma",
-                        "Jira",
-                        "SCRUM",
-                        "Gitflow",
-                        "React",
-                        "Tailwind CSS",
-                        "Python",
-                        "Django",
-                        "PostgreSQL"
-                    ],
-                    "links": {
-                        "live": "https://pair-connect.netlify.app/",
-                        "code": "https://github.com/jess-ar/pair_connect_front/tree/main"
-                    }
-                },
-                {
-                    "id": 2,
-                    "title": "Marvel & DC",
-                    "description": "This is my **individual bootcamp project**, which I **continue developing**. I am responsible for the **design, frontend, and backend**, handling every aspect of the platform. It allows users to explore popular **Marvel and DC characters** and teams, featuring **advanced character search** and full **CRUD functionality** for managing them.",
-                    "img": "/projects/project-img2.png",
-                    "technologies": [
-                        "Figma",
-                        "Jira",
-                        "Gitflow",
-                        "React",
-                        "Tailwind CSS",
-                        "Python",
-                        "Django",
-                        "PostgreSQL",
-                        "Superhero API"
-                    ],
-                    "links": {
-                        "live": "https://www.marvel-and-dc-ultimate-guide.com",
-                        "code": "https://github.com/jess-ar/marvel-dc-ultimate-guide-frontend/tree/main"
-                    }
-                }
-            ]
+          "id": 1,
+          "description": "A platform designed and developed as a team to connect developers for collaborative programming sessions based on skills and preferences. I am responsible for the **frontend development**, ensuring a **modern, responsive, and user-friendly** experience. This project started during the bootcamp, and we **continue working on it as a team**, holding regular **Scrum meetings**. Currently, we are in the **redesign phase in Figma**, refining the **UI/UX** before further implementation.",
+          "img": "/projects/project-img1.png",
+          "technologies": [
+            "Figma",
+            "Jira",
+            "SCRUM",
+            "Gitflow",
+            "React",
+            "Tailwind CSS",
+            "Python",
+            "Django",
+            "PostgreSQL"
+          ],
+          "links": {
+            "live": "https://pair-connect.netlify.app/",
+            "code": "https://github.com/jess-ar/pair_connect_front/tree/main"
+          }
         },
         {
-            "id": 2,
-            "name": "Hackathons",
-            "data": [
-                {
-                    "id": 3,
-                    "title": "Dermatech",
-                    "description": "**Hack Barna: My First In-Person Hackathon.** With just **two months of programming experience**, I joined **Hack Barna** alongside my **bootcamp teammate** and a **backend developer**. However, after showing up on the first day, he **left the team without contributing anything** and never returned. Despite this setback, my teammate and I **built and delivered a fully functional project locally**, handling everything **without a backend**. We implemented an **attractive design** and a **chatbot integrated with OpenAI’s API**, all in just **24 hours**. It was a true test of **resilience, teamwork, and rapid learning**.",
-                    "img": "/projects/project-img5.png",
-                    "technologies": [
-                        "Figma",
-                        "React",
-                        "Tailwind CSS",
-                        "OpenAI",
-                        "Chat bot"
-                    ],
-                    "links": {
-                        "live": "https://www.hackbarna.com/es/projects/DermaTech",
-                        "code": "https://github.com/jess-ar/derma-tech-hackbcn"
-                    }
-                },
-                {
-                    "id": 4,
-                    "title": "Sequiatron",
-                    "description": "Project developed as a **team** during a **2-day online hackathon**. I was responsible for the **design and development** of the **contact form**, **navbar**, **team page**, and the creation of the **logo**. Despite the **limited time**, we managed to build a **functional, accessible, and well-structured** interface for a **smooth user experience**.",
-                    "img": "/projects/project-img6.png",
-                    "technologies": [
-                        "Figma",
-                        "Trello",
-                        "Kanban",
-                        "Gitflow",
-                        "React",
-                        "Tailwind CSS"
-                    ],
-                    "links": {
-                        "live": "https://sequiatron.netlify.app/",
-                        "code": "https://github.com/jess-ar/Hackatoon_Sequia"
-                    }
-                },
-                {
-                    "id": 5,
-                    "title": "Boored",
-                   "description": "Web application developed as a **technical challenge** to qualify for the **Saló Ocupació Hackathon**, which I **successfully passed**. I built this project in just **1 day**, implementing the given **design from a PDF mockup** and ensuring a **fully responsive layout**. As an extra, I added **light and dark mode support** to enhance the **user experience**. This **quick development process** allowed me to refine my **front-end skills** and led to my participation in the next hackathon project, **Barris Vius**.",
-                    "img": "/projects/project-img11.png",
-                    "technologies": [
-                        "React",
-                        "Tailwind CSS"
-                    ],
-                    "links": {
-                        "live": "https://hack-boored-jess-ar.vercel.app/",
-                        "code": "https://github.com/jess-ar/hack-boored/tree/main"
-                    }
-                },
-                {
-                    "id": 6,
-                    "title": "Barris Vius",
-                    "description": "Project developed in a **team of frontend, backend, and data science** during the **Saló de l'Ocupació Hackathon** at the **IT Academy** in **Barcelona**. I worked on the **frontend** and **UI design**, ensuring a **responsive layout** and structuring the application for **future data integration**. In a **short time**, we built a **functional prototype** that showcased the platform’s **potential**.",
-                    "img": "/projects/project-img3.png",
-                    "technologies": [
-                        "Figma",
-                        "React",
-                        "Tailwind CSS"
-                    ],
-                    "links": {
-                        "live": "https://barris-vius.vercel.app/",
-                        "code": "https://github.com/jess-ar/comercio_local_front"
-                    }
-                },
-                {
-                    "id": 7,
-                    "title": "La Caixa The Game is On",
-                    "description": "Project developed during the **'The Game is HackathOn - React Frontend Challenge'** by **CaixaBank**. The goal was to build a **personal finance assistant**, implementing features like **transaction management (CRUD)**, **budget tracking**, **state management**, **data visualization**, and **authentication** using **React** and **Material UI**.",
-                    "img": "/projects/project-img10.png",
-                    "technologies": [
-                        "React",
-                        "Material UI"
-                    ],
-                    "links": {
-                        "code":  "https://github.com/jess-ar/the-game-is-hackathon-caixabank-tech"
-                    }
-                },
-                {
-                    "id": 8,
-                    "title": "La Caixa Coding Challenges",
-                    "description": "Developed during a **second NUWE Hackathon** with **CaixaBank**, where I worked on the **frontend logic** of a **financial web app** based on a **pre-designed UI**. Both challenges required **efficient problem-solving** and delivering a **functional, scalable UI** under **time constraints**.",
-                    "img": "/projects/project-img4.png",
-                    "technologies": [
-                        "React",
-                        "Material UI"
-                    ],
-                    "links": {
-                        "live": "https://hack-la-caixa-1sw9yt3na-jess-ars-projects.vercel.app/",
-                        "code": "https://github.com/jess-ar/hackathon-caixabank-frontend-js-react"
-                    }
-                }
-            ]
-        },
-        {
-            "id": 3,
-            "name": "Bootcamp",
-            "data": [
-                {
-                    "id": 12,
-                    "title": "Travel Buddy",
-                    "description": "Is a **travel planning app** that offers **destination recommendations** to **registered users**. It was developed in **two weeks** during the **bootcamp**, where I **led the team** and worked on both **frontend** and **backend**. I focused on the **design and implementation** of the **Home** and **Welcome pages**, and I was also responsible for **connecting the frontend with the backend**, handling **API requests**, **data fetching**, and **authentication**. While the project is not yet **fully completed**, it showcases **solid fullstack development**.",
-                    "img": "/projects/project-img12.png",
-                    "technologies": [
-                        "Figma",
-                        "Jira",
-                        "SCRUM",
-                        "Gitflow",
-                        "React",
-                        "Tailwind CSS",
-                        "Python",
-                        "Django",
-                        "PostgreSQL"
-                    ],
-                    "links": {
-                        "live": "https://travel-buddy-femcoders.netlify.app/",
-                        "code": "https://github.com/jess-ar/TravelBuddy_front"
-                    }
-                },
-                {
-                    "id": 9,
-                    "title": "Covid Tracker",
-                    "description": "Team project where we worked with a **pre-designed user interface** to replicate and an **API (disease.sh)** to dynamically fetch **COVID-19 data**. My contributions focused on implementing the **navigation bar in the Tracker** and developing the **'Tracker 4' page**, integrating **API data** while following **best practices** to create an **intuitive and informative tracker**.",
-                    "img": "/projects/project-img9.png",
-                    "technologies": [
-                        "React",
-                        "Jira",
-                        "SCRUM",
-                        "Gitflow",
-                        "Tailwind CSS",
-                        "Shadcn"
-                    ],
-                    "links": {
-                        "live": "https://covid-tracker-m71yx9i7x-jess-ars-projects.vercel.app/",
-                        "code": "https://github.com/jess-ar/COVID-Tracker"
-                    }
-                },
-                {
-                    "id": 10,
-                    "title": "Piedra, papel o tijera",
-                    "description": "Design & Development. Only mobile and tablet. More details coming soon.",
-                    "img": "/projects/project-img7.png",
-                    "technologies": [
-                        "Figma",
-                        "Trello",
-                        "SCRUM",
-                        "Javascript",
-                        "Saas"
-                    ],
-                    "links": {
-                        "live": "https://giveme5-carnivaldom-f5.netlify.app/",
-                        "code": "https://github.com/jess-ar/ProyectoCarnivalDom"
-                    }
-                },
-                {
-                    "id": 11,
-                    "title": "Kamakura Food",
-                    "description": "Development. More details coming soon.",
-                    "img": "/projects/project-img8.png",
-                    "technologies": [
-                        "Gitflow",
-                        "SCRUM",
-                        "Javascript",
-                        "CSS"
-                    ],
-                    "links": {
-                        "live": "https://kamakura-food.vercel.app/",
-                        "code": "https://github.com/jess-ar/Kamakura-food"
-                    }
-                }
-            ]
+          "id": 2,
+          "title": "Marvel & DC",
+          "description": "This is my **individual bootcamp project**, which I **continue developing**. I am responsible for the **design, frontend, and backend**, handling every aspect of the platform. It allows users to explore popular **Marvel and DC characters** and teams, featuring **advanced character search** and full **CRUD functionality** for managing them.",
+          "img": "/projects/project-img2.png",
+          "technologies": [
+            "Figma",
+            "Jira",
+            "Gitflow",
+            "React",
+            "Tailwind CSS",
+            "Python",
+            "Django",
+            "PostgreSQL",
+            "Superhero API"
+          ],
+          "links": {
+            "live": "https://www.marvel-and-dc-ultimate-guide.com",
+            "code": "https://github.com/jess-ar/marvel-dc-ultimate-guide-frontend/tree/main"
+          }
         }
-    ]
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Hackathons",
+      "data": [
+        {
+          "id": 3,
+          "title": "Dermatech",
+          "description": "**Hack Barna: My First In-Person Hackathon.** With just **two months of programming experience**, I joined **Hack Barna** alongside my **bootcamp teammate** and a **backend developer**. However, after showing up on the first day, he **left the team without contributing anything** and never returned. Despite this setback, my teammate and I **built and delivered a fully functional project locally**, handling everything **without a backend**. We implemented an **attractive design** and a **chatbot integrated with OpenAI’s API**, all in just **24 hours**. It was a true test of **resilience, teamwork, and rapid learning**.",
+          "img": "/projects/project-img5.png",
+          "technologies": [
+            "Figma",
+            "React",
+            "Tailwind CSS",
+            "OpenAI",
+            "Chat bot"
+          ],
+          "links": {
+            "live": "https://www.hackbarna.com/es/projects/DermaTech",
+            "code": "https://github.com/jess-ar/derma-tech-hackbcn"
+          }
+        },
+        {
+          "id": 4,
+          "title": "Sequiatron",
+          "description": "Project developed as a **team** during a **2-day online hackathon**. I was responsible for the **design and development** of the **contact form**, **navbar**, **team page**, and the creation of the **logo**. Despite the **limited time**, we managed to build a **functional, accessible, and well-structured** interface for a **smooth user experience**.",
+          "img": "/projects/project-img6.png",
+          "technologies": [
+            "Figma",
+            "Trello",
+            "Kanban",
+            "Gitflow",
+            "React",
+            "Tailwind CSS"
+          ],
+          "links": {
+            "live": "https://sequiatron.netlify.app/",
+            "code": "https://github.com/jess-ar/Hackatoon_Sequia"
+          }
+        },
+        {
+          "id": 5,
+          "title": "Boored",
+          "description": "Web application developed as a **technical challenge** to qualify for the **Saló Ocupació Hackathon**, which I **successfully passed**. I built this project in just **1 day**, implementing the given **design from a PDF mockup** and ensuring a **fully responsive layout**. As an extra, I added **light and dark mode support** to enhance the **user experience**. This **quick development process** allowed me to refine my **front-end skills** and led to my participation in the next hackathon project, **Barris Vius**.",
+          "img": "/projects/project-img11.png",
+          "technologies": [
+            "React",
+            "Tailwind CSS"
+          ],
+          "links": {
+            "live": "https://hack-boored-jess-ar.vercel.app/",
+            "code": "https://github.com/jess-ar/hack-boored/tree/main"
+          }
+        },
+        {
+          "id": 6,
+          "title": "Barris Vius",
+          "description": "Project developed in a **team of frontend, backend, and data science** during the **Saló de l'Ocupació Hackathon** at the **IT Academy** in **Barcelona**. I worked on the **frontend** and **UI design**, ensuring a **responsive layout** and structuring the application for **future data integration**. In a **short time**, we built a **functional prototype** that showcased the platform’s **potential**.",
+          "img": "/projects/project-img3.png",
+          "technologies": [
+            "Figma",
+            "React",
+            "Tailwind CSS"
+          ],
+          "links": {
+            "live": "https://barris-vius.vercel.app/",
+            "code": "https://github.com/jess-ar/comercio_local_front"
+          }
+        },
+        {
+          "id": 7,
+          "title": "La Caixa The Game is On",
+          "description": "Project developed during the **'The Game is HackathOn - React Frontend Challenge'** by **CaixaBank**. The goal was to build a **personal finance assistant**, implementing features like **transaction management (CRUD)**, **budget tracking**, **state management**, **data visualization**, and **authentication** using **React** and **Material UI**.",
+          "img": "/projects/project-img10.png",
+          "technologies": [
+            "React",
+            "Material UI"
+          ],
+          "links": {
+            "code": "https://github.com/jess-ar/the-game-is-hackathon-caixabank-tech"
+          }
+        },
+        {
+          "id": 8,
+          "title": "La Caixa Coding Challenges",
+          "description": "Developed during a **second NUWE Hackathon** with **CaixaBank**, where I worked on the **frontend logic** of a **financial web app** based on a **pre-designed UI**. Both challenges required **efficient problem-solving** and delivering a **functional, scalable UI** under **time constraints**.",
+          "img": "/projects/project-img4.png",
+          "technologies": [
+            "React",
+            "Material UI"
+          ],
+          "links": {
+            "live": "https://hack-la-caixa-1sw9yt3na-jess-ars-projects.vercel.app/",
+            "code": "https://github.com/jess-ar/hackathon-caixabank-frontend-js-react"
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Bootcamp",
+      "data": [
+        {
+          "id": 12,
+          "title": "Travel Buddy",
+          "description": "Is a **travel planning app** that offers **destination recommendations** to **registered users**. It was developed in **two weeks** during the **bootcamp**, where I **led the team** and worked on both **frontend** and **backend**. I focused on the **design and implementation** of the **Home** and **Welcome pages**, and I was also responsible for **connecting the frontend with the backend**, handling **API requests**, **data fetching**, and **authentication**. While the project is not yet **fully completed**, it showcases **solid fullstack development**.",
+          "img": "/projects/project-img12.png",
+          "technologies": [
+            "Figma",
+            "Jira",
+            "SCRUM",
+            "Gitflow",
+            "React",
+            "Tailwind CSS",
+            "Python",
+            "Django",
+            "PostgreSQL"
+          ],
+          "links": {
+            "live": "https://travel-buddy-femcoders.netlify.app/",
+            "code": "https://github.com/jess-ar/TravelBuddy_front"
+          }
+        },
+        {
+          "id": 9,
+          "title": "Covid Tracker",
+          "description": "Team project where we worked with a **pre-designed user interface** to replicate and an **API (disease.sh)** to dynamically fetch **COVID-19 data**. My contributions focused on implementing the **navigation bar in the Tracker** and developing the **'Tracker 4' page**, integrating **API data** while following **best practices** to create an **intuitive and informative tracker**.",
+          "img": "/projects/project-img9.png",
+          "technologies": [
+            "React",
+            "Jira",
+            "SCRUM",
+            "Gitflow",
+            "Tailwind CSS",
+            "Shadcn"
+          ],
+          "links": {
+            "live": "https://covid-tracker-m71yx9i7x-jess-ars-projects.vercel.app/",
+            "code": "https://github.com/jess-ar/COVID-Tracker"
+          }
+        },
+        {
+          "id": 10,
+          "title": "Piedra, papel o tijera",
+          "description": "Design & Development. Only mobile and tablet. More details coming soon.",
+          "img": "/projects/project-img7.png",
+          "technologies": [
+            "Figma",
+            "Trello",
+            "SCRUM",
+            "Javascript",
+            "Saas"
+          ],
+          "links": {
+            "live": "https://giveme5-carnivaldom-f5.netlify.app/",
+            "code": "https://github.com/jess-ar/ProyectoCarnivalDom"
+          }
+        },
+        {
+          "id": 11,
+          "title": "Kamakura Food",
+          "description": "Development. More details coming soon.",
+          "img": "/projects/project-img8.png",
+          "technologies": [
+            "Gitflow",
+            "SCRUM",
+            "Javascript",
+            "CSS"
+          ],
+          "links": {
+            "live": "https://kamakura-food.vercel.app/",
+            "code": "https://github.com/jess-ar/Kamakura-food"
+          }
+        }
+      ]
+    }
+  ]
 }

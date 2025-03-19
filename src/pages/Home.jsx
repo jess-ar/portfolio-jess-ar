@@ -5,12 +5,12 @@ import Skills from "@/pages/Skills";
 
 function Home({ isUnlocked, isKeyPickedUp, onPickup, onUnlockAbout }) {
   return (
-    <>
+    <div className="flex flex-col gap-0">
       <Header onPickup={onPickup} isKeyPickedUp={isKeyPickedUp} />
       <About isUnlocked={isUnlocked} isKeyPickedUp={isKeyPickedUp} onUnlock={onUnlockAbout} />
       <Skills />
       <Projects />
-    </>
+    </div>
   );
 }
 

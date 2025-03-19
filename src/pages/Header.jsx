@@ -45,12 +45,12 @@ function Header({ onPickup, isKeyPickedUp, isUnlocked }) {
   return (
     <div
       id='home'
-      className='relative min-h-[120vh] md:min-h-[90vh] lg:min-h-[90vh] xl:min-h-[90vh] flex flex-col overflow-hidden'
+      className='relative min-h-screen md:min-h-[80vh] lg:min-h-[80vh] xl:min-h-[80vh] flex flex-col overflow-hidden pt-28 scroll -mb-60'
     >
       <HeaderBackground />
       <Navbar />
-      <div className="max-w-screen-lg mx-auto px-6 wrapper flex flex-col justify-between h-full w-full relative z-10">
-        <section className="relative flex flex-col md:flex-row lg:flex-row custom-xl:flex-row xl:flex-row md:justify-items-start mt-32 gap-5">
+      <div className="max-w-screen-lg relative w-full min-h-screen mx-auto px-6 wrapper flex flex-col justify-between h-full  z-10">
+        <section className="relative flex flex-col md:flex-row lg:flex-row custom-xl:flex-row xl:flex-row md:justify-items-start gap-5">
           <div>
             <p className='text-white text-3xl md:text-4xl lg:text-4xl font-bold'>
               I'm <img src="/favicon-j.svg" alt="Logo de Jessica Arroyo, desarrolladora web" className="inline-block align-middle mb-6 w-6 h-18" />essica
@@ -75,14 +75,14 @@ function Header({ onPickup, isKeyPickedUp, isUnlocked }) {
 
           </div>
           <section className="relative flex items-center gap-8 mt-4 md:mt-36 md:ml-10 lg:mt-36 lg:ml-5">
-            {/* Sombra interactiva */}
+            {/* Interactive shadow */}
             <div className="relative banner-sombra w-[200px] h-[200px] md:w-[180px] md:h-[180px] lg:w-[200px] lg:h-[200px] animate-float">
               <div
                 className="group relative w-full h-full cursor-pointer"
                 onClick={() => setShowModal(true)}
               >
                 <div className="group relative w-full h-full cursor-pointer" onClick={() => setShowModal(true)}>
-                  {/* Imagen de la sombra */}
+                  {/* Shadow image */}
                   <img
                     className="w-full h-full"
                     src={sombra}
@@ -139,33 +139,6 @@ function Header({ onPickup, isKeyPickedUp, isUnlocked }) {
           </section>
         </section>
       </div>
-      <div className="relative w-full h-48 xxl:h-96">
-        {/* Degradado en curva */}
-        <div
-          className="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-b from-[rgba(11,18,35,0)] via-[rgba(11,18,35,0.8)] to-black"
-          style={{
-            clipPath: "ellipse(80% 70% at 50% 100%)",
-          }}
-        ></div>
-
-        {/* Texto introductorio */}
-        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-center text-white">
-          <p className="text-sm font-medium">Use the key to unlock the next section</p>
-          <a href="#about">
-            <svg
-              className="mx-auto mt-2 w-6 h-6 text-white animate-bounce"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </a>
-        </div>
-      </div>
-
     </div>
   );
 }
