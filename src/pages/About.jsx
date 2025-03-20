@@ -10,7 +10,7 @@ function About({ isUnlocked, isKeyPickedUp, onUnlock }) {
       <div
         id="about"
         className={`
-                relative z-0 w-full min-h-screen py-6 lg:py-12
+                relative z-0 w-full min-h-screen py-10 pt-20 lg:py-12
                 flex flex-col justify-start items-center
                 bg-transparent
                 bg-no-repeat
