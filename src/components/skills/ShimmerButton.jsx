@@ -15,7 +15,7 @@ const ShimmerButton = (
   ref
 ) => {
   return (
-    <button
+    <div
       style={{
         "--spread": "90deg",
         "--shimmer-color": shimmerColor,
@@ -25,7 +25,7 @@ const ShimmerButton = (
         "--bg": background,
       }}
       className={clsx(
-        "group relative z-0 flex cursor-pointer items-center justify-center overflow-hidden whitespace-nowrap border border-white/10 px-2 py-1 text-white [background:var(--bg)] [border-radius:var(--radius)] ",
+        "group relative z-0 flex items-center justify-center overflow-hidden whitespace-nowrap border border-white/10 px-2 py-1 text-white [background:var(--bg)] [border-radius:var(--radius)] ",
         "transform-gpu transition-transform duration-300 ease-in-out active:translate-y-px",
         className,
       )}
@@ -50,7 +50,7 @@ const ShimmerButton = (
           "absolute -z-20 [background:var(--bg)] [border-radius:var(--radius)] [inset:var(--cut)]"
         )}
       />
-    </button>
+    </div>
   );
 };
 

@@ -5,7 +5,7 @@ import ShimmerButton from "@/components/skills/ShimmerButton";
 const skills = [
   {
     category: "Frontend",
-    items: ["HTML5", "CSS3", "Tailwind CSS", "JavaScript", "React", "Astro"]
+    items: ["HTML5", "CSS3", "Tailwind CSS", "JavaScript", "React", "Astro", "Angular"]
   },
   {
     category: "Backend",
@@ -28,9 +28,9 @@ const skills = [
     items: ["Figma", "Photoshop", "Illustrator", "InDesign"]
   },
   {
-    category: "Development Principles",
-    items: ["SOLID", "DRY", "KISS"]
-  },
+    category: "Best Practices",
+    items: ["Responsive Design", "Accessibility (A11y)", "SOLID", "DRY", "KISS"]
+  },  
   {
     category: "Languages",
     items: ["English (B1)", "Spanish (Native)", "Catalan (Native)"]
@@ -63,7 +63,7 @@ function Skills() {
                       <ShimmerButton
                         key={idx}
                         className="inline-flex items-center gap-x-1 bg-[#171717] border border-gray-700    
-                                                text-sm md:text-base lg:text-base transition-all hover:bg-input whitespace-nowrap"
+                        text-sm md:text-base lg:text-base transition-all hover:bg-input whitespace-nowrap"
                       >
                         {item}
                       </ShimmerButton>
