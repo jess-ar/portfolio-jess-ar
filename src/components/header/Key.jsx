@@ -65,52 +65,60 @@ function Key({ onPickup, isUnlocked }) {
     <>
       {/* Key in original position */}
       {!isDragging && !isReturning && (
-        <picture>
-          <source srcSet={llaveSvg} type="image/svg+xml" />
-          <img
-            className={`w-96 cursor-pointer ${isUnlocked ? '' : 'animate-float'}`}
-            src={llavePng}
-            alt="Key to unlock about section"
-            onMouseDown={handlePickup}
-          />
-        </picture>
+        <div className="relative w-40 h-40 md:w-48 md:h-48 lg:w-52 lg:h-52">
+          <picture>
+            <source srcSet={llaveSvg} type="image/svg+xml" />
+            <img
+              className={`w-full h-full cursor-pointer ${isUnlocked ? '' : 'animate-float'}`}
+              src={llavePng}
+              alt="Key to unlock about section"
+              onMouseDown={handlePickup}
+            />
+          </picture>
+        </div>
       )}
 
       {/* Key that follows the cursor while dragging */}
       {isDragging && !isUnlocked && (
-        <picture>
-          <source srcSet={llaveSvg} type="image/svg+xml" />
-          <img
-            src={llavePng}
-            alt="Key in hand"
-            style={{
-              position: 'fixed',
-              top: cursorPosition.y - 48,
-              left: cursorPosition.x - 48,
-              pointerEvents: 'none',
-              zIndex: 1000,
-              width: '150px',
-              transition: 'transform 0.1s ease-in-out',
-            }}
-          />
-        </picture>
+        <div
+          style={{
+            position: 'fixed',
+            top: cursorPosition.y - 80,
+            left: cursorPosition.x - 80,
+            pointerEvents: 'none',
+            zIndex: 1000,
+          }}
+          className="w-40 h-40 md:w-48 md:h-48 lg:w-52 lg:h-52"
+        >
+          <picture>
+            <source srcSet={llaveSvg} type="image/svg+xml" />
+            <img
+              src={llavePng}
+              alt="Key in hand"
+              className="w-full h-full"
+            />
+          </picture>
+        </div>
       )}
 
       {/* Key in automatic return */}
       {isReturning && (
-        <picture>
-          <source srcSet={llaveSvg} type="image/svg+xml" />
-          <img
-            src={llavePng}
-            alt="Key returning"
-            style={{
-              position: 'absolute',
-              top: '0px',
-              left: '0px',
-              animation: 'return-to-origin 1s ease-out forwards',
-            }}
-          />
-        </picture>
+        <div className="relative w-40 h-40 md:w-48 md:h-48 lg:w-52 lg:h-52">
+          <picture>
+            <source srcSet={llaveSvg} type="image/svg+xml" />
+            <img
+              src={llavePng}
+              alt="Key returning"
+              className="w-full h-full"
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                animation: 'return-to-origin 1s ease-out forwards',
+              }}
+            />
+          </picture>
+        </div>
       )}
     </>
   );
