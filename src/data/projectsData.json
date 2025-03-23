@@ -6,6 +6,7 @@
       "data": [
         {
           "id": 1,
+          "title": "Pair Connect",
           "description": "A platform designed and developed as a team to connect developers for collaborative programming sessions based on skills and preferences. I am responsible for the **frontend development**, ensuring a **modern, responsive, and user-friendly** experience. This project started during the bootcamp, and we **continue working on it as a team**, holding regular **Scrum meetings**. Currently, we are in the **redesign phase in Figma**, refining the **UI/UX** before further implementation.",
           "img": "/projects/project-img1.png",
           "technologies": [
