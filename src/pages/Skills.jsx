@@ -63,7 +63,7 @@ function Skills() {
                       <ShimmerButton
                         key={idx}
                         className="inline-flex items-center gap-x-1 bg-[#171717] border border-gray-700    
-                        text-sm md:text-base lg:text-base transition-all hover:bg-input whitespace-nowrap"
+                        text-sm md:text-base lg:text-base transition-all hover:bg-input whitespace-nowrap cursor-default"
                       >
                         {item}
                       </ShimmerButton>
