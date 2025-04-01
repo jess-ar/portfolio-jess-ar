@@ -14,6 +14,13 @@ function Footer() {
     },
   ];
 
+  const trackClick = ({ action, category, label }) => {
+    window.gtag?.("event", action, {
+      event_category: category,
+      event_label: label,
+    });
+  };
+
   return (
     <footer className="footer hidden-print bg-[#171717] text-white py-8">
       <div className="max-w-screen-lg mx-auto px-6">
@@ -33,7 +40,10 @@ function Footer() {
             <p>© {currentYear} Jessica Arroyo Lebrón</p>
           </div>
 
-          <ul className="footer__nav-social flex gap-4 text-xl" aria-label="Social Links">
+          <ul
+            className="footer__nav-social flex gap-4 text-xl"
+            aria-label="Social Links"
+          >
             {socialLinks.map(({ href, label, icon }) => (
               <li key={label} className="footer__nav-item">
                 <a
@@ -42,6 +52,13 @@ function Footer() {
                   rel="noopener noreferrer"
                   className="hover:text-primary transition-colors"
                   aria-label={label}
+                  onClick={() =>
+                    trackClick({
+                      action: "click_social_link",
+                      category: "Footer",
+                      label,
+                    })
+                  }
                 >
                   <i className={`fa-brands ${icon}`} aria-hidden="true"></i>
                 </a>

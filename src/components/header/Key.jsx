@@ -48,10 +48,15 @@ function Key({ onPickup, isUnlocked }) {
 
   const handlePickup = () => {
     if (!isUnlocked) {
+      trackClick({
+        action: "click_key_pickup",
+        category: "Interactive Element",
+        label: "Keyblade Grab",
+      });
       onPickup(true);
       setIsDragging(true);
     }
-  };
+  };  
 
   const handleDrop = () => {
     setIsDragging(false);
@@ -60,6 +65,13 @@ function Key({ onPickup, isUnlocked }) {
       setIsReturning(false);
     }, 1000);
   };
+
+  const trackClick = ({ action, category, label }) => {
+    window.gtag?.("event", action, {
+      event_category: category,
+      event_label: label,
+    });
+  };  
 
   return (
     <>
