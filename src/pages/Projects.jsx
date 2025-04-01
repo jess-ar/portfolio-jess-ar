@@ -7,6 +7,13 @@ function Projects() {
   const [category, setCategory] = useState(1);
   const selectedCategory = projectsData.categories.find((cat) => cat.id === category);
 
+  const trackClick = ({ action, category, label }) => {
+    window.gtag?.("event", action, {
+      event_category: category,
+      event_label: label,
+    });
+  };
+
   return (
     <section id="projects" className="bg-[#171717] text-white pt-16 pb-2">
       <div className="max-w-screen-lg mx-auto pt-10 px-6">
@@ -24,14 +31,20 @@ function Projects() {
           {projectsData.categories.map((cat) => (
             <GradientButton
               key={cat.id}
-              onClick={() => setCategory(cat.id)}
+              onClick={() => {
+                setCategory(cat.id);
+                trackClick({
+                  action: "select_project_category",
+                  category: "Projects",
+                  label: cat.name,
+                });
+              }}
               variant={category === cat.id ? "default" : "neutral"}
             >
               {cat.name}
             </GradientButton>
           ))}
         </div>
-
         <div className="grid gap-10">
           {selectedCategory.data.map((project) => (
             <ProjectCard

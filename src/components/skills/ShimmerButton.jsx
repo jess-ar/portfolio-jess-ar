@@ -53,7 +53,7 @@ const ShimmerButton = forwardRef(
           "--cut": shimmerSize || styles.shimmerSize,
           "--bg": background || styles.background,
           ...(styles.boxShadow && { boxShadow: styles.boxShadow }),
-          ...props.style, // Para no pisar estilos externos
+          ...props.style,
         }}
         className={clsx(
           "group relative z-0 flex items-center justify-center overflow-hidden whitespace-nowrap border border-white/10 px-4 py-2 text-white [background:var(--bg)] [border-radius:var(--radius)]",

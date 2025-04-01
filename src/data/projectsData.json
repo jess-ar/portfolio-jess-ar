@@ -22,7 +22,8 @@
           ],
           "links": {
             "live": "https://pair-connect.netlify.app/",
-            "code": "https://github.com/jess-ar/pair_connect_front/tree/main"
+            "code": "https://github.com/jess-ar/pair_connect_front/tree/main",
+            "demo": "/videos/pairconnect-demo.mp4"
           }
         },
         {
