@@ -1,5 +1,6 @@
 import Header from "@/pages/Header";
 import About from "@/pages/About";
+import Experience from "@/pages/Experience";
 import Projects from "@/pages/Projects";
 import Skills from "@/pages/Skills";
 import Navbar from "@/components/layout/Navbar";
@@ -17,6 +18,7 @@ function Home({ isUnlocked, isKeyPickedUp, onPickup, onUnlockAbout }) {
         isKeyPickedUp={isKeyPickedUp} 
         onUnlock={onUnlockAbout} 
       />
+      <Experience />
       <Skills />
       <Projects />
     </div>
