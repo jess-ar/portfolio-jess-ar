@@ -104,7 +104,7 @@ function Navbar() {
               className="flex flex-col lg:flex-row items-center gap-y-4 lg:gap-x-8 text-sm md:text-lg"
               aria-label="Primary Menu"
             >
-              {["home", "about", "skills", "projects"].map((section) => (
+              {["home", "about", "experience", "skills", "projects"].map((section) => (
                 <li key={section}>
                   <AnchorLink
                     href={`#${section}`}

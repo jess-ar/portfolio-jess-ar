@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div className="app">
-      <Navbar /> {/* Scroll interior with AnchorLink */}
+      <Navbar />
       <main>
         <Home
           isUnlocked={isUnlocked}
