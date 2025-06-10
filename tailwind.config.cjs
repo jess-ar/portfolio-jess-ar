@@ -91,7 +91,7 @@ module.exports = {
     "text-accent",
     "bg-stats-green/10",
     "border-stats-green/30",
-    "text-stats-green"
+    "text-stats-green",
   ],
   plugins: [],
 };
