@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "company": "SheHub",
+    "role": "Jr Frontend Web Developer",
+    "level": 54,
+    "description": "Frontend Developer and Development Coordinator | Drive women’s participation in technology by managing real-world projects and ensuring valuable deliverables.",
+    "technologies": ["React", "TypeScript", "Tailwind CSS", "Figma"],
+    "achievements": ["MVP Leadership", "Team Coordination", "Code Review", "Best Practices"],
+    "emblem": "⚔️",
+    "magicType": "Creation Magic",
+    "experiencePoints": 2500,
+    "duration": "Oct 2024 - Present",
+    "links": [
+      {
+        "url": "https://shehub.es",
+        "title": "SheHub Website",
+        "description": "The project started with a vibe coding approach, generating parts of the code through AI prompts. Later on, everything was customized, reviewed, and adapted to fit the real needs of the SheHub team."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "company": "SquareMX",
+    "role": "Jr Full Stack Web Developer & UI Designer",
+    "level": 78,
+    "description": "Email marketing in Symfony, Astro refactor, API integration, and modular dashboard in Vue and Vuetify.",
+    "technologies": ["PHP", "Symfony", "PostgreSQL", "Astro", "Vue", "Vuetify"],
+    "achievements": ["Email Marketing", "Astro Refactoring", "API Integration", "UX/UI Design"],
+    "emblem": "🗡️",
+    "magicType": "Transformation Magic",
+    "experiencePoints": 2200,
+    "duration": "Feb 2025 - Mar 2025 (3 months)",
+    "links": [
+      {
+        "url": "https://dealfactor.co.uk/",
+        "title": "DealFactor",
+        "description": "Refactoring in Astro: Redesign and Cleanup of legacy code, folder reorganization, and migration from plain CSS to Tailwind CSS. Improved accessibility, responsive design, and integration with external API (Mailxpertise)."
+      }
+    ]
+  }
+]

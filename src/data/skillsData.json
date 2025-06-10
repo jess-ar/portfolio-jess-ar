@@ -1,0 +1,34 @@
+[
+  {
+    "category": "Frontend",
+    "items": ["HTML5", "CSS3", "Tailwind CSS", "JavaScript", "TypeScript", "React", "Astro", "Vue"]
+  },
+  {
+    "category": "Backend",
+    "items": ["Python", "Django", "PHP", "Symfony"]
+  },
+  {
+    "category": "Testing",
+    "items": ["Pytest", "Vitest", "React Testing Library"]
+  },
+  {
+    "category": "Databases",
+    "items": ["PostgreSQL", "MySQL"]
+  },
+  {
+    "category": "Agile Methodologies",
+    "items": ["Scrum", "Kanban", "Jira"]
+  },
+  {
+    "category": "Design Tools",
+    "items": ["Figma", "Photoshop", "Illustrator", "InDesign"]
+  },
+  {
+    "category": "Best Practices",
+    "items": ["Responsive Design", "Accessibility (A11y)", "SOLID", "DRY", "KISS"]
+  },
+  {
+    "category": "Languages",
+    "items": ["English (B1)", "Spanish (Native)", "Catalan (Native)"]
+  }
+]

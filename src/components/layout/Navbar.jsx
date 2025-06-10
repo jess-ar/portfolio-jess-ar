@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useAudio } from "@/context/AudioContext";
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import logo from "@/assets/icons/logo.svg";
+import logo from "@/assets/images/logo.png";
 import { playSound } from "@/utils/soundUtils";
 import SoundPopup from "@/components/layout/SoundPopup";
 
@@ -50,7 +50,7 @@ function Navbar() {
   return (
     <header role="banner">
       <div
-        className={`navbarcon fixed top-0 left-0 w-full z-40 text-primary  shadow-[0px_4px_10px_rgba(255,255,255,0.2)] transition-colors duration-75 ${isScrolled ? "bg-[#0B1223]" : "bg-transparent"
+        className={`navbarcon fixed top-0 left-0 w-full z-40 text-primary  border-b border-white/10 transition-colors duration-75 ${isScrolled ? "bg-[#0B1223]" : "bg-transparent"
           }`}
         aria-label="Main Navigation"
       >

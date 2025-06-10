@@ -16,15 +16,13 @@ const ProjectCard = ({ title, img, description, technologies, links }) => {
   return (
     <>
       <div className="md:items-start flex flex-col md:flex-row lg:flex-row gap-y-8 lg:gap-x-8 items-center lg:items-start">
-        {/* Project image */}
         <div className="w-full max-w-sm sm:max-w-md lg:max-w-lg rounded-lg overflow-hidden mr-8">
           <img
             src={img}
             alt={title}
-            className="w-full h-auto object-cover rounded-lg shadow-lg"
+            className="w-full h-auto object-cover rounded-lg shadow-lg mx-4 md:mx-0"
           />
         </div>
-        {/* Content */}
         <div className="w-full lg:w-1/2 flex flex-col justify-start lg:justify-center gap-4">
           <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-left">{title}</h3>
           <div className="flex flex-wrap gap-2 mb-2">
@@ -47,7 +45,6 @@ const ProjectCard = ({ title, img, description, technologies, links }) => {
             </ReactMarkdown>
           </div>
           <div className="flex gap-4 mt-2 flex-wrap">
-            {/* Visit Website Button */}
             <ShimmerButton
               variant="darkMetal"
               as="a"
@@ -62,7 +59,6 @@ const ProjectCard = ({ title, img, description, technologies, links }) => {
               Visit the website
               <i className="fa-solid fa-up-right-from-square text-sm ml-4"></i>
             </ShimmerButton>
-            {/* Code Button */}
             {links.code && (
               <a
                 href={links.code}
@@ -78,7 +74,6 @@ const ProjectCard = ({ title, img, description, technologies, links }) => {
                 <i className="fa-brands fa-github ml-2" aria-hidden="true"></i>
               </a>
             )}
-            {/* Demo Button */}
             {links.demo && (
               <button
                 onClick={() => {
@@ -104,7 +99,6 @@ const ProjectCard = ({ title, img, description, technologies, links }) => {
           </div>
         </div>
       </div>
-      {/* Demo Video Modal */}
       {showDemo && (
         <div className="fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center p-4">
           <div className="relative w-full max-w-3xl">
