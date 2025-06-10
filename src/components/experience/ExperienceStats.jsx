@@ -1,6 +1,6 @@
 const ExperienceStats = ({ stats }) => (
   <section
-    className="mt-12 sm:mt-16 bg-gradient-to-r from-dark/70 via-secondary/70 to-dark/70 border border-terciary/20 rounded-xl p-4 sm:p-6 text-center"
+    className="mt-12 sm:mt-16 bg-gradient-to-r from-dark/70 via-secondary/70 to-dark/70 border border-terciary/20 rounded-xl p-4 sm:p-6 text-center md:mx-6"
     aria-labelledby="stats-title"
   >
     <h3

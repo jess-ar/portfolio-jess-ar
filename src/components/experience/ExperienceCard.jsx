@@ -35,10 +35,8 @@ const ExperienceCard = ({ experience, index, isVisible, onMouseEnter, onMouseLea
       aria-labelledby={`experience-${id}-title`}
       tabIndex="0"
     >
-      {/* Subtle Glow Effect */}
       <div className="absolute inset-0 bg-gradient-to-r from-terciary/5 via-accent/5 to-terciary/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
-      {/* Header with Level */}
       <header className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4 relative z-10 gap-3 sm:gap-0">
         <div className="flex items-center">
           <div className="text-xl sm:text-2xl mr-3 filter drop-shadow-sm" aria-hidden="true">
@@ -61,7 +59,6 @@ const ExperienceCard = ({ experience, index, isVisible, onMouseEnter, onMouseLea
         </div>
       </header>
 
-      {/* Magic Type & XP */}
       <div className="bg-terciary/10 border border-terciary/20 rounded-lg p-3 mb-4 relative z-10">
         <div className="flex flex-col xs:flex-row xs:items-center xs:justify-between gap-2 xs:gap-0 text-sm">
           <span className="text-primary font-medium flex items-center">
@@ -74,10 +71,8 @@ const ExperienceCard = ({ experience, index, isVisible, onMouseEnter, onMouseLea
         </div>
       </div>
 
-      {/* Description */}
       <p className="text-stats-grey text-sm mb-4 leading-relaxed relative z-10">{description}</p>
 
-      {/* Achievements */}
       <ExperienceSection title="Key Achievements" icon="🏆" iconColor="text-accent" ariaLabel="achievements">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-1">
           {achievements.map((achievement, idx) => (
@@ -89,7 +84,6 @@ const ExperienceCard = ({ experience, index, isVisible, onMouseEnter, onMouseLea
         </div>
       </ExperienceSection>
 
-      {/* Technologies */}
       <ExperienceSection title="Tech Stack" icon="⚡" iconColor="text-terciary" ariaLabel="technologies">
         <div className="flex flex-wrap" role="list">
           {technologies.map((tech, idx) => (
@@ -98,7 +92,6 @@ const ExperienceCard = ({ experience, index, isVisible, onMouseEnter, onMouseLea
         </div>
       </ExperienceSection>
 
-      {/* Links Section */}
       {links && links.length > 0 && (
         <ExperienceSection title="Key Projects" icon="🔗" iconColor="text-stats-blue">
           <div className="space-y-2">
@@ -109,10 +102,8 @@ const ExperienceCard = ({ experience, index, isVisible, onMouseEnter, onMouseLea
         </ExperienceSection>
       )}
 
-      {/* Progress Bar */}
       <ProgressBar level={level} label="Progress" />
 
-      {/* Hover Particles */}
       {isActive && (
         <div className="absolute inset-0 pointer-events-none z-5" aria-hidden="true">
           {[...Array(3)].map((_, i) => (

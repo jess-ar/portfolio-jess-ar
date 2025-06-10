@@ -22,7 +22,6 @@ function About({ isUnlocked, isKeyPickedUp, onUnlock }) {
           backgroundSize: 'cover',
         }}
       >
-        {/* Text and arrow at the beginning of the section */}
         <div className="relative w-full h-20 sm:h-16 md:h-16 flex items-end justify-center z-10 ">
           <div className="mb-4 text-center text-white">
             <p className="text-xs sm:text-sm md:text-base font-medium ">
@@ -42,7 +41,6 @@ function About({ isUnlocked, isKeyPickedUp, onUnlock }) {
           </div>
         </div>
 
-        {/* LockOverlay only if blocked */}
         {!isUnlocked && (
           <LockOverlay
             isKeyPickedUp={isKeyPickedUp}
@@ -51,7 +49,6 @@ function About({ isUnlocked, isKeyPickedUp, onUnlock }) {
           />
         )}
 
-        {/* AboutInfo is displayed when unlocking */}
         {isUnlocked && <AboutInfo />}
       </div>
     </section>

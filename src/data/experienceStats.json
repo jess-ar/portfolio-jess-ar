@@ -1,0 +1,23 @@
+[
+  {
+    "value": "2",
+    "label": "Quests Completed",
+    "bgColor": "bg-terciary/10",
+    "borderColor": "border border-terciary/30",
+    "textColor": "text-terciary"
+  },
+  {
+    "value": "5+",
+    "label": "Technologies Mastered",
+    "bgColor": "bg-accent/10",
+    "borderColor": "border border-accent/30",
+    "textColor": "text-accent"
+  },
+  {
+    "value": "4700",
+    "label": "Total Experience Points",
+    "bgColor": "bg-stats-green/10",
+    "borderColor": "border border-stats-green/30",
+    "textColor": "text-stats-green"
+  }
+]
