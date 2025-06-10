@@ -1,4 +1,4 @@
-import React, { forwardRef } from "react";
+import { forwardRef } from "react";
 import { clsx } from "clsx";
 
 const VARIANTS = {
@@ -82,10 +82,8 @@ const ShimmerButton = forwardRef(
           </div>
         </div>
 
-        {/* Content */}
         {children}
 
-        {/* Background */}
         <div
           className={clsx(
             "absolute -z-20 [background:var(--bg)] [border-radius:var(--radius)] [inset:var(--cut)]"
