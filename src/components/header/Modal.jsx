@@ -73,12 +73,11 @@ const Modal = ({ isOpen, onClose, title }) => {
 
   return (
     <div
-      className="modal-overlay fixed inset-0 z-[999] bg-black bg-opacity-70 flex items-center justify-center overflow-y-auto"
+      className="fixed inset-0 z-[999] bg-black bg-opacity-70 flex items-center justify-center overflow-y-auto pointer-events-auto"
       role="dialog"
       aria-modal="true"
       aria-labelledby="modal-title"
       aria-describedby="modal-description"
-      style={{ zIndex: 9999 }}
     >
       <div
         ref={modalRef}

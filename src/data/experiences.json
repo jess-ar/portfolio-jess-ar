@@ -5,7 +5,7 @@
     "role": "Jr Frontend Web Developer",
     "level": 54,
     "description": "Frontend Developer and Development Coordinator | Drive women’s participation in technology by managing real-world projects and ensuring valuable deliverables.",
-    "technologies": ["React", "TypeScript", "Tailwind CSS", "Figma"],
+    "technologies": ["React", "TypeScript","Next.js", "Tailwind CSS", "Figma"],
     "achievements": ["MVP Leadership", "Team Coordination", "Code Review", "Best Practices"],
     "emblem": "⚔️",
     "magicType": "Creation Magic",

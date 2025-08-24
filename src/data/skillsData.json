@@ -1,7 +1,7 @@
 [
   {
     "category": "Frontend",
-    "items": ["HTML5", "CSS3", "Tailwind CSS", "JavaScript", "TypeScript", "React", "Astro", "Vue"]
+    "items": ["HTML5", "CSS3", "Tailwind CSS", "JavaScript", "TypeScript", "React", "Astro", "Vue", "Angular"]
   },
   {
     "category": "Backend",
@@ -17,7 +17,7 @@
   },
   {
     "category": "Agile Methodologies",
-    "items": ["Scrum", "Kanban", "Jira"]
+    "items": ["Scrum", "Kanban", "Jira", "Notion"]
   },
   {
     "category": "Design Tools",

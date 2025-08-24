@@ -14,7 +14,7 @@ function AboutInfo() {
 
   return (
     <div className="relative p-8 shadow-lg bg-detail-about bg-cover bg-center mt-20">
-      <div className="relative z-10 flex flex-col md:flex-row gap-6 items-center">
+      <div className="relative flex flex-col md:flex-row gap-6 items-center">
         <ProfileCard />
         <div className="w-full md:w-2/3 space-y-4">
           {stats.map((stat, index) => (
