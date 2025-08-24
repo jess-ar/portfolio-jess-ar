@@ -74,6 +74,7 @@ function LockOverlay({ isKeyPickedUp, isUnlocked, onUnlock }) {
 
   return (
     <div
+    id="lock-overlay"
       className={`absolute inset-0 ${isUnlocked ? "opacity-0 pointer-events-none" : "opacity-90"
         } transition-opacity duration-700 flex flex-col justify-center items-center relative overflow-hidden px-10 py-16`}
       onDragOver={handleDragOver}
