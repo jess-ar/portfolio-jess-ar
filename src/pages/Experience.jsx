@@ -4,7 +4,6 @@ import { useState, useEffect } from "react"
 import ExperienceCard from "@/components/experience/ExperienceCard"
 import ExperienceStats from "@/components/experience/ExperienceStats"
 import experiences from "@/data/experiences.json"
-import stats from "@/data/experienceStats.json"
 
 const Experience = () => {
   const [activeExperience, setActiveExperience] = useState(null)
@@ -45,7 +44,10 @@ const Experience = () => {
       <div className="max-w-7xl mx-auto relative">
         <header className="text-center mb-8 sm:mb-12">
           <div className="inline-block bg-gradient-to-r from-terciary to-accent bg-clip-text text-transparent mb-3">
-            <h2 id="experience-title" className="text-2xl sm:text-3xl lg:text-4xl font-bold mt-12">
+            <h2
+              id="experience-title"
+              className="text-2xl sm:text-3xl lg:text-4xl font-bold mt-12"
+            >
               ⚔️ Quest Journal ⚔️
             </h2>
           </div>
@@ -65,21 +67,34 @@ const Experience = () => {
           </div>
         </header>
 
-        <main className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
-          {experiences.map((exp, index) => (
-            <ExperienceCard
-              key={exp.id}
-              experience={exp}
-              index={index}
-              isVisible={isVisible}
-              onMouseEnter={setActiveExperience}
-              onMouseLeave={setActiveExperience}
-              isActive={activeExperience === exp.id}
-            />
-          ))}
-        </main>
+        <ul
+  className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8"
+  role="list"
+>
+  {experiences.map((exp, index) => {
+    const isLast = index === experiences.length - 1
+    const isOddCount = experiences.length % 2 === 1
+    const centerLast = isLast && isOddCount
 
-        <ExperienceStats stats={stats} />
+    return (
+      <li
+        key={exp.id}
+        role="listitem"
+        className={centerLast ? "md:col-span-2 flex justify-center" : ""}
+      >
+        <ExperienceCard
+          experience={exp}
+          index={index}
+          isVisible={isVisible}
+          onMouseEnter={setActiveExperience}
+          onMouseLeave={setActiveExperience}
+          isActive={activeExperience === exp.id}
+        />
+      </li>
+    )
+  })}
+</ul>
+        <ExperienceStats experiences={experiences} />
       </div>
     </section>
   )
