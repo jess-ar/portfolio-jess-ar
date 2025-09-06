@@ -3,13 +3,12 @@
     "id": 1,
     "company": "SheHub",
     "role": "Jr Frontend Web Developer",
-    "level": 54,
-    "description": "Frontend Developer and Development Coordinator | Drive women’s participation in technology by managing real-world projects and ensuring valuable deliverables.",
+    "description": "Frontend Developer and Development Coordinator. Non-profit platform linking women graduates with real projects and mentors. Helped architect and deliver the current site; 100+ sign-ups in the first month.",
     "technologies": ["React", "TypeScript","Next.js", "Tailwind CSS", "Figma"],
-    "achievements": ["MVP Leadership", "Team Coordination", "Code Review", "Best Practices"],
+    "achievements": ["Lead dev team; align Dev × UX × Product", "100+ sign-ups in first month", "Reviews, refactors", "Best practices"],
     "emblem": "⚔️",
     "magicType": "Creation Magic",
-    "experiencePoints": 2500,
+    "experiencePoints": 3680,
     "duration": "Oct 2024 - Present",
     "links": [
       {
@@ -20,16 +19,39 @@
     ]
   },
   {
-    "id": 2,
+  "id": 2,
+  "company": "Adevinta (InfoJobs) - Surferss Wave",
+  "role": "Jr Frontend Web Developer",
+  "description": "Two-week collaboration with Miguel Ángel Durán (midudev): built Surferss Wave, an informational promotional site for influencer Sofía Surferss to boost visibility for her surf travel experiences.",
+  "technologies": ["Astro", "Tailwind CSS", "Figma"],
+  "achievements": [
+    "Astro + Tailwind implementation",
+    "Figma-to-code handoff",
+    "UI styling & animations",
+    "Collaboration with midudev"
+  ],
+  "emblem": "🌊",
+  "magicType": "Visibility Magic",
+  "experiencePoints": 545,
+  "duration": "Jul 2025 - Aug 2025 (2 weeks)",
+  "links": [
+    {
+      "url": "https://www.surferswavetrip.com/",
+      "title": "Surferss Wave",
+      "description": "Built the layout and styles in Astro with Tailwind CSS, translating Figma into a responsive UI with semantic markup and a general accessibility focus, including the Open Graph preview image (og:image)."
+    }
+  ]
+  },
+  {
+    "id": 3,
     "company": "SquareMX",
     "role": "Jr Full Stack Web Developer & UI Designer",
-    "level": 78,
     "description": "Email marketing in Symfony, Astro refactor, API integration, and modular dashboard in Vue and Vuetify.",
     "technologies": ["PHP", "Symfony", "PostgreSQL", "Astro", "Vue", "Vuetify"],
     "achievements": ["Email Marketing", "Astro Refactoring", "API Integration", "UX/UI Design"],
     "emblem": "🗡️",
     "magicType": "Transformation Magic",
-    "experiencePoints": 2200,
+    "experiencePoints": 2350,
     "duration": "Feb 2025 - Mar 2025 (3 months)",
     "links": [
       {
