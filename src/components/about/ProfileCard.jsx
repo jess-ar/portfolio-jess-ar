@@ -1,18 +1,33 @@
-import { useState } from "react";
-import namine from "@/assets/images/namine.jpg";
-import me from "@/assets/images/me.png";
-import jessAboutSvg from "@/assets/icons/jess-about.svg";
-import jessAboutPng from "@/assets/images/jess-about.png";
+"use client"
+
+import { useMemo, useState } from "react"
+import namine from "@/assets/images/namine.jpg"
+import me from "@/assets/images/me.png"
+import jessAboutSvg from "@/assets/icons/jess-about.svg"
+import jessAboutPng from "@/assets/images/jess-about.png"
+
+import experiences from "@/data/experiences.json"
+import { xpToLevel, xpToProgress } from "@/utils/levels"
 
 function ProfileCard() {
-  const [isFlipping, setIsFlipping] = useState(false);
+  const [isFlipping, setIsFlipping] = useState(false)
+
+  const { displayLevel, maxHP, progress } = useMemo(() => {
+    const totalXP = (experiences ?? [])
+      .map(e => Math.max(0, e.experiencePoints ?? 0))
+      .reduce((a, b) => a + b, 0)
+
+    const level = xpToLevel(totalXP)
+    const prog  = xpToProgress(totalXP)
+    const hp    = 100 + level * 4
+
+    return { displayLevel: level, maxHP: hp, progress: prog }
+  }, [])
 
   const handleHoverOrClick = () => {
-    setIsFlipping(true);
-    setTimeout(() => {
-      setIsFlipping(false);
-    }, 2000);
-  };
+    setIsFlipping(true)
+    setTimeout(() => setIsFlipping(false), 2000)
+  }
 
   return (
     <div className="relative flex flex-col items-center md:items-start rounded-xl p-4 shadow-md">
@@ -25,11 +40,9 @@ function ProfileCard() {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             className="mr-2"
+            aria-hidden="true"
           >
-            <path
-              d="M13.484 21.8057L3.0815 12.2635C-2.58789 6.61554 5.68212 -4.31936 13.484 4.52657C21.2859 -4.29357 29.6339 6.64133 23.8866 12.2635L13.484 21.8057Z"
-              fill="#CA0010"
-            />
+            <path d="M13.484 21.8057L3.0815 12.2635C-2.58789 6.61554 5.68212 -4.31936 13.484 4.52657C21.2859 -4.29357 29.6339 6.64133 23.8866 12.2635L13.484 21.8057Z" fill="#CA0010" />
             <path
               fillRule="evenodd"
               clipRule="evenodd"
@@ -41,15 +54,11 @@ function ProfileCard() {
         </h1>
       </div>
 
-      {/* Avatar with animation flip */}
       <div
-        className={`relative w-[199px] h-[199px] rounded-t-lg border-4 border-stats-blue z-0 mb-4 cursor-pointer transition-transform duration-700 ${isFlipping ? "rotate-x-180" : ""
-          }`}
+        className={`relative w-[199px] h-[199px] rounded-t-lg border-4 border-stats-blue z-0 mb-4 cursor-pointer transition-transform duration-700 ${isFlipping ? "rotate-x-180" : ""}`}
         onMouseEnter={handleHoverOrClick}
         onClick={handleHoverOrClick}
-        style={{
-          transformStyle: "preserve-3d",
-        }}
+        style={{ transformStyle: "preserve-3d" }}
       >
         <img
           src={isFlipping ? me : namine}
@@ -58,24 +67,30 @@ function ProfileCard() {
         />
       </div>
 
-      {/* SVG image above */}
       <picture className="absolute top-[250px] z-10">
         <source srcSet={jessAboutSvg} type="image/svg+xml" />
         <img src={jessAboutPng} alt="Jess label" width="199" height="43" />
       </picture>
 
       <div className="mt-4 flex flex-col items-center md:items-start gap-2">
-        <div className="flex justify-between w-[203px] h-[41px] bg-black rounded-full border-2 border-stats-red px-4 py-1">
+        <div
+          className="flex justify-between w-[203px] h-[41px] bg-black rounded-full border-2 border-stats-red px-4 py-1"
+          aria-label={`Level ${displayLevel}`}
+        >
           <span className="text-white font-bold">LV</span>
-          <span className="text-white font-bold">1</span>
+          <span className="text-white font-bold">{displayLevel}</span>
         </div>
-        <div className="flex justify-between w-[203px] h-[41px] bg-black rounded-full border-2 border-stats-red px-4 py-1">
+
+        <div
+          className="flex justify-between w-[203px] h-[41px] bg-black rounded-full border-2 border-stats-red px-4 py-1"
+          aria-label={`HP ${maxHP} of ${maxHP}`}
+        >
           <span className="text-white font-bold">HP</span>
-          <span className="text-white font-bold">128 / 128</span>
+          <span className="text-white font-bold">{maxHP} / {maxHP}</span>
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 export default ProfileCard;

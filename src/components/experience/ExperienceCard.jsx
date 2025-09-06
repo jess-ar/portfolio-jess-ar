@@ -3,13 +3,13 @@ import TechBadge from "./TechBadge"
 import ProjectLink from "./ProjectLink"
 import ExperienceSection from "./ExperienceSection"
 import ProgressBar from "./ProgressBar"
+import { xpToLevel, xpToProgress } from "@/utils/levels"
 
 const ExperienceCard = ({ experience, index, isVisible, onMouseEnter, onMouseLeave, isActive }) => {
   const {
     id,
     company,
     role,
-    level,
     description,
     technologies,
     achievements,
@@ -20,9 +20,13 @@ const ExperienceCard = ({ experience, index, isVisible, onMouseEnter, onMouseLea
     links,
   } = experience
 
+  const xp = experiencePoints ?? 0
+  const computedLevel = xpToLevel(xp)
+  const progressPct = xpToProgress(xp)
+
   return (
     <article
-      className={`group relative bg-gradient-to-br from-dark/90 via-dark/95 to-secondary/80 border border-terciary/20 rounded-xl p-4 sm:p-5 shadow-xl hover:border-accent/40 transition-all duration-300 transform max-w-xl mx-auto w-full ${
+      className={`group relative bg-gradient-to-br from-dark/90 via-dark/95 to-secondary/80 border border-terciary/20 rounded-xl p-4 sm:p-5 shadow-xl hover:border-accent/40 transition-all duration-300 transform max-w-xl mx-auto w-full  ${
         isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
       }`}
       style={{
@@ -31,7 +35,6 @@ const ExperienceCard = ({ experience, index, isVisible, onMouseEnter, onMouseLea
       }}
       onMouseEnter={() => onMouseEnter(id)}
       onMouseLeave={() => onMouseLeave(null)}
-      role="article"
       aria-labelledby={`experience-${id}-title`}
       tabIndex="0"
     >
@@ -50,12 +53,13 @@ const ExperienceCard = ({ experience, index, isVisible, onMouseEnter, onMouseLea
             <p className="text-terciary/80 text-xs">{duration}</p>
           </div>
         </div>
+
         <div
           className="bg-gradient-to-r from-accent to-stats-yellow text-dark font-bold text-sm px-3 py-1 rounded-full border-2 border-primary/20 shadow-sm flex-shrink-0 self-start"
           role="status"
-          aria-label={`Level ${level}`}
+          aria-label={`Level ${computedLevel}`}
         >
-          Lv.{level}
+          Lv.{computedLevel}
         </div>
       </header>
 
@@ -66,7 +70,7 @@ const ExperienceCard = ({ experience, index, isVisible, onMouseEnter, onMouseLea
             <span className="ml-1">{magicType}</span>
           </span>
           <span className="text-accent font-semibold" aria-label={`${experiencePoints} experience points`}>
-            {experiencePoints} XP
+            {xp} XP
           </span>
         </div>
       </div>
@@ -102,7 +106,7 @@ const ExperienceCard = ({ experience, index, isVisible, onMouseEnter, onMouseLea
         </ExperienceSection>
       )}
 
-      <ProgressBar level={level} label="Progress" />
+      <ProgressBar value={progressPct} label="Progress to next Lv." />
 
       {isActive && (
         <div className="absolute inset-0 pointer-events-none z-5" aria-hidden="true">
