@@ -1,15 +1,11 @@
-// components/experience/ExperienceStats.jsx
 const ExperienceStats = ({ experiences = [] }) => {
-  // Quests
   const quests = experiences.length;
 
-  // Total XP
   const totalXP = experiences.reduce(
     (sum, e) => sum + (e.experiencePoints ?? 0),
     0
   );
 
-  // Tecnologías únicas (normalizadas)
   const TECH_ALIASES = {
     "nextjs": "next.js",
     "next js": "next.js",
