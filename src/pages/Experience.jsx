@@ -14,26 +14,30 @@ const Experience = () => {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true)
+          observer.disconnect()
         }
       },
-      { threshold: 0.3 },
+      { threshold: 0.1 },
     )
 
     const section = document.getElementById("experience")
-    if (section) {
-      observer.observe(section)
-    }
-
+    if (section) observer.observe(section)
     return () => observer.disconnect()
+  }, [])
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.innerWidth < 640) {
+      setIsVisible(true)
+    }
   }, [])
 
   return (
     <section
       id="experience"
-      className="min-h-screen bg-gradient-to-br from-dark via-secondary to-dark py-12 sm:py-16 px-4 relative overflow-hidden"
+      className="min-h-screen bg-gradient-to-br from-dark via-secondary to-dark py-12 sm:py-16 px-4 relative overflow-visible md:overflow-hidden"
       aria-labelledby="experience-title"
     >
-      <div className="max-w-5xl mx-auto absolute inset-0 opacity-10 px-6" aria-hidden="true">
+      <div className="max-w-5xl mx-auto absolute inset-0 z-0 opacity-10 px-6 pointer-events-none" aria-hidden="true">
         <div className="absolute top-1/3 left-1/5 w-32 h-32 sm:w-48 sm:h-48 bg-terciary/20 rounded-full blur-3xl animate-pulse" />
         <div
           className="absolute bottom-1/3 right-1/5 w-40 h-40 sm:w-64 sm:h-64 bg-accent/20 rounded-full blur-3xl animate-pulse"
@@ -41,13 +45,10 @@ const Experience = () => {
         />
       </div>
 
-      <div className="max-w-7xl mx-auto relative">
+      <div className="max-w-7xl mx-auto relative z-10">
         <header className="text-center mb-8 sm:mb-12">
           <div className="inline-block bg-gradient-to-r from-terciary to-accent bg-clip-text text-transparent mb-3">
-            <h2
-              id="experience-title"
-              className="text-2xl sm:text-3xl lg:text-4xl font-bold mt-12"
-            >
+            <h2 id="experience-title" className="text-2xl sm:text-3xl lg:text-4xl font-bold mt-12">
               ⚔️ Quest Journal ⚔️
             </h2>
           </div>
@@ -68,32 +69,33 @@ const Experience = () => {
         </header>
 
         <ul
-  className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8"
-  role="list"
->
-  {experiences.map((exp, index) => {
-    const isLast = index === experiences.length - 1
-    const isOddCount = experiences.length % 2 === 1
-    const centerLast = isLast && isOddCount
+          className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8"
+          role="list"
+        >
+          {experiences.map((exp, index) => {
+            const isLast = index === experiences.length - 1
+            const isOddCount = experiences.length % 2 === 1
+            const centerLast = isLast && isOddCount
 
-    return (
-      <li
-        key={exp.id}
-        role="listitem"
-        className={centerLast ? "md:col-span-2 flex justify-center" : ""}
-      >
-        <ExperienceCard
-          experience={exp}
-          index={index}
-          isVisible={isVisible}
-          onMouseEnter={setActiveExperience}
-          onMouseLeave={setActiveExperience}
-          isActive={activeExperience === exp.id}
-        />
-      </li>
-    )
-  })}
-</ul>
+            return (
+              <li
+                key={exp.id}
+                role="listitem"
+                className={`h-full ${centerLast ? "md:col-span-2 flex justify-center" : ""}`}
+              >
+                <ExperienceCard
+                  experience={exp}
+                  index={index}
+                  isVisible={isVisible}
+                  onMouseEnter={setActiveExperience}
+                  onMouseLeave={setActiveExperience}
+                  isActive={activeExperience === exp.id}
+                />
+              </li>
+            )
+          })}
+        </ul>
+
         <ExperienceStats experiences={experiences} />
       </div>
     </section>
