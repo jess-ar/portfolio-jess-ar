@@ -100,7 +100,7 @@ function LockOverlay({ isKeyPickedUp, isUnlocked, onUnlock }) {
           <p className="text-[#D7C616] text-lg md:text-xl font-medium opacity-80 text-center mt-2 animate-glow">
             {isKeyPickedUp
               ? "Place the key here to unlock"
-              : "Pick up the key to unlock"}
+              : "Take the key on the top right to unlock the section"}
           </p>
         </div>
       )}
