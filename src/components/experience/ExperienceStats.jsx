@@ -71,11 +71,9 @@ const ExperienceStats = ({ experiences = [] }) => {
         <span aria-hidden="true">⭐</span>
       </h3>
 
-      {/* 1 col (mobile), 2 col (sm/md), 3 col fijo en lg */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {cards.map((stat, index) => {
           const isLast = index === cards.length - 1;
-          // Centrar el último SOLO en sm/md; en lg vuelve a su columna normal
           const centerLast =
             isOdd && isLast
               ? "sm:col-span-2 sm:justify-self-center sm:w-1/2 lg:col-span-1 lg:justify-self-auto lg:w-auto"

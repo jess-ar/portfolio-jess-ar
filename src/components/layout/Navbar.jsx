@@ -50,11 +50,12 @@ function Navbar() {
   return (
     <header role="banner">
       <div
-        className={`navbarcon fixed top-0 left-0 w-full z-40 text-primary  border-b border-white/10 transition-colors duration-75 ${isScrolled ? "bg-[#0B1223]" : "bg-transparent"
-          }`}
+        className={`navbarcon fixed top-0 left-0 w-full z-40 text-primary  border-b border-white/10 transition-colors duration-75 ${
+          isScrolled ? "bg-[#0B1223]" : "bg-transparent"
+        }`}
         aria-label="Main Navigation"
       >
-        <div className="w-full max-w-screen-lg sm:p-6 mx-auto flex justify-between items-center ">
+        <div className="w-full max-w-screen-lg p-6 mx-auto flex justify-between items-center">
           <AnchorLink
             href="#home"
             aria-label="Back to home"
@@ -66,7 +67,11 @@ function Navbar() {
               })
             }
           >
-            <img src={logo} alt="Logo Jessica Arroyo" className="h-12" />
+            <img
+              src={logo}
+              alt="Logo Jessica Arroyo"
+              className="h-12"
+            />
           </AnchorLink>
           <div className="flex items-center gap-2 lg:hidden relative">
             {showPopup && (
@@ -81,8 +86,9 @@ function Navbar() {
               className="w-10 h-10 flex items-center justify-center text-white text-xl border border-dark rounded-full bg-dark transition-all duration-300"
             >
               <i
-                className={`fa-solid ${isMuted ? "fa-volume-xmark" : "fa-volume-high"
-                  }`}
+                className={`fa-solid ${
+                  isMuted ? "fa-volume-xmark" : "fa-volume-high"
+                }`}
                 aria-hidden="true"
               />
             </button>
@@ -95,8 +101,9 @@ function Navbar() {
             />
           </div>
           <nav
-            className={`${isNavOpen ? "flex" : "hidden"
-              } flex-col lg:flex lg:flex-row justify-center items-center gap-y-4 lg:gap-x-8 absolute lg:relative top-16 lg:top-0 left-0 w-full lg:w-auto bg-terciary lg:bg-transparent mt-6 lg:mt-0 pt-4 lg:pt-0`}
+            className={`${
+              isNavOpen ? "flex" : "hidden"
+            } flex-col lg:flex lg:flex-row justify-center items-center gap-y-4 lg:gap-x-8 absolute lg:relative top-16 lg:top-0 left-0 w-full lg:w-auto bg-terciary lg:bg-transparent mt-6 lg:mt-0 pt-4 lg:pt-0`}
             role="navigation"
           >
             <ul
@@ -104,17 +111,28 @@ function Navbar() {
               className="flex flex-col lg:flex-row items-center gap-y-4 lg:gap-x-8 text-sm md:text-lg"
               aria-label="Primary Menu"
             >
-              {["home", "about", "experience", "skills", "projects"].map((section) => (
-                <li key={section}>
-                  <AnchorLink
-                    href={`#${section}`}
-                    className="navbar-link"
-                    onClick={() => handleNavClick("/sounds/save.mp3", section)}
-                  >
-                    {section.charAt(0).toUpperCase() + section.slice(1)}
-                  </AnchorLink>
-                </li>
-              ))}
+              {["home", "about", "experience", "skills", "projects"].map(
+                (section) => (
+                  <li key={section}>
+                    <AnchorLink
+                      href={`#${section}`}
+                      className="
+                      relative no-underline text-white transition-colors duration-300
+                      hover:text-[#0a0a0a] md:hover:text-[#a2c3e4]
+                      after:content-[''] after:absolute after:left-0 after:-bottom-[2px]
+                      after:h-[2px] after:w-0 after:bg-[#0a0a0a] md:after:bg-[#6caff3]
+                      after:transition-[width] after:duration-300 hover:after:w-full
+                      text-[0.9rem] md:text-base
+                    "
+                      onClick={() =>
+                        handleNavClick("/sounds/save.mp3", section)
+                      }
+                    >
+                      {section.charAt(0).toUpperCase() + section.slice(1)}
+                    </AnchorLink>
+                  </li>
+                )
+              )}
             </ul>
             <div className="relative group">
               <button
@@ -124,7 +142,9 @@ function Navbar() {
                     category: "Navbar",
                     label: "Let's Connect",
                   });
-                  navigator.clipboard.writeText("jessica.arroyo.lebron@gmail.com");
+                  navigator.clipboard.writeText(
+                    "jessica.arroyo.lebron@gmail.com"
+                  );
                   alert("¡Correo copiado al portapapeles!");
                   handleNavClick("/sounds/item-get.mp3");
                 }}
@@ -153,7 +173,10 @@ function Navbar() {
                     })
                   }
                 >
-                  <i className="fa-brands fa-linkedin" aria-hidden="true"></i>
+                  <i
+                    className="fa-brands fa-linkedin"
+                    aria-hidden="true"
+                  ></i>
                 </a>
               </li>
               <li>
@@ -172,7 +195,10 @@ function Navbar() {
                     })
                   }
                 >
-                  <i className="fa-brands fa-github" aria-hidden="true"></i>
+                  <i
+                    className="fa-brands fa-github"
+                    aria-hidden="true"
+                  ></i>
                 </a>
               </li>
               <li className="hidden lg:block">
@@ -187,8 +213,9 @@ function Navbar() {
                   className="w-10 h-10 flex items-center justify-center text-black text-xl border border-primary rounded-full bg-primary transition-all duration-300"
                 >
                   <i
-                    className={`fa-solid ${isMuted ? "fa-volume-xmark" : "fa-volume-high"
-                      }`}
+                    className={`fa-solid ${
+                      isMuted ? "fa-volume-xmark" : "fa-volume-high"
+                    }`}
                     aria-hidden="true"
                   />
                 </button>

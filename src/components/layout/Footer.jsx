@@ -50,7 +50,7 @@ function Footer() {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-primary transition-colors"
+                  className="hover:text-terciary transition-colors"
                   aria-label={label}
                   onClick={() =>
                     trackClick({
