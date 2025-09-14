@@ -45,7 +45,7 @@ const Experience = () => {
         />
       </div>
 
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className=" max-w-screen-lg mx-auto relative z-10">
         <header className="text-center mb-8 sm:mb-12">
           <div className="inline-block bg-gradient-to-r from-terciary to-accent bg-clip-text text-transparent mb-3">
             <h2 id="experience-title" className="text-2xl sm:text-3xl lg:text-4xl font-bold mt-12">

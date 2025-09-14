@@ -20,7 +20,7 @@
   },
   {
   "id": 2,
-  "company": "Adevinta (InfoJobs) - Surferss Wave",
+  "company": "Adevinta (InfoJobs)",
   "role": "Jr Frontend Web Developer",
   "description": "Two-week collaboration with Miguel Ángel Durán (midudev): built Surferss Wave, an informational promotional site for influencer Sofía Surferss to boost visibility for her surf travel experiences.",
   "technologies": ["Astro", "Tailwind CSS", "Figma"],

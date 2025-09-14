@@ -37,7 +37,7 @@ const ExperienceStats = ({ experiences = [] }) => {
       label: "Quests Completed",
       bgColor: "bg-gradient-to-r from-stats-blue/10 to-stats-blue/5",
       borderColor: "border border-stats-blue/30",
-      textColor: "text-stats-blue",
+      textColor: "text-stats-blue-light",
     },
     {
       value: techCount,
@@ -49,11 +49,13 @@ const ExperienceStats = ({ experiences = [] }) => {
     {
       value: totalXP.toLocaleString("en-US"),
       label: "Total Experience Points",
-      bgColor: "bg-gradient-to-r from-emerald-500/10 to-emerald-500/5",
-      borderColor: "border border-emerald-500/30",
+      bgColor: "bg-gradient-to-r from-muted/10 to-muted/5",
+      borderColor: "border border-muted/30",
       textColor: "text-emerald-400",
     },
   ];
+
+  const isOdd = cards.length % 2 === 1;
 
   return (
     <section
@@ -69,24 +71,30 @@ const ExperienceStats = ({ experiences = [] }) => {
         <span aria-hidden="true">⭐</span>
       </h3>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {cards.map((stat, index) => (
-          <div
-            key={index}
-            className={`${stat.bgColor} ${stat.borderColor} rounded-lg p-3`}
-            role="group"
-            aria-labelledby={`stat-${index}-value`}
-          >
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {cards.map((stat, index) => {
+          const isLast = index === cards.length - 1;
+          const centerLast =
+            isOdd && isLast ? "sm:col-span-2 sm:justify-self-center sm:w-1/2" : "";
+
+          return (
             <div
-              id={`stat-${index}-value`}
-              className={`text-xl sm:text-2xl font-bold ${stat.textColor} mb-1`}
-              aria-label={`${stat.value} ${stat.label}`}
+              key={index}
+              className={`${stat.bgColor} ${stat.borderColor} rounded-lg p-3 ${centerLast}`}
+              role="group"
+              aria-labelledby={`stat-${index}-value`}
             >
-              {stat.value}
+              <div
+                id={`stat-${index}-value`}
+                className={`text-xl sm:text-2xl font-bold ${stat.textColor} mb-1`}
+                aria-label={`${stat.value} ${stat.label}`}
+              >
+                {stat.value}
+              </div>
+              <div className="text-primary text-xs sm:text-sm">{stat.label}</div>
             </div>
-            <div className="text-primary text-xs sm:text-sm">{stat.label}</div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );
