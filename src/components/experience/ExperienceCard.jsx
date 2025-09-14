@@ -50,7 +50,7 @@ const ExperienceCard = ({ experience, index, isVisible, onMouseEnter, onMouseLea
               {company}
             </h3>
             <p className="text-accent font-medium text-sm">{role}</p>
-            <p className="text-terciary/80 text-xs">{duration}</p>
+            <p className="text-muted text-xs">{duration}</p>
           </div>
         </div>
 
