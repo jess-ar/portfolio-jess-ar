@@ -119,19 +119,6 @@
         },
         {
           "id": 7,
-          "title": "La Caixa The Game is On",
-          "description": "Project developed during the **'The Game is HackathOn - React Frontend Challenge'** by **CaixaBank**. The goal was to build a **personal finance assistant**, implementing features like **transaction management (CRUD)**, **budget tracking**, **state management**, **data visualization**, and **authentication** using **React** and **Material UI**.",
-          "img": "/projects/project-img10.png",
-          "technologies": [
-            "React",
-            "Material UI"
-          ],
-          "links": {
-            "code": "https://github.com/jess-ar/the-game-is-hackathon-caixabank-tech"
-          }
-        },
-        {
-          "id": 8,
           "title": "La Caixa Coding Challenges",
           "description": "Developed during a **second NUWE Hackathon** with **CaixaBank**, where I worked on the **frontend logic** of a **financial web app** based on a **pre-designed UI**. Both challenges required **efficient problem-solving** and delivering a **functional, scalable UI** under **time constraints**.",
           "img": "/projects/project-img4.png",
@@ -151,7 +138,7 @@
       "name": "Bootcamp",
       "data": [
         {
-          "id": 12,
+          "id": 8,
           "title": "Travel Buddy",
           "description": "Is a **travel planning app** that offers **destination recommendations** to **registered users**. It was developed in **two weeks** during the **bootcamp**, where I **led the team** and worked on both **frontend** and **backend**. I focused on the **design and implementation** of the **Home** and **Welcome pages**, and I was also responsible for **connecting the frontend with the backend**, handling **API requests**, **data fetching**, and **authentication**. While the project is not yet **fully completed**, it showcases **solid fullstack development**.",
           "img": "/projects/project-img12.png",
@@ -192,7 +179,7 @@
         {
           "id": 10,
           "title": "Piedra, papel o tijera",
-          "description": "Design & Development. Only mobile and tablet. More details coming soon.",
+          "description": "Design & Development. This was a two-week team project and one of my very first experiences with **JavaScript**. Although the game is not functional, it marked my first steps experimenting with code, teamwork, and project organization.",
           "img": "/projects/project-img7.png",
           "technologies": [
             "Figma",
@@ -209,7 +196,7 @@
         {
           "id": 11,
           "title": "Kamakura Food",
-          "description": "Development. More details coming soon.",
+          "description": "The design was provided to us, and our role focused on the development side. This was a one-week team project and one of my first experiences working with JavaScript, **applying logic** and collaboration to bring the interface to life.",
           "img": "/projects/project-img8.png",
           "technologies": [
             "Gitflow",
