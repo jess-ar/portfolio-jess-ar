@@ -1,5 +1,5 @@
 {
-  "name": "react-training",
+  "name": "portfolio-jess-ar",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -15,6 +15,7 @@
     "bootstrap": "^5.2.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "framer-motion": "^12.23.22",
     "howler": "^2.2.4",
     "react": "^18.3.1",
     "react-anchor-link-smooth-scroll": "^1.0.12",

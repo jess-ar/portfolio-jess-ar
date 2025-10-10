@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import Shadow from '@/components/header/Shadow';
-import Key from '@/components/header/Key';
-import Modal from '@/components/header/Modal';
+import Shadow from '@/components/hero/Shadow';
+import Key from '@/components/hero/Key';
+import Modal from '@/components/hero/Modal';
 
 const KeyShadowSection = ({ onPickup, isUnlocked }) => {
   const [showHint, setShowHint] = useState(true);

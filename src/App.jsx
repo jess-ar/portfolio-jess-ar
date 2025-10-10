@@ -2,6 +2,7 @@ import { useState } from "react";
 import Home from "@/pages/Home";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import IntroAnimation from "@/components/hero/IntroAnimation";
 
 function App() {
   const [isUnlocked, setIsUnlocked] = useState(false);
@@ -19,6 +20,7 @@ function App() {
 
   return (
     <div className="app">
+      <IntroAnimation />
       <Navbar />
       <main>
         <Home

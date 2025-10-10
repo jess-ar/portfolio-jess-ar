@@ -1,4 +1,4 @@
-import Header from "@/pages/Header";
+import Hero from "@/pages/Hero";
 import About from "@/pages/About";
 import Experience from "@/pages/Experience";
 import Projects from "@/pages/Projects";
@@ -9,7 +9,7 @@ function Home({ isUnlocked, isKeyPickedUp, onPickup, onUnlockAbout }) {
   return (
     <div className="flex flex-col gap-0 relative">
       <Navbar />
-      <Header 
+      <Hero 
         onPickup={onPickup} 
         isKeyPickedUp={isKeyPickedUp} 
       />
