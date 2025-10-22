@@ -2,8 +2,8 @@
   {
     "id": 1,
     "company": "SheHub",
-    "role": "Jr Frontend Web Developer",
-    "description": "Frontend Developer and Development Coordinator. Non-profit platform linking women graduates with real projects and mentors. Helped architect and deliver the current site; 100+ sign-ups in the first month.",
+    "role": "Front-End Tech Lead, Team Coordinator & Developer",
+    "description": "Non-profit platform linking women graduates with real projects and mentors. Helped architect and deliver the current site; 100+ sign-ups in the first month.",
     "technologies": ["React", "TypeScript","Next.js", "Tailwind CSS", "Figma"],
     "achievements": ["Lead dev team; align Dev × UX × Product", "100+ sign-ups in first month", "Reviews, refactors", "Best practices"],
     "emblem": "⚔️",
@@ -21,7 +21,7 @@
   {
   "id": 2,
   "company": "Adevinta (InfoJobs)",
-  "role": "Jr Frontend Web Developer",
+  "role": "Frontend Web Developer",
   "description": "Two-week collaboration with Miguel Ángel Durán (midudev): built Surferss Wave, an informational promotional site for influencer Sofía Surferss to boost visibility for her surf travel experiences.",
   "technologies": ["Astro", "Tailwind CSS", "Figma"],
   "achievements": [
@@ -45,7 +45,7 @@
   {
     "id": 3,
     "company": "SquareMX",
-    "role": "Jr Full Stack Web Developer & UI Designer",
+    "role": "Full Stack Web Developer & UX/UI Designer",
     "description": "Email marketing in Symfony, Astro refactor, API integration, and modular dashboard in Vue and Vuetify.",
     "technologies": ["PHP", "Symfony", "PostgreSQL", "Astro", "Vue", "Vuetify"],
     "achievements": ["Email Marketing", "Astro Refactoring", "API Integration", "UX/UI Design"],

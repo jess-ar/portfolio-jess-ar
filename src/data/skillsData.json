@@ -1,7 +1,17 @@
 [
   {
     "category": "Frontend",
-    "items": ["HTML5", "CSS3", "Tailwind CSS", "JavaScript", "TypeScript", "React", "Astro", "Vue", "Angular"]
+    "items": [
+      "HTML5",
+      "CSS3",
+      "Tailwind CSS",
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "Astro",
+      "Vue",
+      "Angular"
+    ]
   },
   {
     "category": "Backend",
@@ -16,6 +26,29 @@
     "items": ["PostgreSQL", "MySQL"]
   },
   {
+    "category": "Version Control & Workflow",
+    "items": [
+      "Git",
+      "GitHub",
+      "Git Flow",
+      "Conventional Commits",
+      "Pull Request Reviews"
+    ]
+  },
+  {
+    "category": "Deployment & Integrations",
+    "items": [
+      "Firebase",
+      "Firestore",
+      "Vercel",
+      "Netlify",
+      "Google Analytics",
+      "Favicon Setup",
+      "Open Graph (OG) Image",
+      "Meta Tags Optimization"
+    ]
+  },
+  {
     "category": "Agile Methodologies",
     "items": ["Scrum", "Kanban", "Jira", "Notion"]
   },
@@ -25,10 +58,36 @@
   },
   {
     "category": "Best Practices",
-    "items": ["Responsive Design", "Accessibility (A11y)", "SOLID", "DRY", "KISS"]
+    "items": [
+      "Responsive Development",
+      "Accessibility (A11y & Inclusive Design)",
+      "Semantic HTML",
+      "SOLID",
+      "DRY",
+      "KISS"
+    ]
+  },
+  {
+    "category": "Community & Communication",
+    "items": ["Discord Administration", "Mentoring", "Public Speaking"]
   },
   {
     "category": "Languages",
     "items": ["English (B1)", "Spanish (Native)", "Catalan (Native)"]
+  },
+  {
+    "category": "Soft Skills",
+    "items": [
+      "Team Collaboration",
+      "Leadership & Mentorship",
+      "Adaptability",
+      "Problem Solving",
+      "Creativity",
+      "Communication",
+      "Attention to Detail",
+      "Continuous Learning",
+      "Community Building",
+      "Empathy & Active Listening"
+    ]
   }
 ]
