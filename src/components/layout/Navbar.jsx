@@ -55,7 +55,7 @@ function Navbar() {
         }`}
         aria-label="Main Navigation"
       >
-        <div className="w-full max-w-screen-lg p-6 mx-auto flex justify-between items-center">
+        <div className="w-full max-w-screen-lg py-3 px-6 mx-auto flex justify-between items-center">
           <AnchorLink
             href="#home"
             aria-label="Back to home"
@@ -103,7 +103,7 @@ function Navbar() {
           <nav
             className={`${
               isNavOpen ? "flex" : "hidden"
-            } flex-col lg:flex lg:flex-row justify-center items-center gap-y-4 lg:gap-x-8 absolute lg:relative top-16 lg:top-0 left-0 w-full lg:w-auto bg-terciary lg:bg-transparent mt-6 lg:mt-0 pt-4 lg:pt-0`}
+            } flex-col lg:flex lg:flex-row justify-center items-center gap-y-4 lg:gap-x-8 absolute lg:relative top-16 lg:top-0 left-0 w-full lg:w-auto bg-terciary lg:bg-transparent mt-2 lg:mt-0 pt-4 lg:pt-0`}
             role="navigation"
           >
             <ul

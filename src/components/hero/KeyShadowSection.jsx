@@ -36,7 +36,7 @@ const KeyShadowSection = ({ onPickup, isUnlocked }) => {
   };
 
   return (
-    <section className="relative flex flex-row justify-center items-center mr-16 gap-10 min-h-[50vh] mb-20 md:mt-20">
+    <section className="relative flex flex-row justify-center items-center lg:ml-8 mr-16 gap-10 min-h-[50vh] mb-20 md:mt-20">
       <div className="relative banner-sombra w-[120px] h-[120px] sm:w-[160px] sm:h-[160px] md:w-[180px] md:h-[180px] lg:w-[200px] lg:h-[200px] animate-float">
         <Shadow onClick={() => setShowModal(true)} />
       </div>
