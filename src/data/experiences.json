@@ -2,12 +2,17 @@
   {
     "id": 1,
     "company": "SheHub",
-    "role": "Front-End Tech Lead, Team Coordinator & Developer",
+    "role": "Tech Lead, Team Coordinator & Frontend Web Developer",
     "description": "Non-profit platform linking women graduates with real projects and mentors. Helped architect and deliver the current site; 100+ sign-ups in the first month.",
-    "technologies": ["React", "TypeScript","Next.js", "Tailwind CSS", "Figma"],
-    "achievements": ["Lead dev team; align Dev × UX × Product", "100+ sign-ups in first month", "Reviews, refactors", "Best practices"],
+    "technologies": ["React", "TypeScript", "Next.js", "Tailwind CSS", "Figma"],
+    "achievements": [
+      "Lead dev team; align Dev × UX × Product",
+      "100+ sign-ups in first month",
+      "Reviews, refactors",
+      "Best practices"
+    ],
     "emblem": "⚔️",
-    "magicType": "Creation Magic",
+    "magicType": "Team-Building Magic",
     "experiencePoints": 3680,
     "duration": "Oct 2024 - Present",
     "links": [
@@ -19,36 +24,65 @@
     ]
   },
   {
-  "id": 2,
-  "company": "Adevinta (InfoJobs)",
-  "role": "Frontend Web Developer",
-  "description": "Two-week collaboration with Miguel Ángel Durán (midudev): built Surferss Wave, an informational promotional site for influencer Sofía Surferss to boost visibility for her surf travel experiences.",
-  "technologies": ["Astro", "Tailwind CSS", "Figma"],
-  "achievements": [
-    "Astro + Tailwind implementation",
-    "Figma-to-code handoff",
-    "UI styling & animations",
-    "Collaboration with midudev"
-  ],
-  "emblem": "🌊",
-  "magicType": "Visibility Magic",
-  "experiencePoints": 545,
-  "duration": "Jul 2025 - Aug 2025 (2 weeks)",
-  "links": [
-    {
-      "url": "https://www.surferswavetrip.com/",
-      "title": "Surferss Wave",
-      "description": "Built the layout and styles in Astro with Tailwind CSS, translating Figma into a responsive UI with semantic markup and a general accessibility focus, including the Open Graph preview image (og:image)."
-    }
-  ]
+    "id": 2,
+    "company": "Kreator",
+    "role": "Frontend Web Developer & Product Collaborator",
+    "description": "Responsible for the complete front-end design and layout, including the landing page, registration form, and legal pages.",
+    "technologies": ["React", "TypeScript", "Next.js", "Tailwind CSS"],
+    "achievements": [
+      "Multi-step registration flow (Firestore + Airtable)",
+      "Reusable UI components using tokens and OKLCH colors",
+      "Design System foundations (Athena tokens)",
+      "Data validation & dynamic search (profession, zone, sector)"
+    ],
+    "emblem": "🔮",
+    "magicType": "Creation Magic",
+    "experiencePoints": 2350,
+    "duration": "Sep 2025 - Nov 2025 (3 months)",
+    "links": [
+      {
+        "url": "https://kreator-omega.vercel.app/",
+        "title": "Kreator Website",
+        "description": "Developed applying best practices in accessibility, modular architecture, and responsive design."
+      }
+    ]
   },
   {
     "id": 3,
+    "company": "Adevinta (InfoJobs)",
+    "role": "Frontend Web Developer",
+    "description": "Two-week collaboration with Miguel Ángel Durán (midudev): built Surferss Wave, an informational promotional site for influencer Sofía Surferss to boost visibility for her surf travel experiences.",
+    "technologies": ["Astro", "Tailwind CSS", "Figma"],
+    "achievements": [
+      "Astro + Tailwind implementation",
+      "Figma-to-code handoff",
+      "UI styling & animations",
+      "Collaboration with midudev"
+    ],
+    "emblem": "🌊",
+    "magicType": "Visibility Magic",
+    "experiencePoints": 545,
+    "duration": "Jul 2025 - Aug 2025 (2 weeks)",
+    "links": [
+      {
+        "url": "https://www.surferswavetrip.com/",
+        "title": "Surferss Wave Website",
+        "description": "Built the layout and styles in Astro with Tailwind CSS, translating Figma into a responsive UI with semantic markup and a general accessibility focus, including the Open Graph preview image (og:image)."
+      }
+    ]
+  },
+  {
+    "id": 4,
     "company": "SquareMX",
     "role": "Full Stack Web Developer & UX/UI Designer",
-    "description": "Email marketing in Symfony, Astro refactor, API integration, and modular dashboard in Vue and Vuetify.",
+    "description": "Experience working on a web project involving email-marketing development with PHP, Symfony, and PostgreSQL, followed by a UI refactor in Astro migrating from plain CSS to Tailwind, and the creation of an admin dashboard using Vue and Vuetify.",
     "technologies": ["PHP", "Symfony", "PostgreSQL", "Astro", "Vue", "Vuetify"],
-    "achievements": ["Email Marketing", "Astro Refactoring", "API Integration", "UX/UI Design"],
+    "achievements": [
+      "Email Marketing",
+      "Astro Refactoring",
+      "API Integration",
+      "UX/UI Design"
+    ],
     "emblem": "🗡️",
     "magicType": "Transformation Magic",
     "experiencePoints": 2350,
@@ -56,7 +90,7 @@
     "links": [
       {
         "url": "https://dealfactor.co.uk/",
-        "title": "DealFactor",
+        "title": "DealFactor Website",
         "description": "Refactoring in Astro: Redesign and Cleanup of legacy code, folder reorganization, and migration from plain CSS to Tailwind CSS. Improved accessibility, responsive design, and integration with external API (Mailxpertise)."
       }
     ]
