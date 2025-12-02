@@ -26,7 +26,12 @@ function Skills() {
               {skills.map((skill, index) => (
                 <div
                   key={index}
-                  className="flex w-full flex-row flex-wrap gap-x-4 gap-y-2"
+                  tabIndex={0}
+                  role="group"
+                  aria-label={skill.category}
+                  className="flex w-full flex-row flex-wrap gap-x-4 gap-y-2
+               focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0087CD]/80
+               rounded-lg"
                   onMouseMove={(e) => {
                     const r = e.currentTarget.getBoundingClientRect();
                     e.currentTarget.style.setProperty(
@@ -46,6 +51,10 @@ function Skills() {
                     {skill.items.map((item, idx) => (
                       <ShimmerButton
                         key={idx}
+                        as="div"
+                        focusable={false}
+                        tabIndex={-1}
+                        aria-hidden="true"
                         className="shimmer-button inline-flex items-center gap-x-1 text-sm md:text-base lg:text-base transition-all whitespace-nowrap cursor-default"
                       >
                         {item}
