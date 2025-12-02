@@ -16,7 +16,8 @@ const VARIANTS = {
     shimmerSize: "0.1em",
     shimmerDuration: "2s",
     borderRadius: "16px",
-    background: "linear-gradient(50deg, #0e5792 10%, #0d0d35 80%, #19105c 120%, #0e5792 100%)",
+    background:
+      "linear-gradient(50deg, #0e5792 10%, #0d0d35 80%, #19105c 120%, #0e5792 100%)",
     boxShadow: "0 0 8px rgba(0, 183, 255, 0.4)",
     shimmerAlwaysOn: true,
   },
@@ -27,6 +28,7 @@ const ShimmerButton = forwardRef(
     {
       as = "button",
       variant = "default",
+      focusable, // nuevo
       shimmerColor,
       shimmerSize,
       shimmerDuration,
@@ -41,10 +43,15 @@ const ShimmerButton = forwardRef(
     const styles = VARIANTS[variant];
     const Component = as;
 
+    // por defecto: button/a focusable, div no
+    const isFocusable =
+      focusable !== undefined ? focusable : as === "button" || as === "a";
+
     return (
       <Component
         ref={ref}
         {...props}
+        tabIndex={isFocusable ? 0 : -1}
         style={{
           "--spread": "90deg",
           "--shimmer-color": shimmerColor || styles.shimmerColor,
@@ -58,7 +65,10 @@ const ShimmerButton = forwardRef(
         className={clsx(
           "group relative z-0 flex items-center justify-center overflow-hidden whitespace-nowrap border border-white/10 px-4 py-2 text-white [background:var(--bg)] [border-radius:var(--radius)]",
           "transform-gpu transition-transform duration-300 ease-in-out active:translate-y-px",
-          "outline-none focus:outline-none focus:ring-0",
+          isFocusable
+            ?
+              "focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
+            : "focus:outline-none focus-visible:outline-none",
           className
         )}
       >
@@ -84,11 +94,7 @@ const ShimmerButton = forwardRef(
 
         {children}
 
-        <div
-          className={clsx(
-            "absolute -z-20 [background:var(--bg)] [border-radius:var(--radius)] [inset:var(--cut)]"
-          )}
-        />
+        <div className="absolute -z-20 [background:var(--bg)] [border-radius:var(--radius)] [inset:var(--cut)]" />
       </Component>
     );
   }
