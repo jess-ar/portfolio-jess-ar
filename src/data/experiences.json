@@ -28,12 +28,20 @@
     "company": "Kreator",
     "role": "Frontend Web Developer & Product Collaborator",
     "description": "Responsible for the complete front-end design and layout, including the landing page, registration form, and legal pages.",
-    "technologies": ["React", "TypeScript", "Next.js", "Tailwind CSS"],
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Next.js",
+      "Tailwind CSS",
+      "Firebase",
+      "Stripe",
+      "G. Analytics"
+    ],
     "achievements": [
-      "Multi-step registration flow (Firestore + Airtable)",
-      "Reusable UI components using tokens and OKLCH colors",
-      "Design System foundations (Athena tokens)",
-      "Data validation & dynamic search (profession, zone, sector)"
+      "Multi-step registration flow integrating Firestore and Stripe",
+      "Payment and subscription handling orchestrated through Firebase Functions",
+      "Accessibility-focused UI (keyboard navigation, ARIA labels, semantic structure)",
+      "Analytics setup with Google Analytics"
     ],
     "emblem": "🔮",
     "magicType": "Creation Magic",

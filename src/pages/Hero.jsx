@@ -26,27 +26,40 @@ function Hero({ onPickup, isUnlocked }) {
             </p>
             <div className="max-w-screen-xl mx-auto">
               <h1 className="text-white text-2xl md:text-3xl lg:text-3xl font-bold leading-tight -mt-4">
-                <span className="text-primary block mb-1">Fullstack Web Developer</span>
+                <span className="text-primary block mb-1">
+                  Fullstack Web Developer
+                </span>
               </h1>
               <div className="text-white text-sm md:text-base lg:text-base py-4 mr-10 sm:mr-36 md:mr-0 lg:mr-0 space-y-3">
                 <p>
-                  My determination has driven me to take on challenges, participate in hackathons, and create solutions that stand out for their creativity and precision.
+                  My determination has driven me to take on challenges,
+                  participate in hackathons, and create solutions that stand out
+                  for their creativity and precision.
                 </p>
                 <p>
-                  I deeply value the power of community and collaboration, driving inclusive projects that foster growth and representation in technology.
+                  I deeply value the power of community and collaboration,
+                  driving inclusive projects that foster growth and
+                  representation in technology.
                 </p>
                 <p>
-                  I also focus on accessibility and user-centered design, ensuring high-quality and iterative results in agile environments.
+                  I also focus on accessibility and user-centered design,
+                  ensuring high-quality and iterative results in agile
+                  environments.
                 </p>
               </div>
             </div>
             <div className="flex flex-col lg:flex-row gap-6 items-start mt-4">
-              <AnchorLink
-                href="#about"
-                offset="90"
+              <GradientButton
+                asChild
+                variant="variant"
               >
-                <GradientButton variant="variant">More About me</GradientButton>
-              </AnchorLink>
+                <AnchorLink
+                  href="#about"
+                  offset="90"
+                >
+                  More About me
+                </AnchorLink>
+              </GradientButton>
             </div>
           </div>
           <KeyShadowSection

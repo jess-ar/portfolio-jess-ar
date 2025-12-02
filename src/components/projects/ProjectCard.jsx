@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ReactMarkdown from "react-markdown";
 import ShimmerButton from "@/components/skills/ShimmerButton";
 
@@ -13,6 +13,19 @@ const ProjectCard = ({ title, img, description, technologies, links }) => {
     });
   };
 
+  useEffect(() => {
+    if (!showDemo) return;
+
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        setShowDemo(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [showDemo]);
+
   return (
     <>
       <div className="md:items-start flex flex-col md:flex-row lg:flex-row gap-y-8 lg:gap-x-8 items-center lg:items-start">
@@ -24,10 +37,15 @@ const ProjectCard = ({ title, img, description, technologies, links }) => {
           />
         </div>
         <div className="w-full lg:w-1/2 flex flex-col justify-start lg:justify-center gap-4">
-          <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-left">{title}</h3>
+          <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-left">
+            {title}
+          </h3>
           <div className="flex flex-wrap gap-2 mb-2">
             {technologies.map((tech, index) => (
-              <span key={index} className="bg-gray-800 text-sm px-3 py-1 rounded-full">
+              <span
+                key={index}
+                className="bg-gray-800 text-sm px-3 py-1 rounded-full"
+              >
                 {tech}
               </span>
             ))}
@@ -36,7 +54,9 @@ const ProjectCard = ({ title, img, description, technologies, links }) => {
             <ReactMarkdown
               components={{
                 strong: ({ children }) => (
-                  <strong className="text-slate-300 font-semibold">{children}</strong>
+                  <strong className="text-slate-300 font-semibold">
+                    {children}
+                  </strong>
                 ),
               }}
               className="text-gray-400 text-sm md:text-base"
@@ -48,13 +68,18 @@ const ProjectCard = ({ title, img, description, technologies, links }) => {
             <ShimmerButton
               variant="darkMetal"
               as="a"
+              focusable={true}
               href={links.live}
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`Visit ${title} website (opens in a new tab)`}
-              className="px-4 py-2 cursor-pointer text-base font-semibold md:text-lg lg:text-lg
-              rounded-xl text-white shadow-lg hover:opacity-90 flex items-center gap-2 border-0
-              focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
+              className="
+      px-4 py-2 cursor-pointer text-base font-semibold md:text-lg lg:text-lg
+      rounded-xl text-white shadow-lg hover:opacity-90 flex items-center gap-2 border-0
+      focus-visible:outline-none
+      focus-visible:ring-2 focus-visible:ring-[#0087CD]
+      focus-visible:ring-offset-2 focus-visible:ring-offset-black
+    "
             >
               Visit the website
               <i className="fa-solid fa-up-right-from-square text-sm ml-4"></i>
@@ -71,7 +96,10 @@ const ProjectCard = ({ title, img, description, technologies, links }) => {
                 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-gray-500"
               >
                 Code
-                <i className="fa-brands fa-github ml-2" aria-hidden="true"></i>
+                <i
+                  className="fa-brands fa-github ml-2"
+                  aria-hidden="true"
+                ></i>
               </a>
             )}
             {links.demo && (
@@ -93,22 +121,35 @@ const ProjectCard = ({ title, img, description, technologies, links }) => {
                 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
               >
                 Demo
-                <i className="fa-solid fa-play ml-2" aria-hidden="true"></i>
+                <i
+                  className="fa-solid fa-play ml-2"
+                  aria-hidden="true"
+                ></i>
               </button>
             )}
           </div>
         </div>
       </div>
       {showDemo && (
-        <div className="fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center p-4">
-          <div className="relative w-full max-w-3xl">
+        <div
+          className="fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center p-4"
+          onClick={() => setShowDemo(false)}
+          role="dialog"
+          aria-modal="true"
+        >
+          <div
+            className="relative w-full max-w-3xl"
+            onClick={(e) => e.stopPropagation()}
+          >
             <button
               onClick={() => setShowDemo(false)}
-              className="absolute top-2 right-2 text-white text-2xl"
+              className="absolute top-2 right-2 text-white text-2xl z-50"
               aria-label="Close demo video"
+              type="button"
             >
               &times;
             </button>
+
             <div className="w-full">
               {links.demo.endsWith(".mp4") ? (
                 <video
@@ -128,6 +169,7 @@ const ProjectCard = ({ title, img, description, technologies, links }) => {
                 ></iframe>
               )}
             </div>
+
             {showSoundHint && (
               <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-70 text-white text-sm px-4 py-2 rounded-md shadow-lg animate-fade-in-out z-50">
                 🔇 This video starts muted. Click the volume icon to hear it.

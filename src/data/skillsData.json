@@ -50,7 +50,7 @@
   },
   {
     "category": "Agile Methodologies",
-    "items": ["Scrum", "Kanban", "Jira", "Notion"]
+    "items": ["Scrum", "Kanban", "Jira", "Trello", "ClickUp", "Notion"]
   },
   {
     "category": "Design Tools",
