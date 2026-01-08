@@ -1,9 +1,33 @@
 [
   {
     "id": 1,
+    "company": "Imbee",
+    "role": "Fullstack Developer",
+    "description": "Working on fullstack development, code modernization, and database operations. Focused on refactoring legacy systems, implementing new features, and maintaining code quality standards.",
+    "technologies": ["Python", "Goland", "JavaScript", "CSS", "PostgreSQL"],
+    "achievements": [
+      "Legacy code modernization",
+      "Feature enhancement and optimization", 
+      "Reviews, refactors",
+      "Best practices"
+    ],
+    "emblem": "🤖",
+    "magicType": "Bot Enhancement Magic",
+    "experiencePoints": 4750,
+    "duration": "Dic 2025 - Present",
+    "links": [
+      {
+        "url": "https://imbee.me",
+        "title": "Imbee Website",
+        "description": "AI-powered chatbot automation platform helping businesses streamline processes through intelligent  conversational agents. Contributing to fullstack development and code modernization across company systems"
+      }
+    ]
+  },
+    {
+    "id": 2,
     "company": "SheHub",
     "role": "Tech Lead, Team Coordinator & Frontend Web Developer",
-    "description": "Non-profit platform linking women graduates with real projects and mentors. Helped architect and deliver the current site; 100+ sign-ups in the first month.",
+    "description": "Volunteer work for non-profit platform linking women graduates with real projects and mentors. Helped architect and deliver the current site; 100+ sign-ups in the first month.",
     "technologies": ["React", "TypeScript", "Next.js", "Tailwind CSS", "Figma"],
     "achievements": [
       "Lead dev team; align Dev × UX × Product",
@@ -24,7 +48,7 @@
     ]
   },
   {
-    "id": 2,
+    "id": 3,
     "company": "Kreator",
     "role": "Frontend Web Developer & Product Collaborator",
     "description": "Responsible for the complete front-end design and layout, including the landing page, registration form, and legal pages.",
@@ -35,7 +59,7 @@
       "Tailwind CSS",
       "Firebase",
       "Stripe",
-      "G. Analytics"
+      "Google Analytics"
     ],
     "achievements": [
       "Multi-step registration flow integrating Firestore and Stripe",
@@ -56,7 +80,7 @@
     ]
   },
   {
-    "id": 3,
+    "id": 4,
     "company": "Adevinta (InfoJobs)",
     "role": "Frontend Web Developer",
     "description": "Two-week collaboration with Miguel Ángel Durán (midudev): built Surferss Wave, an informational promotional site for influencer Sofía Surferss to boost visibility for her surf travel experiences.",
@@ -80,7 +104,7 @@
     ]
   },
   {
-    "id": 4,
+    "id": 5,
     "company": "SquareMX",
     "role": "Full Stack Web Developer & UX/UI Designer",
     "description": "Experience working on a web project involving email-marketing development with PHP, Symfony, and PostgreSQL, followed by a UI refactor in Astro migrating from plain CSS to Tailwind, and the creation of an admin dashboard using Vue and Vuetify.",
