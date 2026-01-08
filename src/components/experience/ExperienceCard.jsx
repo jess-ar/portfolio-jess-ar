@@ -26,9 +26,8 @@ const ExperienceCard = ({ experience, index, isVisible, onMouseEnter, onMouseLea
 
   return (
     <article
-      className={`group relative bg-gradient-to-br from-dark/90 via-dark/95 to-secondary/80 border border-terciary/20 rounded-xl p-4 sm:p-5 shadow-xl hover:border-accent/40 transition-all duration-300 transform max-w-xl mx-auto w-full  ${
-        isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-      }`}
+      className={`group relative bg-gradient-to-br from-dark/90 via-dark/95 to-secondary/80 border border-terciary/20 rounded-xl p-4 sm:p-5 shadow-xl hover:border-accent/40 transition-all duration-300 transform max-w-xl mx-auto w-full h-full ${isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+        }`}
       style={{
         transitionDelay: `${index * 150}ms`,
         boxShadow: "0 8px 25px rgba(14, 135, 205, 0.15)",
@@ -96,7 +95,25 @@ const ExperienceCard = ({ experience, index, isVisible, onMouseEnter, onMouseLea
         </div>
       </ExperienceSection>
 
-      {links && links.length > 0 && (
+      {/* Para Imbee: mostrar Company Website */}
+      {company === "Imbee" && (
+        <ExperienceSection title="Company Website" icon="🔗" iconColor="text-stats-blue">
+          <div className="space-y-2">
+            <ProjectLink
+              key={0}
+              link={{
+                url: "https://imbee.me",
+                title: "Imbee Website",
+                description: "AI-powered chatbot automation platform helping businesses streamline processes through intelligent conversational agents."
+              }}
+              index={0}
+            />
+          </div>
+        </ExperienceSection>
+      )}
+
+      {/* Para el resto: mostrar Key Projects si hay links */}
+      {company !== "Imbee" && links && links.length > 0 && (
         <ExperienceSection title="Key Projects" icon="🔗" iconColor="text-stats-blue">
           <div className="space-y-2">
             {links.map((link, idx) => (
