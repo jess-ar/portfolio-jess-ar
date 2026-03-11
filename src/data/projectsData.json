@@ -21,7 +21,7 @@
             "PostgreSQL"
           ],
           "links": {
-            "live": "https://pair-connect.netlify.app/",
+            "live": "https://pair-connect-web.vercel.app/",
             "code": "https://github.com/jess-ar/pair_connect_front/tree/main",
             "demo": "/videos/pairconnect-demo.mp4"
           }
